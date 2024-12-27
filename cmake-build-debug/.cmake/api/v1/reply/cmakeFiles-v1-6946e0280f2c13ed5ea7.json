@@ -1,0 +1,1847 @@
+{
+	"globsDependent" : 
+	[
+		{
+			"expression" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/*.hpp",
+			"paths" : 
+			[
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/array.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/basic_parser.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/basic_parser_impl.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/conversion.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/debug_printers.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/array.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/buffer.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/chars_format.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/compute_float64.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/config.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/emulated128.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/fast_float/ascii_number.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/fast_float/bigint.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/fast_float/constexpr_feature_detect.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/fast_float/decimal_to_binary.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/fast_float/digit_comparison.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/fast_float/fast_float.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/fast_float/fast_table.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/fast_float/float_common.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/fast_float/parse_number.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/from_chars_float_impl.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/from_chars_integer_impl.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/from_chars_result.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/integer_search_trees.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/parser.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/detail/significand_tables.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/from_chars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/limits.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/config.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/default_resource.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/digest.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/except.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/format.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/gdb_printers.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/handler.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/impl/array.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/impl/stack.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/literals.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/object.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/parse_into.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/ryu/detail/common.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/ryu/detail/d2s.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/ryu/detail/d2s_full_table.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/ryu/detail/d2s_intrinsics.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/ryu/detail/digit_table.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/ryu/ryu.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/sbo_buffer.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/shared_resource.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/sse2.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/stack.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/stream.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/string_impl.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/utf8.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/value.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/value_from.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/value_to.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/writer.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/error.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/fwd.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/array.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/conversion.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/error.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/object.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/parse_into.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/serialize.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/serializer.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/string.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/value.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/value_ref.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/visit.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/is_deallocate_trivial.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/kind.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/monotonic_resource.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/null_resource.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/object.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/parse.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/parse_into.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/parse_options.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/parser.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/pilfer.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/result_for.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/serialize.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/serialize_options.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/serializer.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/set_pointer_options.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/src.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/static_resource.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/storage_ptr.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/stream_parser.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/string.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/string_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/value.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/value_from.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/value_ref.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/value_stack.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/value_to.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/visit.hpp"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/*.ipp",
+			"paths" : 
+			[
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/charconv/impl/from_chars.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/impl/default_resource.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/impl/except.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/impl/format.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/impl/handler.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/impl/shared_resource.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/impl/stack.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/impl/string_impl.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/detail/ryu/impl/d2s.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/array.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/error.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/kind.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/monotonic_resource.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/null_resource.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/object.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/parse.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/parser.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/pointer.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/serialize.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/serializer.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/static_resource.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/stream_parser.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/string.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/value.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/value_ref.ipp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/impl/value_stack.ipp"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/*.natvis",
+			"paths" : 
+			[
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/json/include/boost/json/json.natvis"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_string/include/boost/*.hpp",
+			"paths" : 
+			[
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_string/include/boost/static_string.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_string/include/boost/static_string/config.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_string/include/boost/static_string/static_string.hpp"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_string/include/boost/*.ipp",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_string/include/boost/*.natvis",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/*.hpp",
+			"paths" : 
+			[
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/authority_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/decode_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/any_params_iter.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/any_segments_iter.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/config.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/encode.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/except.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/format_args.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/impl/format_args.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/optional_string.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/params_iter_impl.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/parts_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/replacement_field_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/segments_iter_impl.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/string_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/url_impl.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/detail/vformat.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/encode.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/encoding_opts.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/error.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/error_types.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/format.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/all_chars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/alnum_chars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/alpha_chars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/charset.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/ci_string.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/dec_octet_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/delim_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/detail/charset.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/detail/ci_string.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/detail/recycled.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/detail/tuple.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/digit_chars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/error.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/hexdig_chars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/impl/error.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/impl/not_empty_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/impl/optional_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/impl/parse.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/impl/range_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/impl/recycled.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/impl/token_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/impl/tuple_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/impl/unsigned_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/impl/variant_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/literal_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/lut_chars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/not_empty_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/optional_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/parse.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/range_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/recycled.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/string_token.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/string_view_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/token_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/tuple_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/type_traits.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/unsigned_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/variant_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/grammar/vchars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/host_type.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/ignore_case.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/impl/decode_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/impl/encode.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/impl/error.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/impl/params_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/impl/params_encoded_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/impl/params_encoded_ref.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/impl/params_ref.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/impl/segments_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/impl/segments_encoded_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/impl/segments_encoded_ref.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/impl/segments_ref.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/ipv4_address.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/ipv6_address.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/optional.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/param.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/params_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/params_encoded_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/params_encoded_ref.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/params_encoded_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/params_ref.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/params_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/parse.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/parse_path.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/parse_query.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/pct_string_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/absolute_uri_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/authority_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/detail/path_rules.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/gen_delim_chars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/impl/pct_encoded_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/ipv4_address_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/ipv6_address_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/origin_form_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/pchars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/pct_encoded_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/query_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/relative_ref_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/reserved_chars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/sub_delim_chars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/unreserved_chars.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/uri_reference_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/rfc/uri_rule.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/scheme.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/segments_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/segments_encoded_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/segments_encoded_ref.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/segments_encoded_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/segments_ref.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/segments_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/src.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/static_url.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/string_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/url.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/url_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/url_view.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/url_view_base.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/urls.hpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/variant.hpp"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/*.natvis",
+			"paths" : 
+			[
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/include/boost/url/url.natvis"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/*.cpp",
+			"paths" : 
+			[
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/authority_view.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/decode_view.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/any_params_iter.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/any_segments_iter.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/decode.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/except.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/format_args.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/normalize.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/params_iter_impl.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/pattern.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/pct_format.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/replacement_field_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/segments_iter_impl.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/url_impl.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/detail/vformat.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/encoding_opts.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/error.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/grammar/ci_string.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/grammar/dec_octet_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/grammar/delim_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/grammar/detail/recycled.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/grammar/error.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/grammar/literal_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/grammar/string_view_base.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/ipv4_address.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/ipv6_address.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/params_base.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/params_encoded_base.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/params_encoded_ref.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/params_encoded_view.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/params_ref.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/params_view.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/parse.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/parse_path.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/parse_query.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/pct_string_view.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/absolute_uri_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/authority_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/detail/h16_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/detail/hier_part_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/detail/host_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/detail/ip_literal_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/detail/ipv6_addrz_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/detail/ipvfuture_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/detail/port_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/detail/relative_part_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/detail/scheme_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/detail/userinfo_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/ipv4_address_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/ipv6_address_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/origin_form_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/query_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/relative_ref_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/uri_reference_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/rfc/uri_rule.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/scheme.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/segments_base.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/segments_encoded_base.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/segments_encoded_ref.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/segments_encoded_view.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/segments_ref.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/segments_view.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/static_url.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/url.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/url_base.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/url_view.cpp",
+				"/Users/jimmy/CLionProjects/Crypto/external/boost/libs/url/src/url_view_base.cpp"
+			],
+			"recurse" : true
+		}
+	],
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"path" : "external/googletest/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeDependentOption.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"path" : "external/googletest/googlemock/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "external/googletest/googlemock/cmake/gmock.pc.in"
+		},
+		{
+			"path" : "external/googletest/googlemock/cmake/gmock_main.pc.in"
+		},
+		{
+			"path" : "external/googletest/googletest/CMakeLists.txt"
+		},
+		{
+			"path" : "external/googletest/googletest/cmake/internal_utils.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in"
+		},
+		{
+			"path" : "external/googletest/googletest/cmake/Config.cmake.in"
+		},
+		{
+			"path" : "external/googletest/googletest/cmake/gtest.pc.in"
+		},
+		{
+			"path" : "external/googletest/googletest/cmake/gtest_main.pc.in"
+		},
+		{
+			"path" : "external/boost/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/tools/cmake/include/BoostRoot.cmake"
+		},
+		{
+			"path" : "external/boost/tools/cmake/include/BoostMessage.cmake"
+		},
+		{
+			"path" : "external/boost/tools/cmake/include/BoostInstall.cmake"
+		},
+		{
+			"path" : "external/boost/tools/cmake/include/BoostMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake"
+		},
+		{
+			"path" : "external/boost/libs/accumulators/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/algorithm/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/align/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/any/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/array/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/asio/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/assert/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/assign/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/atomic/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "external/boost/libs/atomic/cmake/BoostLibraryIncludes.cmake"
+		},
+		{
+			"path" : "external/boost/libs/beast/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/bimap/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/bind/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/callable_traits/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/charconv/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCXXSourceRuns.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Internal/CheckSourceRuns.cmake"
+		},
+		{
+			"path" : "external/boost/libs/chrono/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/circular_buffer/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/cobalt/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/cobalt/cmake/CheckRequirements.cmake"
+		},
+		{
+			"path" : "external/boost/libs/cobalt/cmake/coroutine.cpp"
+		},
+		{
+			"path" : "external/boost/libs/cobalt/cmake/concepts.cpp"
+		},
+		{
+			"path" : "external/boost/libs/cobalt/cmake/memory_resource.cpp"
+		},
+		{
+			"path" : "external/boost/libs/compat/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/compute/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/concept_check/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/config/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/container/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/container_hash/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/context/CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeASMCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeASMInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-ASM.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang-ASM.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-ASM.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-ASM.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"path" : "external/boost/libs/contract/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/conversion/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/convert/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/core/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/coroutine/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/coroutine2/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/crc/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/date_time/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/describe/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/detail/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/dll/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/dynamic_bitset/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/endian/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/exception/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/fiber/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/filesystem/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"path" : "external/boost/libs/filesystem/cmake/BoostLibraryIncludes.cmake"
+		},
+		{
+			"path" : "external/boost/libs/flyweight/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/foreach/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/format/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/function/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/function_types/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/functional/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/fusion/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/geometry/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/gil/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/graph/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/hana/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/headers/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/heap/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/histogram/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/hof/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/icl/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/integer/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/interprocess/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/intrusive/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/io/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/iostreams/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindZLIB.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindZLIB.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindBZip2.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckSymbolExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakePushCheckState.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindBZip2.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckSymbolExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakePushCheckState.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindLibLZMA.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindLibLZMA.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/zstd/zstdConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/zstd/zstdConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/zstd/zstdTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/zstd/zstdTargets-release.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/zstd/zstdConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/zstd/zstdConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/zstd/zstdTargets.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"path" : "external/boost/libs/iterator/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/json/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"path" : "external/boost/libs/json/pretty_printers/FindBoostPrettyPrinters.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPython3.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPython/Support.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "external/boost/libs/lambda/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/lambda2/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/leaf/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/lexical_cast/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/local_function/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/locale/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindICU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindIconv.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakePushCheckState.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindIconv.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakePushCheckState.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "external/boost/libs/lockfree/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/log/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "external/boost/libs/log/cmake/BoostLibraryIncludes.cmake"
+		},
+		{
+			"path" : "external/boost/libs/logic/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/math/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeDependentOption.cmake"
+		},
+		{
+			"path" : "external/boost/libs/metaparse/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/move/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/mp11/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/mpl/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/msm/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/multi_array/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/multi_index/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/multiprecision/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeDependentOption.cmake"
+		},
+		{
+			"path" : "external/boost/libs/mysql/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindOpenSSL.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPkgConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "external/boost/libs/nowide/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/nowide/cmake/BoostAddWarnings.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"path" : "external/boost/libs/numeric/conversion/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/numeric/interval/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/numeric/odeint/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/numeric/ublas/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/optional/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/outcome/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/parameter/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/parser/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/pfr/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/phoenix/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/poly_collection/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/polygon/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/pool/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/predef/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/preprocessor/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/process/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/program_options/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/property_map/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/property_tree/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/proto/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/ptr_container/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/qvm/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/random/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/range/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/ratio/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/rational/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/redis/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindOpenSSL.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPkgConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "external/boost/libs/regex/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindICU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "external/boost/libs/safe_numerics/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/scope/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/scope_exit/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/serialization/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/signals2/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/smart_ptr/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/sort/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/spirit/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/stacktrace/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"path" : "external/boost/libs/statechart/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/static_assert/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/static_string/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"path" : "external/boost/libs/stl_interfaces/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/system/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/test/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/thread/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "external/boost/libs/throw_exception/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/timer/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/tokenizer/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/tti/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/tuple/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/type_erasure/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/type_index/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/type_traits/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/typeof/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/units/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/unordered/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/url/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/utility/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/uuid/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/variant/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/variant2/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/vmd/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/wave/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/winapi/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/xpressive/CMakeLists.txt"
+		},
+		{
+			"path" : "external/boost/libs/yap/CMakeLists.txt"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug",
+		"source" : "/Users/jimmy/CLionProjects/Crypto"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

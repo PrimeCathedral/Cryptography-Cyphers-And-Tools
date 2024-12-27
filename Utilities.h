@@ -9,15 +9,17 @@
 #include <cmath>
 #include <numeric>
 #include <iostream>
+#include <cstdint>
+// #include <boost/version.hpp>
 
 namespace Crypto {
 
 class Utilities {
 
     public:
-        int random(int min, int max);
-        bool FermatPrimalityTest(int p, int a);
-        int modularExponentiation(int base, int power, int mod);
+        static int random(int min, int max);
+        static bool FermatPrimalityTest(int p, int a);
+        static int modularExponentiation(uint64_t base, uint64_t power, uint64_t mod);
 };
 
 } // Crypto

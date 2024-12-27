@@ -9,23 +9,25 @@
 //}
 
 TEST(TestUtilities, SimpleFermatIdentifiesPrimes) {
+    using namespace Crypto;
 
-    Crypto::Utilities Utilities;
+    EXPECT_EQ(true, Utilities::FermatPrimalityTest(3, 2));
 
-    EXPECT_EQ(true, Utilities.FermatPrimalityTest(3, 2));
+    EXPECT_EQ(false, Utilities::FermatPrimalityTest(4, 2));
 
-    EXPECT_EQ(false, Utilities.FermatPrimalityTest(4, 2));
+    EXPECT_EQ(true, Utilities::FermatPrimalityTest(5, 2));
 
-    EXPECT_EQ(true, Utilities.FermatPrimalityTest(5, 2));
+    EXPECT_EQ(true, Utilities::FermatPrimalityTest(1223, 2));
 
-    EXPECT_EQ(true, Utilities.FermatPrimalityTest(1223, 2));
+    EXPECT_EQ(false, Utilities::FermatPrimalityTest(3727, 2));
 
-    EXPECT_EQ(false, Utilities.FermatPrimalityTest(3727, 2));
+    EXPECT_EQ(false, Utilities::FermatPrimalityTest(10000, 2));
 
-    EXPECT_EQ(false, Utilities.FermatPrimalityTest(10000, 2));
+    // Mersenne prime, should be true
+    EXPECT_EQ(true, Utilities::FermatPrimalityTest(2305843009213693951, 2));
 
     // This next one is a Fermat's Liar, it should return true even though it is not a prime.
-    EXPECT_EQ(true, Utilities.FermatPrimalityTest(561, 8));
+    EXPECT_EQ(true, Utilities::FermatPrimalityTest(561, 8));
 }
 
 // Main entry point for the test runner

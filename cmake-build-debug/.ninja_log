@@ -1,0 +1,21 @@
+# ninja log v6
+531	670	1735338785545190223	Crypto	aecbc684a80a3c7c
+11	36	1735339424339762246	/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/cmake.verify_globs	d5bafaa18cb1b14a
+4	531	1735338785018056614	CMakeFiles/Crypto.dir/Utilities.cpp.o	f9cfb0aaf19585be
+1	533	1735338776035554299	CMakeFiles/Crypto.dir/main.cpp.o	7f177e04bd3cd308
+32	1773	1735339426014416372	build.ninja	392cf59223b5ba75
+36	1746	1735339426014416372	build.ninja	392cf59223b5ba75
+7	22	1735339426082199693	/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/cmake.verify_globs	d5bafaa18cb1b14a
+23	94	1735339426097876437	external/boost/libs/container/CMakeFiles/boost_container.dir/src/dlmalloc.cpp.o	abe863647aef8241
+23	130	1735339426098406392	external/boost/libs/container/CMakeFiles/boost_container.dir/src/synchronized_pool_resource.cpp.o	17e09c31b3768d4b
+23	136	1735339426098161477	external/boost/libs/container/CMakeFiles/boost_container.dir/src/monotonic_buffer_resource.cpp.o	12e21f32dfb83225
+23	143	1735339426098284017	external/boost/libs/container/CMakeFiles/boost_container.dir/src/pool_resource.cpp.o	14077869e8f5304d
+95	173	1735339426169733776	external/boost/libs/container/CMakeFiles/boost_container.dir/src/unsynchronized_pool_resource.cpp.o	fdb43866c6ac221e
+23	191	1735339426098003352	external/boost/libs/container/CMakeFiles/boost_container.dir/src/global_resource.cpp.o	1d1e14cb64949f0c
+23	239	1735339426097691021	external/boost/libs/container/CMakeFiles/boost_container.dir/src/alloc_lib.c.o	21c31ba380c84ca
+239	277	1735339426314243157	external/boost/libs/container/libboost_container.a	1a254f6558a3b7f2
+136	536	1735339426211374037	CMakeFiles/boost_test.dir/boost_test.cpp.o	6c0fdb3ecfac72a5
+130	610	1735339426205469404	external/boost/libs/random/CMakeFiles/boost_random.dir/src/random_device.cpp.o	493b5f1c4751192d
+610	640	1735339426685478908	external/boost/libs/random/libboost_random.a	efd1d4f440fc7cf5
+640	795	1735339426715322446	boost_test	4b0e7e4dbb013f44
+7	27	1735339432093345300	/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/cmake.verify_globs	d5bafaa18cb1b14a
