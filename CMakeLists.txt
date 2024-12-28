@@ -4,9 +4,13 @@ project(Crypto)
 set(CMAKE_CXX_STANDARD 23)
 
 # Add the main Crypto executable (target, source files)
-add_executable(Crypto main.cpp Utilities.cpp)
+add_executable(Crypto main.cpp Utilities.cpp
+        Montgomery.cpp
+        Montgomery.h)
 add_executable(test_example tests/test_example.cpp)
-add_executable(utilities tests/test_utilities.cpp utilities.cpp)
+add_executable(utilities tests/test_utilities.cpp utilities.cpp
+        Montgomery.cpp
+        Montgomery.h)
 add_executable(boost_test boost_test.cpp)
 
 # Enable testing
@@ -32,3 +36,4 @@ target_link_libraries(utilities Boost::multiprecision)
 # Add the tests to CMake's testing framework
 add_test(NAME SampleTest COMMAND test_example)
 add_test(NAME TestUtilities COMMAND test_utilities)
+add_library(Montgomery Montgomery.cpp Montgomery.h)

@@ -63,6 +63,13 @@ build CMakeFiles/Crypto.dir/Utilities.cpp.o: CXX_COMPILER__Crypto_unscanned_Debu
   OBJECT_DIR = CMakeFiles/Crypto.dir
   OBJECT_FILE_DIR = CMakeFiles/Crypto.dir
 
+build CMakeFiles/Crypto.dir/Montgomery.cpp.o: CXX_COMPILER__Crypto_unscanned_Debug /Users/jimmy/CLionProjects/Crypto/Montgomery.cpp || cmake_object_order_depends_target_Crypto
+  DEP_FILE = CMakeFiles/Crypto.dir/Montgomery.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -I/Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include -I/Users/jimmy/CLionProjects/Crypto/external/boost
+  OBJECT_DIR = CMakeFiles/Crypto.dir
+  OBJECT_FILE_DIR = CMakeFiles/Crypto.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Crypto
@@ -71,7 +78,7 @@ build CMakeFiles/Crypto.dir/Utilities.cpp.o: CXX_COMPILER__Crypto_unscanned_Debu
 #############################################
 # Link the executable Crypto
 
-build Crypto: CXX_EXECUTABLE_LINKER__Crypto_Debug CMakeFiles/Crypto.dir/main.cpp.o CMakeFiles/Crypto.dir/Utilities.cpp.o
+build Crypto: CXX_EXECUTABLE_LINKER__Crypto_Debug CMakeFiles/Crypto.dir/main.cpp.o CMakeFiles/Crypto.dir/Utilities.cpp.o CMakeFiles/Crypto.dir/Montgomery.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1
   OBJECT_DIR = CMakeFiles/Crypto.dir
   POST_BUILD = :
@@ -137,6 +144,14 @@ build CMakeFiles/utilities.dir/Utilities.cpp.o: CXX_COMPILER__utilities_unscanne
   OBJECT_DIR = CMakeFiles/utilities.dir
   OBJECT_FILE_DIR = CMakeFiles/utilities.dir
 
+build CMakeFiles/utilities.dir/Montgomery.cpp.o: CXX_COMPILER__utilities_unscanned_Debug /Users/jimmy/CLionProjects/Crypto/Montgomery.cpp || cmake_object_order_depends_target_utilities
+  DEFINES = -DBOOST_CONTAINER_NO_LIB -DBOOST_CONTAINER_STATIC_LINK -DBOOST_RANDOM_NO_LIB -DBOOST_RANDOM_STATIC_LINK
+  DEP_FILE = CMakeFiles/utilities.dir/Montgomery.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/multiprecision/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/assert/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/core/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_assert/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_traits/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/intrusive/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/move/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/math/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/concept_check/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/preprocessor/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/predef/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/random/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/array/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/dynamic_bitset/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container_hash/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/describe/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mp11/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/io/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/range/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/conversion/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/smart_ptr/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/detail/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/iterator/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function_types/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mpl/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/utility/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/fusion/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tuple/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/typeof/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/functional/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/bind/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/optional/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/regex/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include -isystem /Users/jimmy/CLionProjects/Crypto/external/boost -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googletest -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googlemock/include -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googlemock
+  OBJECT_DIR = CMakeFiles/utilities.dir
+  OBJECT_FILE_DIR = CMakeFiles/utilities.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target utilities
@@ -145,7 +160,7 @@ build CMakeFiles/utilities.dir/Utilities.cpp.o: CXX_COMPILER__utilities_unscanne
 #############################################
 # Link the executable utilities
 
-build utilities: CXX_EXECUTABLE_LINKER__utilities_Debug CMakeFiles/utilities.dir/tests/test_utilities.cpp.o CMakeFiles/utilities.dir/Utilities.cpp.o | lib/libgtest.a lib/libgmock.a lib/libgtest.a external/boost/libs/container/libboost_container.a external/boost/libs/random/libboost_random.a || external/boost/libs/container/libboost_container.a external/boost/libs/math/boost_math external/boost/libs/optional/boost_optional external/boost/libs/random/libboost_random.a lib/libgmock.a lib/libgtest.a
+build utilities: CXX_EXECUTABLE_LINKER__utilities_Debug CMakeFiles/utilities.dir/tests/test_utilities.cpp.o CMakeFiles/utilities.dir/Utilities.cpp.o CMakeFiles/utilities.dir/Montgomery.cpp.o | lib/libgtest.a lib/libgmock.a lib/libgtest.a external/boost/libs/container/libboost_container.a external/boost/libs/random/libboost_random.a || external/boost/libs/container/libboost_container.a external/boost/libs/math/boost_math external/boost/libs/optional/boost_optional external/boost/libs/random/libboost_random.a lib/libgmock.a lib/libgtest.a
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1
   LINK_LIBRARIES = lib/libgtest.a  lib/libgmock.a  lib/libgtest.a  external/boost/libs/container/libboost_container.a  external/boost/libs/random/libboost_random.a
   OBJECT_DIR = CMakeFiles/utilities.dir
@@ -187,6 +202,39 @@ build boost_test: CXX_EXECUTABLE_LINKER__boost_test_Debug CMakeFiles/boost_test.
   PRE_LINK = :
   TARGET_FILE = boost_test
   TARGET_PDB = boost_test.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target Montgomery
+
+
+#############################################
+# Order-only phony target for Montgomery
+
+build cmake_object_order_depends_target_Montgomery: phony || .
+
+build CMakeFiles/Montgomery.dir/Montgomery.cpp.o: CXX_COMPILER__Montgomery_unscanned_Debug /Users/jimmy/CLionProjects/Crypto/Montgomery.cpp || cmake_object_order_depends_target_Montgomery
+  DEP_FILE = CMakeFiles/Montgomery.dir/Montgomery.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -I/Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include -I/Users/jimmy/CLionProjects/Crypto/external/boost
+  OBJECT_DIR = CMakeFiles/Montgomery.dir
+  OBJECT_FILE_DIR = CMakeFiles/Montgomery.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Montgomery
+
+
+#############################################
+# Link the static library libMontgomery.a
+
+build libMontgomery.a: CXX_STATIC_LIBRARY_LINKER__Montgomery_Debug CMakeFiles/Montgomery.dir/Montgomery.cpp.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Montgomery.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libMontgomery.a
+  TARGET_PDB = Montgomery.a.dbg
 
 
 #############################################
@@ -16607,6 +16655,8 @@ build external/boost/libs/yap/install/strip: phony external/boost/libs/yap/CMake
 # =============================================================================
 # Target aliases.
 
+build Montgomery: phony libMontgomery.a
+
 build boost_atomic: phony external/boost/libs/atomic/libboost_atomic.a
 
 build boost_charconv: phony external/boost/libs/charconv/libboost_charconv.a
@@ -16777,7 +16827,7 @@ build libgtest_main.a: phony lib/libgtest_main.a
 #############################################
 # Folder: /Users/jimmy/CLionProjects/Crypto/cmake-build-debug
 
-build all: phony Crypto test_example utilities boost_test external/googletest/all external/boost/all
+build all: phony Crypto test_example utilities boost_test libMontgomery.a external/googletest/all external/boost/all
 
 # =============================================================================
 
