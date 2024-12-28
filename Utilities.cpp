@@ -3,7 +3,9 @@
 //
 
 #include "Utilities.h"
-#include <boost/multiprecision>
+#include <boost/multiprecision/cpp_int.hpp>
+
+using namespace boost::multiprecision;
 
 namespace Crypto {
 
@@ -22,36 +24,24 @@ namespace Crypto {
       return true;
     }
 
-    // int Utilities::modularExponentiation(const uint64_t base, const uint64_t power, const uint64_t mod) {
-    //   // Edge cases 0 and 1
-    //   if (power == 0) return 1;
-    //   if (base == 0) return 0;
-    //
-    //   // Set result to be the base
-    //   auto result {base};
-    //
-    //   // For every bit in a uint64_t (from left to right)
-    //   for(auto i {63}; i >= 0; --i) {
-    //
-    //       // Always square the result
-    //       result = (result * result) % mod;
-    //
-    //        // Shift to see the i-th bit in the leftmost position (64 = 10000000)
-    //        if ((64 & (power << (7-i))) != 0) {
-    //           // If bit is 1, also multiply
-    //           result = result * base % mod;
-    //        }
-    //   }
-    //
-    //   // Return the calculated value
-    //   return result;
-    // }
-//    template <typename T>
-//    T modularExponentiation(T base, T power, T mod) {
-//        //
-//        if (base == 0) return 0;
-//        if (power == 0) return 1;
+    int Utilities::modularExponentiation(
+        const boost::multiprecision::cpp_int base,
+        const boost::multiprecision::cpp_int power,
+        const boost::multiprecision::cpp_int mod) {
 
+        // Edge cases 0 and 1
+        if (power == 0) return 1;
+        if (base == 0) return 0;
 
-    // }
+        std::size_t bit_count {0};
+
+        // Find the total number of bits in the power(?)
+        for (const auto& temp {power}; temp != 0; temp >> 1) {
+            bit_count++;
+        }
+
+        //
+
+        return result;
+    }
 } //

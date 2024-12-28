@@ -25,7 +25,7 @@ add_subdirectory(external/boost) # Might need to rework this line along with 17.
 
 # Link Google Test, Google Mock, and utilities library to the test executables
 target_link_libraries(test_example gtest gmock)
-target_link_libraries(test_utilities gtest gmock utilities)
+target_link_libraries(utilities gtest gmock)
 target_link_libraries(boost_test Boost::multiprecision)
 target_link_libraries(utilities Boost::multiprecision)
 
