@@ -343,19 +343,19 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "boost_atomic::@9bd428892d004da19406"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "boost_context::@88f9e115f38d20b7bf75"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "boost_fiber::@2f553e7b8846b834cf56"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "boost_filesystem::@e07629d57e311bf56451"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_atomic::@9bd428892d004da19406"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_context::@88f9e115f38d20b7bf75"
 		},
 		{
 			"backtrace" : 2,

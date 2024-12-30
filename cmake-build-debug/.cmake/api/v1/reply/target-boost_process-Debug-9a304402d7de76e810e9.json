@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "external/boost/libs/serialization/libboost_wserialization.a"
+			"path" : "external/boost/libs/process/libboost_process.a"
 		}
 	],
 	"backtrace" : 1,
@@ -19,7 +19,7 @@
 		],
 		"files" : 
 		[
-			"external/boost/libs/serialization/CMakeLists.txt",
+			"external/boost/libs/process/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -30,25 +30,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 47,
+				"line" : 10,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 95,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 103,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 114,
+				"line" : 66,
 				"parent" : 0
 			},
 			{
@@ -69,7 +69,7 @@
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 67,
+				"line" : 31,
 				"parent" : 0
 			}
 		]
@@ -87,27 +87,23 @@
 			[
 				{
 					"backtrace" : 2,
-					"define" : "BOOST_ATOMIC_NO_LIB"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_ATOMIC_STATIC_LINK"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_CHRONO_NO_LIB"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_CHRONO_STATIC_LINK"
-				},
-				{
-					"backtrace" : 2,
 					"define" : "BOOST_CONTAINER_NO_LIB"
 				},
 				{
 					"backtrace" : 2,
 					"define" : "BOOST_CONTAINER_STATIC_LINK"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_CONTEXT_EXPORT="
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_CONTEXT_NO_LIB="
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_CONTEXT_STATIC_LINK="
 				},
 				{
 					"backtrace" : 2,
@@ -118,24 +114,20 @@
 					"define" : "BOOST_DATE_TIME_STATIC_LINK"
 				},
 				{
+					"backtrace" : 2,
+					"define" : "BOOST_FILESYSTEM_NO_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_FILESYSTEM_STATIC_LINK=1"
+				},
+				{
 					"backtrace" : 3,
-					"define" : "BOOST_SERIALIZATION_NO_LIB"
+					"define" : "BOOST_PROCESS_SOURCE=1"
 				},
 				{
 					"backtrace" : 4,
-					"define" : "BOOST_SERIALIZATION_STATIC_LINK"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_THREAD_NO_LIB"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_THREAD_STATIC_LINK"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_THREAD_USE_LIB"
+					"define" : "BOOST_PROCESS_STATIC_LINK"
 				}
 			],
 			"includes" : 
@@ -150,7 +142,11 @@
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/serialization/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/process/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/algorithm/include"
 				},
 				{
 					"backtrace" : 2,
@@ -178,7 +174,11 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/detail/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/bind/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/concept_check/include"
 				},
 				{
 					"backtrace" : 2,
@@ -190,11 +190,19 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/exception/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/io/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/smart_ptr/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tuple/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function/include"
 				},
 				{
 					"backtrace" : 2,
@@ -202,7 +210,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/concept_check/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/detail/include"
 				},
 				{
 					"backtrace" : 2,
@@ -222,6 +230,10 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/io/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/fusion/include"
 				},
 				{
@@ -238,10 +250,6 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tuple/include"
-				},
-				{
-					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/typeof/include"
 				},
 				{
@@ -250,39 +258,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/bind/include"
-				},
-				{
-					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/optional/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/smart_ptr/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/move/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/spirit/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/endian/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/phoenix/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/proto/include"
 				},
 				{
 					"backtrace" : 2,
@@ -298,7 +274,27 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/unordered/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/asio/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/align/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/context/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/pool/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include"
 				},
 				{
 					"backtrace" : 2,
@@ -306,27 +302,11 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/thread/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/date_time/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/atomic/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/chrono/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/ratio/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include"
 				},
 				{
 					"backtrace" : 2,
@@ -338,23 +318,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/date_time/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/algorithm/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/exception/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/unordered/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/move/include"
 				},
 				{
 					"backtrace" : 2,
@@ -366,7 +330,15 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/filesystem/include"
 				},
 				{
 					"backtrace" : 2,
@@ -378,6 +350,15 @@
 			{
 				"backtraces" : 
 				[
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
 					2,
 					2,
 					2,
@@ -400,7 +381,11 @@
 				9,
 				10,
 				11,
-				12
+				12,
+				13,
+				14,
+				15,
+				16
 			]
 		}
 	],
@@ -408,15 +393,19 @@
 	[
 		{
 			"backtrace" : 2,
+			"id" : "boost_filesystem::@e07629d57e311bf56451"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "boost_atomic::@9bd428892d004da19406"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "boost_chrono::@ba2fa923337ba8da527c"
+			"id" : "boost_container::@b930a84827d1b3bb4ac5"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "boost_container::@b930a84827d1b3bb4ac5"
+			"id" : "boost_context::@88f9e115f38d20b7bf75"
 		},
 		{
 			"backtrace" : 2,
@@ -425,23 +414,15 @@
 		{
 			"backtrace" : 2,
 			"id" : "boost_optional::@a76016fda4acd1107840"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "boost_serialization::@dfd8c61321f7ff43aa38"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "boost_thread::@acde8bb2e11c9adb3f24"
 		}
 	],
-	"id" : "boost_wserialization::@dfd8c61321f7ff43aa38",
-	"name" : "boost_wserialization",
-	"nameOnDisk" : "libboost_wserialization.a",
+	"id" : "boost_process::@27d4c839853f098a6997",
+	"name" : "boost_process",
+	"nameOnDisk" : "libboost_process.a",
 	"paths" : 
 	{
-		"build" : "external/boost/libs/serialization",
-		"source" : "external/boost/libs/serialization"
+		"build" : "external/boost/libs/process",
+		"source" : "external/boost/libs/process"
 	},
 	"sourceGroups" : 
 	[
@@ -461,7 +442,11 @@
 				9,
 				10,
 				11,
-				12
+				12,
+				13,
+				14,
+				15,
+				16
 			]
 		}
 	],
@@ -470,79 +455,103 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/basic_text_wiprimitive.cpp",
+			"path" : "external/boost/libs/process/src/detail/environment_posix.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/basic_text_woprimitive.cpp",
+			"path" : "external/boost/libs/process/src/detail/environment_win.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/binary_wiarchive.cpp",
+			"path" : "external/boost/libs/process/src/detail/last_error.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/binary_woarchive.cpp",
+			"path" : "external/boost/libs/process/src/detail/process_handle_windows.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/polymorphic_text_wiarchive.cpp",
+			"path" : "external/boost/libs/process/src/detail/throw_error.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/polymorphic_text_woarchive.cpp",
+			"path" : "external/boost/libs/process/src/detail/utf8.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/polymorphic_xml_wiarchive.cpp",
+			"path" : "external/boost/libs/process/src/ext/cmd.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/polymorphic_xml_woarchive.cpp",
+			"path" : "external/boost/libs/process/src/ext/cwd.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/text_wiarchive.cpp",
+			"path" : "external/boost/libs/process/src/ext/env.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/text_woarchive.cpp",
+			"path" : "external/boost/libs/process/src/ext/exe.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/xml_wgrammar.cpp",
+			"path" : "external/boost/libs/process/src/ext/proc_info.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/xml_wiarchive.cpp",
+			"path" : "external/boost/libs/process/src/posix/close_handles.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/serialization/src/xml_woarchive.cpp",
+			"path" : "external/boost/libs/process/src/windows/default_launcher.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/environment.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/error.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/pid.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/shell.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
