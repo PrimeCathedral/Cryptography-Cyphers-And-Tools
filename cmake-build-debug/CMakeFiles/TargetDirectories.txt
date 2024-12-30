@@ -1,8 +1,4 @@
-/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/Crypto.dir
-/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/test_example.dir
-/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/test_utilities.dir
-/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/test_modular_arithmetic.dir
-/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/Utilities.dir
+/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/ModularArithmeticTest.dir
 /Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/ModularArithmetic.dir
 /Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/test.dir
 /Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/edit_cache.dir

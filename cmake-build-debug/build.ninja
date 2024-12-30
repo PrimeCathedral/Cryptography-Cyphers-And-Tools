@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Crypto
+# Project: Cryptography-Ciphers-And-Tools
 # Configurations: Debug
 # =============================================================================
 
@@ -41,185 +41,38 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /Users/jimmy/CLionProjects/Crypto/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target Crypto
+# Object build statements for EXECUTABLE target ModularArithmeticTest
 
 
 #############################################
-# Order-only phony target for Crypto
+# Order-only phony target for ModularArithmeticTest
 
-build cmake_object_order_depends_target_Crypto: phony || .
+build cmake_object_order_depends_target_ModularArithmeticTest: phony || cmake_object_order_depends_target_ModularArithmetic cmake_object_order_depends_target_boost_container cmake_object_order_depends_target_boost_random cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest external/boost/libs/math/boost_math external/boost/libs/optional/boost_optional
 
-build CMakeFiles/Crypto.dir/main.cpp.o: CXX_COMPILER__Crypto_unscanned_Debug /Users/jimmy/CLionProjects/Crypto/main.cpp || cmake_object_order_depends_target_Crypto
-  DEP_FILE = CMakeFiles/Crypto.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
-  INCLUDES = -I/Users/jimmy/CLionProjects/Crypto/external/boost -I/Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include
-  OBJECT_DIR = CMakeFiles/Crypto.dir
-  OBJECT_FILE_DIR = CMakeFiles/Crypto.dir
-
-build CMakeFiles/Crypto.dir/Utilities.cpp.o: CXX_COMPILER__Crypto_unscanned_Debug /Users/jimmy/CLionProjects/Crypto/Utilities.cpp || cmake_object_order_depends_target_Crypto
-  DEP_FILE = CMakeFiles/Crypto.dir/Utilities.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
-  INCLUDES = -I/Users/jimmy/CLionProjects/Crypto/external/boost -I/Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include
-  OBJECT_DIR = CMakeFiles/Crypto.dir
-  OBJECT_FILE_DIR = CMakeFiles/Crypto.dir
-
-build CMakeFiles/Crypto.dir/Utilities/ModularArithmetic.cpp.o: CXX_COMPILER__Crypto_unscanned_Debug /Users/jimmy/CLionProjects/Crypto/Utilities/ModularArithmetic.cpp || cmake_object_order_depends_target_Crypto
-  DEP_FILE = CMakeFiles/Crypto.dir/Utilities/ModularArithmetic.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
-  INCLUDES = -I/Users/jimmy/CLionProjects/Crypto/external/boost -I/Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include
-  OBJECT_DIR = CMakeFiles/Crypto.dir
-  OBJECT_FILE_DIR = CMakeFiles/Crypto.dir/Utilities
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target Crypto
-
-
-#############################################
-# Link the executable Crypto
-
-build Crypto: CXX_EXECUTABLE_LINKER__Crypto_Debug CMakeFiles/Crypto.dir/main.cpp.o CMakeFiles/Crypto.dir/Utilities.cpp.o CMakeFiles/Crypto.dir/Utilities/ModularArithmetic.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1
-  OBJECT_DIR = CMakeFiles/Crypto.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Crypto
-  TARGET_PDB = Crypto.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target test_example
-
-
-#############################################
-# Order-only phony target for test_example
-
-build cmake_object_order_depends_target_test_example: phony || cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest
-
-build CMakeFiles/test_example.dir/tests/test_example.cpp.o: CXX_COMPILER__test_example_unscanned_Debug /Users/jimmy/CLionProjects/Crypto/tests/test_example.cpp || cmake_object_order_depends_target_test_example
-  DEP_FILE = CMakeFiles/test_example.dir/tests/test_example.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
-  INCLUDES = -isystem /Users/jimmy/CLionProjects/Crypto/external/boost -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googletest -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googlemock/include -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googlemock
-  OBJECT_DIR = CMakeFiles/test_example.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_example.dir/tests
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target test_example
-
-
-#############################################
-# Link the executable test_example
-
-build test_example: CXX_EXECUTABLE_LINKER__test_example_Debug CMakeFiles/test_example.dir/tests/test_example.cpp.o | lib/libgtest.a lib/libgmock.a lib/libgtest.a || lib/libgmock.a lib/libgtest.a
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1
-  LINK_LIBRARIES = lib/libgtest.a  lib/libgmock.a  lib/libgtest.a
-  OBJECT_DIR = CMakeFiles/test_example.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = test_example
-  TARGET_PDB = test_example.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target test_utilities
-
-
-#############################################
-# Order-only phony target for test_utilities
-
-build cmake_object_order_depends_target_test_utilities: phony || cmake_object_order_depends_target_Utilities cmake_object_order_depends_target_boost_container cmake_object_order_depends_target_boost_random cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest external/boost/libs/math/boost_math external/boost/libs/optional/boost_optional
-
-build CMakeFiles/test_utilities.dir/tests/test_utilities.cpp.o: CXX_COMPILER__test_utilities_unscanned_Debug /Users/jimmy/CLionProjects/Crypto/tests/test_utilities.cpp || cmake_object_order_depends_target_test_utilities
+build CMakeFiles/ModularArithmeticTest.dir/tests/ModularArithmeticTest.cpp.o: CXX_COMPILER__ModularArithmeticTest_unscanned_Debug /Users/jimmy/CLionProjects/Crypto/tests/ModularArithmeticTest.cpp || cmake_object_order_depends_target_ModularArithmeticTest
   DEFINES = -DBOOST_CONTAINER_NO_LIB -DBOOST_CONTAINER_STATIC_LINK -DBOOST_RANDOM_NO_LIB -DBOOST_RANDOM_STATIC_LINK
-  DEP_FILE = CMakeFiles/test_utilities.dir/tests/test_utilities.cpp.o.d
+  DEP_FILE = CMakeFiles/ModularArithmeticTest.dir/tests/ModularArithmeticTest.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
   INCLUDES = -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/multiprecision/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/assert/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/core/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_assert/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_traits/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/intrusive/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/move/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/math/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/concept_check/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/preprocessor/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/predef/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/random/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/array/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/dynamic_bitset/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container_hash/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/describe/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mp11/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/io/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/range/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/conversion/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/smart_ptr/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/detail/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/iterator/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function_types/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mpl/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/utility/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/fusion/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tuple/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/typeof/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/functional/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/bind/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/optional/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/regex/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include -isystem /Users/jimmy/CLionProjects/Crypto/external/boost -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googletest -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googlemock/include -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googlemock
-  OBJECT_DIR = CMakeFiles/test_utilities.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_utilities.dir/tests
+  OBJECT_DIR = CMakeFiles/ModularArithmeticTest.dir
+  OBJECT_FILE_DIR = CMakeFiles/ModularArithmeticTest.dir/tests
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target test_utilities
+# Link build statements for EXECUTABLE target ModularArithmeticTest
 
 
 #############################################
-# Link the executable test_utilities
+# Link the executable ModularArithmeticTest
 
-build test_utilities: CXX_EXECUTABLE_LINKER__test_utilities_Debug CMakeFiles/test_utilities.dir/tests/test_utilities.cpp.o | libUtilities.a lib/libgtest.a lib/libgmock.a external/boost/libs/container/libboost_container.a external/boost/libs/random/libboost_random.a lib/libgtest.a || external/boost/libs/container/libboost_container.a external/boost/libs/math/boost_math external/boost/libs/optional/boost_optional external/boost/libs/random/libboost_random.a lib/libgmock.a lib/libgtest.a libUtilities.a
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1
-  LINK_LIBRARIES = libUtilities.a  lib/libgtest.a  lib/libgmock.a  external/boost/libs/container/libboost_container.a  external/boost/libs/random/libboost_random.a  lib/libgtest.a
-  OBJECT_DIR = CMakeFiles/test_utilities.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = test_utilities
-  TARGET_PDB = test_utilities.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target test_modular_arithmetic
-
-
-#############################################
-# Order-only phony target for test_modular_arithmetic
-
-build cmake_object_order_depends_target_test_modular_arithmetic: phony || cmake_object_order_depends_target_ModularArithmetic cmake_object_order_depends_target_boost_container cmake_object_order_depends_target_boost_random cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest external/boost/libs/math/boost_math external/boost/libs/optional/boost_optional
-
-build CMakeFiles/test_modular_arithmetic.dir/tests/test_modular_arithmetic.cpp.o: CXX_COMPILER__test_modular_arithmetic_unscanned_Debug /Users/jimmy/CLionProjects/Crypto/tests/test_modular_arithmetic.cpp || cmake_object_order_depends_target_test_modular_arithmetic
-  DEFINES = -DBOOST_CONTAINER_NO_LIB -DBOOST_CONTAINER_STATIC_LINK -DBOOST_RANDOM_NO_LIB -DBOOST_RANDOM_STATIC_LINK
-  DEP_FILE = CMakeFiles/test_modular_arithmetic.dir/tests/test_modular_arithmetic.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
-  INCLUDES = -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/multiprecision/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/assert/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/core/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_assert/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_traits/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/intrusive/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/move/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/math/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/concept_check/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/preprocessor/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/predef/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/random/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/array/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/dynamic_bitset/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container_hash/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/describe/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mp11/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/io/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/range/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/conversion/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/smart_ptr/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/detail/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/iterator/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function_types/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mpl/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/utility/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/fusion/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tuple/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/typeof/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/functional/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/bind/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/optional/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/regex/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include -isystem /Users/jimmy/CLionProjects/Crypto/external/boost -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googletest -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googlemock/include -isystem /Users/jimmy/CLionProjects/Crypto/external/googletest/googlemock
-  OBJECT_DIR = CMakeFiles/test_modular_arithmetic.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_modular_arithmetic.dir/tests
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target test_modular_arithmetic
-
-
-#############################################
-# Link the executable test_modular_arithmetic
-
-build test_modular_arithmetic: CXX_EXECUTABLE_LINKER__test_modular_arithmetic_Debug CMakeFiles/test_modular_arithmetic.dir/tests/test_modular_arithmetic.cpp.o | libModularArithmetic.a lib/libgtest.a lib/libgmock.a external/boost/libs/container/libboost_container.a external/boost/libs/random/libboost_random.a lib/libgtest.a || external/boost/libs/container/libboost_container.a external/boost/libs/math/boost_math external/boost/libs/optional/boost_optional external/boost/libs/random/libboost_random.a lib/libgmock.a lib/libgtest.a libModularArithmetic.a
+build ModularArithmeticTest: CXX_EXECUTABLE_LINKER__ModularArithmeticTest_Debug CMakeFiles/ModularArithmeticTest.dir/tests/ModularArithmeticTest.cpp.o | libModularArithmetic.a lib/libgtest.a lib/libgmock.a external/boost/libs/container/libboost_container.a external/boost/libs/random/libboost_random.a lib/libgtest.a || external/boost/libs/container/libboost_container.a external/boost/libs/math/boost_math external/boost/libs/optional/boost_optional external/boost/libs/random/libboost_random.a lib/libgmock.a lib/libgtest.a libModularArithmetic.a
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1
   LINK_LIBRARIES = libModularArithmetic.a  lib/libgtest.a  lib/libgmock.a  external/boost/libs/container/libboost_container.a  external/boost/libs/random/libboost_random.a  lib/libgtest.a
-  OBJECT_DIR = CMakeFiles/test_modular_arithmetic.dir
+  OBJECT_DIR = CMakeFiles/ModularArithmeticTest.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = test_modular_arithmetic
-  TARGET_PDB = test_modular_arithmetic.dbg
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target Utilities
-
-
-#############################################
-# Order-only phony target for Utilities
-
-build cmake_object_order_depends_target_Utilities: phony || cmake_object_order_depends_target_boost_container cmake_object_order_depends_target_boost_random external/boost/libs/math/boost_math external/boost/libs/optional/boost_optional
-
-build CMakeFiles/Utilities.dir/Utilities.cpp.o: CXX_COMPILER__Utilities_unscanned_Debug /Users/jimmy/CLionProjects/Crypto/Utilities.cpp || cmake_object_order_depends_target_Utilities
-  DEFINES = -DBOOST_CONTAINER_NO_LIB -DBOOST_CONTAINER_STATIC_LINK -DBOOST_RANDOM_NO_LIB -DBOOST_RANDOM_STATIC_LINK
-  DEP_FILE = CMakeFiles/Utilities.dir/Utilities.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
-  INCLUDES = -I/Users/jimmy/CLionProjects/Crypto/external/boost -I/Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/multiprecision/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/assert/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/core/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_assert/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_traits/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/intrusive/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/move/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/math/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/concept_check/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/preprocessor/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/predef/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/random/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/array/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/dynamic_bitset/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container_hash/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/describe/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mp11/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/io/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/range/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/conversion/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/smart_ptr/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/detail/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/iterator/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function_types/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mpl/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/utility/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/fusion/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tuple/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/typeof/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/functional/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/bind/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/optional/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/regex/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include -I/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include
-  OBJECT_DIR = CMakeFiles/Utilities.dir
-  OBJECT_FILE_DIR = CMakeFiles/Utilities.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target Utilities
-
-
-#############################################
-# Link the static library libUtilities.a
-
-build libUtilities.a: CXX_STATIC_LIBRARY_LINKER__Utilities_Debug CMakeFiles/Utilities.dir/Utilities.cpp.o || external/boost/libs/container/libboost_container.a external/boost/libs/math/boost_math external/boost/libs/optional/boost_optional external/boost/libs/random/libboost_random.a
-  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles/Utilities.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = libUtilities.a
-  TARGET_PDB = Utilities.a.dbg
+  TARGET_FILE = ModularArithmeticTest
+  TARGET_PDB = ModularArithmeticTest.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target ModularArithmetic
@@ -16676,8 +16529,6 @@ build external/googletest/googletest/install/strip: phony external/googletest/go
 
 build ModularArithmetic: phony libModularArithmetic.a
 
-build Utilities: phony libUtilities.a
-
 build boost_atomic: phony external/boost/libs/atomic/libboost_atomic.a
 
 build boost_charconv: phony external/boost/libs/charconv/libboost_charconv.a
@@ -16848,7 +16699,7 @@ build libgtest_main.a: phony lib/libgtest_main.a
 #############################################
 # Folder: /Users/jimmy/CLionProjects/Crypto/cmake-build-debug
 
-build all: phony Crypto test_example test_utilities test_modular_arithmetic libUtilities.a libModularArithmetic.a external/boost/all external/googletest/all
+build all: phony ModularArithmeticTest libModularArithmetic.a external/boost/all external/googletest/all
 
 # =============================================================================
 

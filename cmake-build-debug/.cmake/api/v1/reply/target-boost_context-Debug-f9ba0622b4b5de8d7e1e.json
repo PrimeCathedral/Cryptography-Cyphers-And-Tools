@@ -1,0 +1,346 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "external/boost/libs/context/libboost_context.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_compile_definitions",
+			"include_directories",
+			"target_include_directories",
+			"target_link_libraries"
+		],
+		"files" : 
+		[
+			"external/boost/libs/context/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 197,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 228,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 220,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 13,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 14,
+				"parent" : 4
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 204,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 206,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_CONTEXT_EXPORT="
+				},
+				{
+					"backtrace" : 3,
+					"define" : "BOOST_CONTEXT_NO_LIB="
+				},
+				{
+					"backtrace" : 3,
+					"define" : "BOOST_CONTEXT_SOURCE="
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_CONTEXT_STATIC_LINK="
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/context/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/assert/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/core/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_assert/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mp11/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/pool/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_traits/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/predef/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/smart_ptr/include"
+				}
+			],
+			"language" : "ASM",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_CONTEXT_EXPORT="
+				},
+				{
+					"backtrace" : 3,
+					"define" : "BOOST_CONTEXT_NO_LIB="
+				},
+				{
+					"backtrace" : 3,
+					"define" : "BOOST_CONTEXT_SOURCE="
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_CONTEXT_STATIC_LINK="
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/googletest/googletest/include"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/context/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/assert/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/core/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_assert/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mp11/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/pool/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_traits/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/predef/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/smart_ptr/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					8,
+					8,
+					8,
+					8
+				],
+				"standard" : "23"
+			},
+			"sourceIndexes" : 
+			[
+				3,
+				4
+			]
+		}
+	],
+	"id" : "boost_context::@88f9e115f38d20b7bf75",
+	"name" : "boost_context",
+	"nameOnDisk" : "libboost_context.a",
+	"paths" : 
+	{
+		"build" : "external/boost/libs/context",
+		"source" : "external/boost/libs/context"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				3,
+				4
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/context/src/asm/make_arm64_aapcs_macho_gas.S",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/context/src/asm/jump_arm64_aapcs_macho_gas.S",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/context/src/asm/ontop_arm64_aapcs_macho_gas.S",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "external/boost/libs/context/src/fcontext.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "external/boost/libs/context/src/posix/stack_traits.cpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

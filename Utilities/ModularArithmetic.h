@@ -1,29 +1,28 @@
 //
-// Created by Jimmy on 12/28/24.
+// Created by Jimmy on 12/22/24.
 //
 
-#ifndef MODULARARITHMETIC_H
-#define MODULARARITHMETIC_H
+#ifndef UTILITIES_H
+#define UTILITIES_H
 
+#include <random>
 #include <boost/multiprecision/cpp_int.hpp>
 
+// using cpp_int = boost::multiprecision::cpp_int;
+using namespace boost::multiprecision;
+
+namespace Crypto {
+
 class ModularArithmetic {
-    using cpp_int = boost::multiprecision::cpp_int;
-private:
-    cpp_int mod {}; // The modulus for all operations
 
-public:
-    explicit ModularArithmetic(const cpp_int& mod);
-
-    cpp_int add(const cpp_int &a, const cpp_int &b);
-    cpp_int substract(const cpp_int &a, const cpp_int &b);
-    cpp_int multiply(const cpp_int &a, const cpp_int &b);
-    cpp_int divide(const cpp_int &a, const cpp_int &b); // TODO implement modular division
-    cpp_int power(const cpp_int &a, const cpp_int &b);
-    cpp_int inverse(const cpp_int &a); // Find modular inverse
-
+    public:
+        static int random(int min, int max);
+        static bool FermatPrimalityTest(int p, int a);
+        static cpp_int extendedGCD(cpp_int base, cpp_int modulus, cpp_int& x, cpp_int& y);
+        static cpp_int modularInverse(cpp_int base, cpp_int modulus);
+        static cpp_int modularExponentiation(const cpp_int& base, const cpp_int& power, const cpp_int& mod);
 };
 
+} // Crypto
 
-
-#endif //MODULARARITHMETIC_H
+#endif //UTILITIES_H
