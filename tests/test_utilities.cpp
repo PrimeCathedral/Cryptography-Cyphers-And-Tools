@@ -72,7 +72,7 @@ TEST(TestModularExponentiation, PowerGreaterThanModulus) {
     ASSERT_EQ(Utilities.modularExponentiation(3,12,7), 1);
 }
 
-TEST(TestModularExponentiation, LargeNumbers) {
+TEST(TestModularExponentiation, LE20Digit) {
     Crypto::Utilities Utilities{};
 
     // Large numbers
@@ -112,7 +112,7 @@ TEST(TestModularInverse, ModularInverseDoesNotExist) {
     EXPECT_THROW(Utilities.modularInverse(4, 8), std::runtime_error);
 }
 
-TEST(TestModularInverse, LargeNumbers) {
+TEST(TestModularInverse, LE20Digit) {
     Crypto::Utilities Utilities{};
     mp::cpp_int a {boost::multiprecision::cpp_int("12345678901234567890")};
     mp::cpp_int mod {boost::multiprecision::cpp_int("98765432109876543211")};
@@ -144,6 +144,66 @@ TEST(TestModularInverse, NotCoprime) {
 
     // GCD is not 1
     EXPECT_THROW(Utilities.modularInverse(12, 15), std::runtime_error);
+}
+
+// Extended Euclidean Algorithm: https://www.dcode.fr/gcd
+
+
+TEST(ExtendedGCD, BaseCase) {
+    Crypto::Utilities Utilities;
+
+    mp::cpp_int x, y;
+    mp::cpp_int base = 10, modulus = 0;
+    mp::cpp_int gcd = Utilities.extendedGCD(base, modulus, x, y);
+
+    EXPECT_EQ(gcd, 10);  // GCD should be 10
+    EXPECT_EQ(x, 1);     // x should be 1
+    EXPECT_EQ(y, 0);     // y should be 0
+}
+
+TEST(ExtendedGCD, CoprimeNumbers) {
+    Crypto::Utilities Utilities;
+
+    mp::cpp_int x, y;
+    mp::cpp_int base = 17, modulus = 13;
+    mp::cpp_int gcd = Utilities.extendedGCD(base, modulus, x, y);
+
+    EXPECT_EQ(gcd, 1);
+    EXPECT_EQ(17 * x + 13 * y, gcd);
+}
+
+TEST(ExtendedGCD, NonCoprimeNumbers) {
+    Crypto::Utilities Utilities;
+
+    mp::cpp_int x, y;
+    mp::cpp_int base = 12, modulus = 8;
+    mp::cpp_int gcd = Utilities.extendedGCD(base, modulus, x, y);
+
+    EXPECT_EQ(gcd, 4);
+    EXPECT_EQ(12 * x + 8 * y, gcd);
+}
+
+TEST(ExtendedGCD, NegativeBase) {
+    Crypto::Utilities Utilities;
+
+    mp::cpp_int x, y;
+    mp::cpp_int base = -3, modulus = 7;
+    mp::cpp_int gcd = Utilities.extendedGCD(base, modulus, x, y);
+
+    EXPECT_EQ(gcd, 1);
+    EXPECT_EQ(-3 * x + 7 * y, gcd);
+}
+
+TEST(ExtendedGCD, LE20Digit) {
+    Crypto::Utilities Utilities;
+
+    mp::cpp_int x, y;
+    mp::cpp_int base    {"12345678901234567890"};
+    mp::cpp_int modulus {"9876543210987654321"};
+    mp::cpp_int gcd = Utilities.extendedGCD(base, modulus, x, y);
+
+    EXPECT_EQ(gcd, 90000000009);
+    EXPECT_EQ(base * x + modulus * y, gcd); // Verify the linear combination
 }
 
 // Main entry point for the test runner

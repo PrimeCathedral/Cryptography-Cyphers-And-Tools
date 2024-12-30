@@ -16,7 +16,7 @@ namespace Crypto {
         return dis(gen);
     }
 
-    mp::cpp_int extendedGCD(mp::cpp_int base, mp::cpp_int modulus, mp::cpp_int& x, mp::cpp_int& y) {
+    mp::cpp_int Utilities::extendedGCD(mp::cpp_int base, mp::cpp_int modulus, mp::cpp_int& x, mp::cpp_int& y) {
         if (modulus == 0) {
             x = 1;
             y = 0;
