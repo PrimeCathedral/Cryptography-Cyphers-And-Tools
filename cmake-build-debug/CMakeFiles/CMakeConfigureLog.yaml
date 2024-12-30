@@ -3109,3 +3109,453 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:19 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_COROUTINE_INCLUDE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_2bc11
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_2bc11.dir/coroutine.cpp.o -MF CMakeFiles/cmTC_2bc11.dir/coroutine.cpp.o.d -o CMakeFiles/cmTC_2bc11.dir/coroutine.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/coroutine.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_2bc11.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_2bc11.a  CMakeFiles/cmTC_2bc11.dir/coroutine.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_2bc11.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_2bc11.a && :
+        warning: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: archive library: libcmTC_2bc11.a the table of contents is empty (no object file members in the library define global symbols)
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:33 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_CONCEPTS"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_d8930
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_d8930.dir/concepts.cpp.o -MF CMakeFiles/cmTC_d8930.dir/concepts.cpp.o.d -o CMakeFiles/cmTC_d8930.dir/concepts.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/concepts.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_d8930.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_d8930.a  CMakeFiles/cmTC_d8930.dir/concepts.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_d8930.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_d8930.a && :
+        warning: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: archive library: libcmTC_d8930.a the table of contents is empty (no object file members in the library define global symbols)
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:49 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_STD_PMR"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_4f37a
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_4f37a.dir/memory_resource.cpp.o -MF CMakeFiles/cmTC_4f37a.dir/memory_resource.cpp.o.d -o CMakeFiles/cmTC_4f37a.dir/memory_resource.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/memory_resource.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_4f37a.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_4f37a.a  CMakeFiles/cmTC_4f37a.dir/memory_resource.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_4f37a.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_4f37a.a && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:19 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_COROUTINE_INCLUDE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_b8230
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -MD -MT CMakeFiles/cmTC_b8230.dir/coroutine.cpp.o -MF CMakeFiles/cmTC_b8230.dir/coroutine.cpp.o.d -o CMakeFiles/cmTC_b8230.dir/coroutine.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/coroutine.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_b8230.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_b8230.a  CMakeFiles/cmTC_b8230.dir/coroutine.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_b8230.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_b8230.a && :
+        warning: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: archive library: libcmTC_b8230.a the table of contents is empty (no object file members in the library define global symbols)
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:33 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_CONCEPTS"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_2c7f6
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -MD -MT CMakeFiles/cmTC_2c7f6.dir/concepts.cpp.o -MF CMakeFiles/cmTC_2c7f6.dir/concepts.cpp.o.d -o CMakeFiles/cmTC_2c7f6.dir/concepts.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/concepts.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_2c7f6.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_2c7f6.a  CMakeFiles/cmTC_2c7f6.dir/concepts.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_2c7f6.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_2c7f6.a && :
+        warning: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: archive library: libcmTC_2c7f6.a the table of contents is empty (no object file members in the library define global symbols)
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:49 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_STD_PMR"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_369d0
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -MD -MT CMakeFiles/cmTC_369d0.dir/memory_resource.cpp.o -MF CMakeFiles/cmTC_369d0.dir/memory_resource.cpp.o.d -o CMakeFiles/cmTC_369d0.dir/memory_resource.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/memory_resource.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_369d0.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_369d0.a  CMakeFiles/cmTC_369d0.dir/memory_resource.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_369d0.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_369d0.a && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:19 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_COROUTINE_INCLUDE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_386dd
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -MD -MT CMakeFiles/cmTC_386dd.dir/coroutine.cpp.o -MF CMakeFiles/cmTC_386dd.dir/coroutine.cpp.o.d -o CMakeFiles/cmTC_386dd.dir/coroutine.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/coroutine.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_386dd.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_386dd.a  CMakeFiles/cmTC_386dd.dir/coroutine.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_386dd.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_386dd.a && :
+        warning: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: archive library: libcmTC_386dd.a the table of contents is empty (no object file members in the library define global symbols)
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:33 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_CONCEPTS"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_66be9
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -MD -MT CMakeFiles/cmTC_66be9.dir/concepts.cpp.o -MF CMakeFiles/cmTC_66be9.dir/concepts.cpp.o.d -o CMakeFiles/cmTC_66be9.dir/concepts.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/concepts.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_66be9.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_66be9.a  CMakeFiles/cmTC_66be9.dir/concepts.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_66be9.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_66be9.a && :
+        warning: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: archive library: libcmTC_66be9.a the table of contents is empty (no object file members in the library define global symbols)
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:49 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_STD_PMR"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_766b9
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -MD -MT CMakeFiles/cmTC_766b9.dir/memory_resource.cpp.o -MF CMakeFiles/cmTC_766b9.dir/memory_resource.cpp.o.d -o CMakeFiles/cmTC_766b9.dir/memory_resource.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/memory_resource.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_766b9.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_766b9.a  CMakeFiles/cmTC_766b9.dir/memory_resource.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_766b9.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_766b9.a && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:19 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_COROUTINE_INCLUDE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_18495
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -MD -MT CMakeFiles/cmTC_18495.dir/coroutine.cpp.o -MF CMakeFiles/cmTC_18495.dir/coroutine.cpp.o.d -o CMakeFiles/cmTC_18495.dir/coroutine.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/coroutine.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_18495.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_18495.a  CMakeFiles/cmTC_18495.dir/coroutine.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_18495.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_18495.a && :
+        warning: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: archive library: libcmTC_18495.a the table of contents is empty (no object file members in the library define global symbols)
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:33 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_CONCEPTS"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_4f5f8
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -MD -MT CMakeFiles/cmTC_4f5f8.dir/concepts.cpp.o -MF CMakeFiles/cmTC_4f5f8.dir/concepts.cpp.o.d -o CMakeFiles/cmTC_4f5f8.dir/concepts.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/concepts.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_4f5f8.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_4f5f8.a  CMakeFiles/cmTC_4f5f8.dir/concepts.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_4f5f8.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_4f5f8.a && :
+        warning: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: archive library: libcmTC_4f5f8.a the table of contents is empty (no object file members in the library define global symbols)
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:49 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_STD_PMR"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_69e1d
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -MD -MT CMakeFiles/cmTC_69e1d.dir/memory_resource.cpp.o -MF CMakeFiles/cmTC_69e1d.dir/memory_resource.cpp.o.d -o CMakeFiles/cmTC_69e1d.dir/memory_resource.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/memory_resource.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_69e1d.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_69e1d.a  CMakeFiles/cmTC_69e1d.dir/memory_resource.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_69e1d.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_69e1d.a && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:19 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_COROUTINE_INCLUDE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_7128f
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_7128f.dir/coroutine.cpp.o -MF CMakeFiles/cmTC_7128f.dir/coroutine.cpp.o.d -o CMakeFiles/cmTC_7128f.dir/coroutine.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/coroutine.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_7128f.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_7128f.a  CMakeFiles/cmTC_7128f.dir/coroutine.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_7128f.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_7128f.a && :
+        warning: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: archive library: libcmTC_7128f.a the table of contents is empty (no object file members in the library define global symbols)
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:33 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_CONCEPTS"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_8c610
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_8c610.dir/concepts.cpp.o -MF CMakeFiles/cmTC_8c610.dir/concepts.cpp.o.d -o CMakeFiles/cmTC_8c610.dir/concepts.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/concepts.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_8c610.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_8c610.a  CMakeFiles/cmTC_8c610.dir/concepts.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_8c610.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_8c610.a && :
+        warning: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: archive library: libcmTC_8c610.a the table of contents is empty (no object file members in the library define global symbols)
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/boost/libs/cobalt/cmake/CheckRequirements.cmake:49 (try_compile)"
+      - "external/boost/libs/cobalt/CMakeLists.txt:15 (include)"
+    directories:
+      source: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+      binary: "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/jimmy/CLionProjects/Crypto/external/boost/tools/cmake/include"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.1"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "BOOST_COBALT_HAS_STD_PMR"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/cobalt/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_ecf27
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_ecf27.dir/memory_resource.cpp.o -MF CMakeFiles/cmTC_ecf27.dir/memory_resource.cpp.o.d -o CMakeFiles/cmTC_ecf27.dir/memory_resource.cpp.o -c /Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/cmake/memory_resource.cpp
+        [2/2] : && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f libcmTC_ecf27.a && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libcmTC_ecf27.a  CMakeFiles/cmTC_ecf27.dir/memory_resource.cpp.o && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libcmTC_ecf27.a && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E touch libcmTC_ecf27.a && :
+        
+      exitCode: 0
+...

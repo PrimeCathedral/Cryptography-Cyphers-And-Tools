@@ -12,7 +12,7 @@
 #include <cstdint>
 #include <boost/multiprecision/cpp_int.hpp>
 
-using namespace boost::multiprecision;
+#define mp boost::multiprecision
 
 namespace Crypto {
 
@@ -21,7 +21,8 @@ class Utilities {
     public:
         static int random(int min, int max);
         static bool FermatPrimalityTest(int p, int a);
-        static cpp_int modularExponentiation(const cpp_int& base, const cpp_int& power, const cpp_int& mod);
+        static mp::cpp_int modularInverse(mp::cpp_int a, mp::cpp_int mod);
+        static mp::cpp_int modularExponentiation(const mp::cpp_int& base, const mp::cpp_int& power, const mp::cpp_int& mod);
 };
 
 } // Crypto

@@ -5,10 +5,10 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 add_test([=[SampleTest]=] "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/test_example")
-set_tests_properties([=[SampleTest]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;40;add_test;/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;0;")
+set_tests_properties([=[SampleTest]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;37;add_test;/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;0;")
 add_test([=[TestUtilities]=] "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/test_utilities")
-set_tests_properties([=[TestUtilities]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;41;add_test;/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;0;")
+set_tests_properties([=[TestUtilities]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;38;add_test;/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;0;")
 add_test([=[TestModularArithmetic]=] "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/test_modular_arithmetic")
-set_tests_properties([=[TestModularArithmetic]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;42;add_test;/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;0;")
-subdirs("external/googletest")
+set_tests_properties([=[TestModularArithmetic]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;39;add_test;/Users/jimmy/CLionProjects/Crypto/CMakeLists.txt;0;")
 subdirs("external/boost")
+subdirs("external/googletest")

@@ -6,6 +6,8 @@
 
 #include <stdexcept>
 #include <boost/multiprecision/cpp_int.hpp>
+#include <libs/multiprecision/include/boost/multiprecision/cpp_int.hpp>
+#include <libs/multiprecision/include/boost/multiprecision/cpp_int.hpp>
 
 namespace Crypto {
 
@@ -17,40 +19,73 @@ namespace Crypto {
         return dis(gen);
     }
 
-    cpp_int Utilities::modularExponentiation(const cpp_int& base, const cpp_int& power, const cpp_int& mod) {
+    mp::cpp_int extendedGCD(mp::cpp_int a, mp::cpp_int b, mp::cpp_int& x, mp::cpp_int& y) {
+        if (b == 0) {
+            x = 1;
+            y = 0;
+            return a;
+        }
+
+        mp::cpp_int x1, y1;
+        mp::cpp_int gcd {extendedGCD(b, a % b, x1, y1)};
+
+        x = y1;
+        y = x1 - (a / b) * y1;
+
+        return gcd;
+    }
+
+    mp::cpp_int Utilities::modularInverse(mp::cpp_int a, mp::cpp_int mod) {
+        mp::cpp_int x, y;
+        mp::cpp_int gcd = extendedGCD(a, mod, x, y);
+
+        if (gcd != 1) {
+            throw std::runtime_error("Modular inverse does not exist");
+        }
+
+        return (x % mod + mod) % mod;
+    }
+
+    mp::cpp_int Utilities::modularExponentiation(const mp::cpp_int& base, const mp::cpp_int& power, const mp::cpp_int& mod) {
 
         // Edge cases 0 and 1
         if (power == 0 && base == 0) throw std::runtime_error("Math Error: 0^0 is undefined.");
         if (power == 0) return 1;
-        if (base == 0) return 0;
+        if (power == -1) {
+            return modularInverse(base, mod);
+            // TODO check if this is really what I want to return on powm(base, power, mod)
+        }
+        if (power == 1) return base % mod;
+        if (base == 0)  return 0;
 
         // Set the result to be the base so we start with b^1
-        cpp_int result{base};
+        mp::cpp_int result{base};
         if (result > mod) result %= mod;
-        else if (result == mod) return 1;
-
+        if (result == mod) return 1;
 
         // Find out how many bits the exponent has
         // Leftmost bit is actually the INDEX of the most significant
         // bit, basing at zero. So if power has 10 bits, leftmost will
         // contain 9.
-        const std::size_t leftmost_bit_in_power {boost::multiprecision::msb(power)};
-
+        std::size_t current_bit {mp::msb(power)};
         constexpr std::size_t rightmost_bit {0};
-        // For every bit in the exponent (from left to right)
-        for (auto current_bit {leftmost_bit_in_power}; current_bit >= 0; --current_bit) {
 
+        // While there are bits left to compute
+        do {
             // Square the result
             result = (result * result) % mod;
 
             // If the current bit is 1
-            if (power >> current_bit & 1) {
-               // Multiply by base
+            if (1 & (power >> (current_bit-1))) {
+                // Multiply by base
                 result = (result * base) % mod;
             }
-            // Break the loop after the rightmost bit has been analyzed
-            if (current_bit == rightmost_bit) break;
-        }
+
+            // Go right one bit
+            current_bit--;
+
+        } while (current_bit != rightmost_bit);
+
         // Return the calculated value
         return result;
     }
