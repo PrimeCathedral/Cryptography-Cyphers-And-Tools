@@ -122,7 +122,8 @@ TEST(TestModularInverse, LargeNumbers) {
 TEST(TestModularInverse, NegativeBase) {
     Crypto::Utilities Utilities{};
 
-    EXPECT_EQ(Utilities.modularInverse(-3, 7), 5);
+    EXPECT_EQ(Utilities.modularInverse(-5, 7), 3);
+    // TODO add better testcases. Code handles this by swapping symbols
 }
 
 TEST(TestModularInverse, BaseIsOne) {

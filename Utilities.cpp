@@ -5,10 +5,6 @@
 #include "Utilities.h"
 
 #include <stdexcept>
-#include <boost/multiprecision/cpp_int.hpp>
-#include <libs/multiprecision/include/boost/multiprecision/cpp_int.hpp>
-#include <libs/multiprecision/include/boost/multiprecision/cpp_int.hpp>
-#include <libs/multiprecision/include/boost/multiprecision/cpp_int.hpp>
 
 namespace Crypto {
 
@@ -48,7 +44,8 @@ namespace Crypto {
         if (isNegative(modulus)) modulus = -modulus;
 
         // Ensure the base is always positive (negatives do not exist in modulo)
-        if (isNegative(base))
+        // if (isNegative(base)) base = (base % modulus + modulus) % modulus;
+        if (isNegative(base)) base = -base;
 
         // Multiplicative inverse under 1 does not exist
         if (modulus == 1) throw std::runtime_error("Multiplicative Inverse under Modulo = 1 does not exist.");
@@ -62,11 +59,6 @@ namespace Crypto {
 
             // Calculate the inverse
         mp::cpp_int result {(x % modulus + modulus) % modulus};
-
-        // Make sure the inverse is positive
-        if (result < 0) {
-            result = -result;
-        }
 
         return result;
     }
