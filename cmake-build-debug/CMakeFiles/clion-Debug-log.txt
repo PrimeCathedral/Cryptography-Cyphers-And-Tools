@@ -9,6 +9,6 @@
 -- Boost.Multiprecision: standalone mode OFF
 -- Boost.Stacktrace: noop ON, backtrace OFF, addr2line ON, basic ON, windbg OFF, windbg_cached OFF, from_exception OFF
 -- Boost.Thread: threading API is pthread
--- Configuring done (1.6s)
--- Generating done (0.2s)
+-- Configuring done (5.1s)
+-- Generating done (0.4s)
 -- Build files have been written to: /Users/jimmy/CLionProjects/Crypto/cmake-build-debug
