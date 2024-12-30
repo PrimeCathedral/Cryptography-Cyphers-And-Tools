@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "external/boost/libs/date_time/libboost_date_time.a"
+			"path" : "external/boost/libs/graph/libboost_graph.a"
 		}
 	],
 	"backtrace" : 1,
@@ -19,7 +19,7 @@
 		],
 		"files" : 
 		[
-			"external/boost/libs/date_time/CMakeLists.txt",
+			"external/boost/libs/graph/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -30,7 +30,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 10,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
@@ -42,13 +42,13 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 37,
+				"line" : 64,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 45,
+				"line" : 73,
 				"parent" : 0
 			},
 			{
@@ -87,6 +87,22 @@
 			[
 				{
 					"backtrace" : 2,
+					"define" : "BOOST_ATOMIC_NO_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_ATOMIC_STATIC_LINK"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_CHRONO_NO_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_CHRONO_STATIC_LINK"
+				},
+				{
+					"backtrace" : 2,
 					"define" : "BOOST_CONTAINER_NO_LIB"
 				},
 				{
@@ -94,16 +110,48 @@
 					"define" : "BOOST_CONTAINER_STATIC_LINK"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"define" : "BOOST_DATE_TIME_NO_LIB"
 				},
 				{
+					"backtrace" : 2,
+					"define" : "BOOST_DATE_TIME_STATIC_LINK"
+				},
+				{
 					"backtrace" : 3,
-					"define" : "BOOST_DATE_TIME_SOURCE"
+					"define" : "BOOST_GRAPH_NO_LIB"
 				},
 				{
 					"backtrace" : 4,
-					"define" : "BOOST_DATE_TIME_STATIC_LINK"
+					"define" : "BOOST_GRAPH_STATIC_LINK"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_RANDOM_NO_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_RANDOM_STATIC_LINK"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_SERIALIZATION_NO_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_SERIALIZATION_STATIC_LINK"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_THREAD_NO_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_THREAD_STATIC_LINK"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_THREAD_USE_LIB"
 				}
 			],
 			"includes" : 
@@ -118,7 +166,7 @@
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/date_time/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/graph/include"
 				},
 				{
 					"backtrace" : 2,
@@ -254,6 +302,38 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/any/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_index/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/bimap/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lambda/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/multi_index/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/move/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/foreach/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include"
 				},
 				{
@@ -266,7 +346,83 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/move/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/math/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/random/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/dynamic_bitset/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/parameter/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/property_map/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/property_tree/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/serialization/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/spirit/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/endian/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/phoenix/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/proto/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/pool/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/thread/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/atomic/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/chrono/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/ratio/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/date_time/include"
 				},
 				{
 					"backtrace" : 2,
@@ -278,7 +434,15 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tti/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/xpressive/include"
 				}
 			],
 			"language" : "CXX",
@@ -289,13 +453,15 @@
 					2,
 					2,
 					2,
+					2,
 					2
 				],
 				"standard" : "23"
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -303,20 +469,48 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "boost_container::@b930a84827d1b3bb4ac5"
+			"id" : "boost_date_time::@6afdf494e79f77a1efd5"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "boost_optional::@a76016fda4acd1107840"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_random::@34a61d4ae111c80ed67c"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_atomic::@9bd428892d004da19406"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_chrono::@ba2fa923337ba8da527c"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_container::@b930a84827d1b3bb4ac5"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_thread::@acde8bb2e11c9adb3f24"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_math::@0adaed0a5428539486dd"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_serialization::@dfd8c61321f7ff43aa38"
 		}
 	],
-	"id" : "boost_date_time::@6afdf494e79f77a1efd5",
-	"name" : "boost_date_time",
-	"nameOnDisk" : "libboost_date_time.a",
+	"id" : "boost_graph::@79b0ca634d93850618fc",
+	"name" : "boost_graph",
+	"nameOnDisk" : "libboost_graph.a",
 	"paths" : 
 	{
-		"build" : "external/boost/libs/date_time",
-		"source" : "external/boost/libs/date_time"
+		"build" : "external/boost/libs/graph",
+		"source" : "external/boost/libs/graph"
 	},
 	"sourceGroups" : 
 	[
@@ -324,7 +518,8 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -333,7 +528,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/date_time/src/gregorian/greg_month.cpp",
+			"path" : "external/boost/libs/graph/src/graphml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/graph/src/read_graphviz_new.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

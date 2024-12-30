@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "external/boost/libs/wave/libboost_wave.a"
+			"path" : "external/boost/libs/serialization/libboost_wserialization.a"
 		}
 	],
 	"backtrace" : 1,
@@ -15,12 +15,11 @@
 			"target_link_libraries",
 			"target_compile_definitions",
 			"include_directories",
-			"target_include_directories",
-			"target_compile_features"
+			"target_include_directories"
 		],
 		"files" : 
 		[
-			"external/boost/libs/wave/CMakeLists.txt",
+			"external/boost/libs/serialization/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -31,25 +30,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 10,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
+				"line" : 95,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 55,
+				"line" : 103,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 63,
+				"line" : 114,
 				"parent" : 0
 			},
 			{
@@ -70,13 +69,7 @@
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 28,
-				"parent" : 0
-			},
-			{
-				"command" : 5,
-				"file" : 0,
-				"line" : 53,
+				"line" : 67,
 				"parent" : 0
 			}
 		]
@@ -125,19 +118,11 @@
 					"define" : "BOOST_DATE_TIME_STATIC_LINK"
 				},
 				{
-					"backtrace" : 2,
-					"define" : "BOOST_FILESYSTEM_NO_LIB"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_FILESYSTEM_STATIC_LINK=1"
-				},
-				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"define" : "BOOST_SERIALIZATION_NO_LIB"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 4,
 					"define" : "BOOST_SERIALIZATION_STATIC_LINK"
 				},
 				{
@@ -151,18 +136,6 @@
 				{
 					"backtrace" : 2,
 					"define" : "BOOST_THREAD_USE_LIB"
-				},
-				{
-					"backtrace" : 3,
-					"define" : "BOOST_WAVE_NO_LIB"
-				},
-				{
-					"backtrace" : 3,
-					"define" : "BOOST_WAVE_SOURCE"
-				},
-				{
-					"backtrace" : 4,
-					"define" : "BOOST_WAVE_STATIC_LINK"
 				}
 			],
 			"includes" : 
@@ -177,7 +150,11 @@
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/wave/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/serialization/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/array/include"
 				},
 				{
 					"backtrace" : 2,
@@ -189,11 +166,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/concept_check/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/preprocessor/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/core/include"
 				},
 				{
 					"backtrace" : 2,
@@ -201,35 +174,23 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_traits/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/core/include"
-				},
-				{
-					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/filesystem/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container_hash/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/describe/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mp11/include"
-				},
-				{
-					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/detail/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/preprocessor/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_traits/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include"
 				},
 				{
 					"backtrace" : 2,
@@ -238,6 +199,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/iterator/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/concept_check/include"
 				},
 				{
 					"backtrace" : 2,
@@ -258,6 +223,18 @@
 				{
 					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/fusion/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container_hash/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/describe/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mp11/include"
 				},
 				{
 					"backtrace" : 2,
@@ -289,55 +266,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/format/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/intrusive/include"
-				},
-				{
-					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/move/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/multi_index/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/pool/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/serialization/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/array/include"
 				},
 				{
 					"backtrace" : 2,
@@ -369,6 +298,14 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/pool/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/thread/include"
 				},
 				{
@@ -385,6 +322,22 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/intrusive/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/date_time/include"
 				},
 				{
@@ -398,6 +351,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/unordered/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include"
 				},
 				{
 					"backtrace" : 2,
@@ -421,16 +378,6 @@
 			{
 				"backtraces" : 
 				[
-					9,
-					2,
-					2,
-					2,
-					2,
-					2,
-					2,
-					2,
-					2,
-					2,
 					2,
 					2,
 					2,
@@ -452,12 +399,21 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12
 			]
 		}
 	],
 	"dependencies" : 
 	[
+		{
+			"backtrace" : 2,
+			"id" : "boost_date_time::@6afdf494e79f77a1efd5"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_optional::@a76016fda4acd1107840"
+		},
 		{
 			"backtrace" : 2,
 			"id" : "boost_atomic::@9bd428892d004da19406"
@@ -472,32 +428,20 @@
 		},
 		{
 			"backtrace" : 2,
-			"id" : "boost_date_time::@6afdf494e79f77a1efd5"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "boost_filesystem::@e07629d57e311bf56451"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "boost_optional::@a76016fda4acd1107840"
+			"id" : "boost_thread::@acde8bb2e11c9adb3f24"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "boost_serialization::@dfd8c61321f7ff43aa38"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "boost_thread::@acde8bb2e11c9adb3f24"
 		}
 	],
-	"id" : "boost_wave::@8c0ee00ea47c9ef0b894",
-	"name" : "boost_wave",
-	"nameOnDisk" : "libboost_wave.a",
+	"id" : "boost_wserialization::@dfd8c61321f7ff43aa38",
+	"name" : "boost_wserialization",
+	"nameOnDisk" : "libboost_wserialization.a",
 	"paths" : 
 	{
-		"build" : "external/boost/libs/wave",
-		"source" : "external/boost/libs/wave"
+		"build" : "external/boost/libs/serialization",
+		"source" : "external/boost/libs/serialization"
 	},
 	"sourceGroups" : 
 	[
@@ -516,7 +460,8 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12
 			]
 		}
 	],
@@ -525,73 +470,79 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/instantiate_re2c_lexer.cpp",
+			"path" : "external/boost/libs/serialization/src/basic_text_wiprimitive.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/token_ids.cpp",
+			"path" : "external/boost/libs/serialization/src/basic_text_woprimitive.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/instantiate_defined_grammar.cpp",
+			"path" : "external/boost/libs/serialization/src/binary_wiarchive.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/instantiate_cpp_literalgrs.cpp",
+			"path" : "external/boost/libs/serialization/src/binary_woarchive.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/instantiate_cpp_exprgrammar.cpp",
+			"path" : "external/boost/libs/serialization/src/polymorphic_text_wiarchive.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/instantiate_has_include_grammar.cpp",
+			"path" : "external/boost/libs/serialization/src/polymorphic_text_woarchive.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/instantiate_predef_macros.cpp",
+			"path" : "external/boost/libs/serialization/src/polymorphic_xml_wiarchive.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/instantiate_re2c_lexer_str.cpp",
+			"path" : "external/boost/libs/serialization/src/polymorphic_xml_woarchive.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/instantiate_cpp_grammar.cpp",
+			"path" : "external/boost/libs/serialization/src/text_wiarchive.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/wave_config_constant.cpp",
+			"path" : "external/boost/libs/serialization/src/text_woarchive.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/cpplexer/re2clex/aq.cpp",
+			"path" : "external/boost/libs/serialization/src/xml_wgrammar.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/wave/src/cpplexer/re2clex/cpp_re.cpp",
+			"path" : "external/boost/libs/serialization/src/xml_wiarchive.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/serialization/src/xml_woarchive.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

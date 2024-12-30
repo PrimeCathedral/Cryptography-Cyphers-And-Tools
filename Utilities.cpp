@@ -8,6 +8,7 @@
 #include <boost/multiprecision/cpp_int.hpp>
 #include <libs/multiprecision/include/boost/multiprecision/cpp_int.hpp>
 #include <libs/multiprecision/include/boost/multiprecision/cpp_int.hpp>
+#include <libs/multiprecision/include/boost/multiprecision/cpp_int.hpp>
 
 namespace Crypto {
 
@@ -19,31 +20,55 @@ namespace Crypto {
         return dis(gen);
     }
 
-    mp::cpp_int extendedGCD(mp::cpp_int a, mp::cpp_int b, mp::cpp_int& x, mp::cpp_int& y) {
-        if (b == 0) {
+    mp::cpp_int extendedGCD(mp::cpp_int base, mp::cpp_int modulus, mp::cpp_int& x, mp::cpp_int& y) {
+        if (modulus == 0) {
             x = 1;
             y = 0;
-            return a;
+            return base;
         }
 
         mp::cpp_int x1, y1;
-        mp::cpp_int gcd {extendedGCD(b, a % b, x1, y1)};
+        mp::cpp_int gcd {extendedGCD(modulus, base % modulus, x1, y1)};
 
         x = y1;
-        y = x1 - (a / b) * y1;
+        y = x1 - (base / modulus) * y1;
 
         return gcd;
     }
 
-    mp::cpp_int Utilities::modularInverse(mp::cpp_int a, mp::cpp_int mod) {
+    // This function is here purely to improve code readability
+    bool isNegative(mp::cpp_int x) {
+        if (x < 0) return true;
+        return false;
+    }
+
+    mp::cpp_int Utilities::modularInverse(mp::cpp_int base, mp::cpp_int modulus) {
+
+        // Ensure the modulo is always positive before computing the inverse
+        if (isNegative(modulus)) modulus = -modulus;
+
+        // Ensure the base is always positive (negatives do not exist in modulo)
+        if (isNegative(base))
+
+        // Multiplicative inverse under 1 does not exist
+        if (modulus == 1) throw std::runtime_error("Multiplicative Inverse under Modulo = 1 does not exist.");
+
         mp::cpp_int x, y;
-        mp::cpp_int gcd = extendedGCD(a, mod, x, y);
+        mp::cpp_int gcd = extendedGCD(base, modulus, x, y);
 
         if (gcd != 1) {
             throw std::runtime_error("Modular inverse does not exist");
         }
 
-        return (x % mod + mod) % mod;
+            // Calculate the inverse
+        mp::cpp_int result {(x % modulus + modulus) % modulus};
+
+        // Make sure the inverse is positive
+        if (result < 0) {
+            result = -result;
+        }
+
+        return result;
     }
 
     mp::cpp_int Utilities::modularExponentiation(const mp::cpp_int& base, const mp::cpp_int& power, const mp::cpp_int& mod) {

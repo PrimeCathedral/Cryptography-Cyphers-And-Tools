@@ -109,33 +109,41 @@ TEST(TestModularInverse, ModularInverseExists) {
 
 TEST(TestModularInverse, ModularInverseDoesNotExist) {
     Crypto::Utilities Utilities{};
-
     EXPECT_THROW(Utilities.modularInverse(4, 8), std::runtime_error);
 }
 
 TEST(TestModularInverse, LargeNumbers) {
     Crypto::Utilities Utilities{};
-
     mp::cpp_int a {boost::multiprecision::cpp_int("12345678901234567890")};
     mp::cpp_int mod {boost::multiprecision::cpp_int("98765432109876543211")};
     EXPECT_EQ(Utilities.modularInverse(a, mod), boost::multiprecision::cpp_int("94316753668893093070")); // Precomputed result
 }
 
-// TEST(TestModularInverse, ) {
-//     Crypto::Utilities Utilities{};
-//
-// }
-//
-// TEST(TestModularInverse, ) {
-//     Crypto::Utilities Utilities{};
-//
-// }
-//
-// TEST(TestModularInverse, ) {
-//     Crypto::Utilities Utilities{};
-//
-// }
+TEST(TestModularInverse, NegativeBase) {
+    Crypto::Utilities Utilities{};
 
+    EXPECT_EQ(Utilities.modularInverse(-3, 7), 5);
+}
+
+TEST(TestModularInverse, BaseIsOne) {
+    Crypto::Utilities Utilities{};
+
+    EXPECT_EQ(Utilities.modularInverse(1, 13), 1);
+}
+
+TEST(TestModularInverse, ModulusIsOne) {
+    Crypto::Utilities Utilities{};
+
+    // Modular inverse does not exist when the modulus is 1
+    EXPECT_THROW(Utilities.modularInverse(5, 1), std::runtime_error);
+}
+
+TEST(TestModularInverse, NotCoprime) {
+    Crypto::Utilities Utilities{};
+
+    // GCD is not 1
+    EXPECT_THROW(Utilities.modularInverse(12, 15), std::runtime_error);
+}
 
 // Main entry point for the test runner
 int main(int argc, char **argv) {
