@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "external/boost/libs/cobalt/libboost_cobalt.a"
+			"path" : "external/boost/libs/fiber/libboost_fiber_numa.a"
 		}
 	],
 	"backtrace" : 1,
@@ -15,12 +15,11 @@
 			"target_link_libraries",
 			"target_compile_definitions",
 			"include_directories",
-			"target_include_directories",
-			"target_compile_features"
+			"target_include_directories"
 		],
 		"files" : 
 		[
-			"external/boost/libs/cobalt/CMakeLists.txt",
+			"external/boost/libs/fiber/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -31,25 +30,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 33,
+				"line" : 87,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 47,
+				"line" : 96,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 64,
+				"line" : 109,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 82,
+				"line" : 117,
 				"parent" : 0
 			},
 			{
@@ -70,13 +69,7 @@
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 45,
-				"parent" : 0
-			},
-			{
-				"command" : 5,
-				"file" : 0,
-				"line" : 68,
+				"line" : 94,
 				"parent" : 0
 			}
 		]
@@ -93,26 +86,6 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 3,
-					"define" : "BOOST_COBALT_NO_LIB=1"
-				},
-				{
-					"backtrace" : 3,
-					"define" : "BOOST_COBALT_SOURCE=1"
-				},
-				{
-					"backtrace" : 4,
-					"define" : "BOOST_COBALT_STATIC_LINK"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_CONTAINER_NO_LIB"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_CONTAINER_STATIC_LINK"
-				},
-				{
 					"backtrace" : 2,
 					"define" : "BOOST_CONTEXT_EXPORT="
 				},
@@ -125,12 +98,28 @@
 					"define" : "BOOST_CONTEXT_STATIC_LINK="
 				},
 				{
-					"backtrace" : 2,
-					"define" : "BOOST_DATE_TIME_NO_LIB"
+					"backtrace" : 3,
+					"define" : "BOOST_FIBERS_SOURCE"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "BOOST_FIBER_NO_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "BOOST_FIBER_SOURCE"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "BOOST_FIBER_STATIC_LINK"
 				},
 				{
 					"backtrace" : 2,
-					"define" : "BOOST_DATE_TIME_STATIC_LINK"
+					"define" : "BOOST_FILESYSTEM_NO_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_FILESYSTEM_STATIC_LINK=1"
 				}
 			],
 			"includes" : 
@@ -145,15 +134,7 @@
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/cobalt/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/asio/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/align/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/fiber/include"
 				},
 				{
 					"backtrace" : 2,
@@ -162,6 +143,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/context/include"
 				},
 				{
 					"backtrace" : 2,
@@ -174,10 +159,6 @@
 				{
 					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/context/include"
 				},
 				{
 					"backtrace" : 2,
@@ -209,7 +190,11 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/date_time/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/intrusive/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/move/include"
 				},
 				{
 					"backtrace" : 2,
@@ -309,27 +294,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/intrusive/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/move/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/numeric/conversion/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tokenizer/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/filesystem/include"
 				},
 				{
 					"backtrace" : 2,
@@ -341,15 +306,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/callable_traits/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/circular_buffer/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/leaf/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/format/include"
 				}
 			],
 			"language" : "CXX",
@@ -357,7 +314,16 @@
 			{
 				"backtraces" : 
 				[
-					9,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
 					2,
 					2,
 					2,
@@ -369,11 +335,7 @@
 			[
 				0,
 				1,
-				2,
-				3,
-				4,
-				5,
-				6
+				2
 			]
 		}
 	],
@@ -381,28 +343,32 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "boost_container::@b930a84827d1b3bb4ac5"
+			"id" : "boost_fiber::@2f553e7b8846b834cf56"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "boost_context::@88f9e115f38d20b7bf75"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "boost_date_time::@6afdf494e79f77a1efd5"
+			"id" : "boost_filesystem::@e07629d57e311bf56451"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "boost_optional::@a76016fda4acd1107840"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_atomic::@9bd428892d004da19406"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_context::@88f9e115f38d20b7bf75"
 		}
 	],
-	"id" : "boost_cobalt::@b0e6a5a0b8ae46998c3b",
-	"name" : "boost_cobalt",
-	"nameOnDisk" : "libboost_cobalt.a",
+	"id" : "boost_fiber_numa::@2f553e7b8846b834cf56",
+	"name" : "boost_fiber_numa",
+	"nameOnDisk" : "libboost_fiber_numa.a",
 	"paths" : 
 	{
-		"build" : "external/boost/libs/cobalt",
-		"source" : "external/boost/libs/cobalt"
+		"build" : "external/boost/libs/fiber",
+		"source" : "external/boost/libs/fiber"
 	},
 	"sourceGroups" : 
 	[
@@ -412,11 +378,7 @@
 			[
 				0,
 				1,
-				2,
-				3,
-				4,
-				5,
-				6
+				2
 			]
 		}
 	],
@@ -425,43 +387,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/cobalt/src/detail/exception.cpp",
+			"path" : "external/boost/libs/fiber/src/numa/pin_thread.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/cobalt/src/detail/util.cpp",
+			"path" : "external/boost/libs/fiber/src/numa/topology.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/cobalt/src/channel.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/cobalt/src/error.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/cobalt/src/main.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/cobalt/src/this_thread.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/cobalt/src/thread.cpp",
+			"path" : "external/boost/libs/fiber/src/numa/algo/work_stealing.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

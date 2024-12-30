@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "external/boost/libs/program_options/libboost_program_options.a"
+			"path" : "external/boost/libs/iostreams/libboost_iostreams.a"
 		}
 	],
 	"backtrace" : 1,
@@ -16,11 +16,12 @@
 			"target_compile_definitions",
 			"include_directories",
 			"target_include_directories",
-			"target_compile_features"
+			"boost_iostreams_option",
+			"target_sources"
 		],
 		"files" : 
 		[
-			"external/boost/libs/program_options/CMakeLists.txt",
+			"external/boost/libs/iostreams/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -31,25 +32,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 10,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 28,
+				"line" : 82,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 48,
+				"line" : 105,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 56,
+				"line" : 114,
 				"parent" : 0
 			},
 			{
@@ -70,14 +71,62 @@
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 26,
+				"line" : 80,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 46,
+				"line" : 44,
 				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 32,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 42,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 31,
+				"parent" : 11
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 43,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 31,
+				"parent" : 13
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 31,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 45,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 31,
+				"parent" : 16
 			}
 		]
 	},
@@ -93,24 +142,20 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 2,
-					"define" : "BOOST_CONTAINER_NO_LIB"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "BOOST_CONTAINER_STATIC_LINK"
-				},
-				{
 					"backtrace" : 3,
-					"define" : "BOOST_PROGRAM_OPTIONS_NO_LIB"
-				},
-				{
-					"backtrace" : 3,
-					"define" : "BOOST_PROGRAM_OPTIONS_SOURCE"
+					"define" : "BOOST_IOSTREAMS_NO_LIB"
 				},
 				{
 					"backtrace" : 4,
-					"define" : "BOOST_PROGRAM_OPTIONS_STATIC_LINK"
+					"define" : "BOOST_IOSTREAMS_STATIC_LINK"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_RANDOM_NO_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_RANDOM_STATIC_LINK"
 				}
 			],
 			"includes" : 
@@ -125,19 +170,7 @@
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/program_options/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/any/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/iostreams/include"
 				},
 				{
 					"backtrace" : 2,
@@ -145,19 +178,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_index/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container_hash/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/describe/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mp11/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include"
 				},
 				{
 					"backtrace" : 2,
@@ -166,6 +187,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_assert/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include"
 				},
 				{
 					"backtrace" : 2,
@@ -186,6 +211,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/bind/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include"
 				},
 				{
 					"backtrace" : 2,
@@ -221,6 +250,18 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container_hash/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/describe/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mp11/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tuple/include"
 				},
 				{
@@ -241,15 +282,15 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/random/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/array/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/intrusive/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/dynamic_bitset/include"
 				},
 				{
 					"backtrace" : 2,
@@ -257,7 +298,36 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tokenizer/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/range/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/conversion/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/regex/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/numeric/conversion/include"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/include"
 				}
 			],
 			"language" : "CXX",
@@ -265,7 +335,7 @@
 			{
 				"backtraces" : 
 				[
-					9,
+					2,
 					2,
 					2,
 					2
@@ -280,11 +350,7 @@
 				3,
 				4,
 				5,
-				6,
-				7,
-				8,
-				9,
-				10
+				6
 			]
 		}
 	],
@@ -292,20 +358,20 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "boost_container::@b930a84827d1b3bb4ac5"
+			"id" : "boost_random::@34a61d4ae111c80ed67c"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "boost_optional::@a76016fda4acd1107840"
 		}
 	],
-	"id" : "boost_program_options::@77fca7cc5158ac44e903",
-	"name" : "boost_program_options",
-	"nameOnDisk" : "libboost_program_options.a",
+	"id" : "boost_iostreams::@f0ef9ff1eaca08a37244",
+	"name" : "boost_iostreams",
+	"nameOnDisk" : "libboost_iostreams.a",
 	"paths" : 
 	{
-		"build" : "external/boost/libs/program_options",
-		"source" : "external/boost/libs/program_options"
+		"build" : "external/boost/libs/iostreams",
+		"source" : "external/boost/libs/iostreams"
 	},
 	"sourceGroups" : 
 	[
@@ -319,11 +385,7 @@
 				3,
 				4,
 				5,
-				6,
-				7,
-				8,
-				9,
-				10
+				6
 			]
 		}
 	],
@@ -332,67 +394,43 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/program_options/src/cmdline.cpp",
+			"path" : "external/boost/libs/iostreams/src/file_descriptor.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/program_options/src/config_file.cpp",
+			"path" : "external/boost/libs/iostreams/src/mapped_file.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 1,
+			"backtrace" : 12,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/program_options/src/convert.cpp",
+			"path" : "external/boost/libs/iostreams/src/zlib.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 1,
+			"backtrace" : 12,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/program_options/src/options_description.cpp",
+			"path" : "external/boost/libs/iostreams/src/gzip.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 1,
+			"backtrace" : 14,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/program_options/src/parsers.cpp",
+			"path" : "external/boost/libs/iostreams/src/bzip2.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 1,
+			"backtrace" : 15,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/program_options/src/positional_options.cpp",
+			"path" : "external/boost/libs/iostreams/src/lzma.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 1,
+			"backtrace" : 17,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/program_options/src/split.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/program_options/src/utf8_codecvt_facet.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/program_options/src/value_semantic.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/program_options/src/variables_map.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/program_options/src/winmain.cpp",
+			"path" : "external/boost/libs/iostreams/src/zstd.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

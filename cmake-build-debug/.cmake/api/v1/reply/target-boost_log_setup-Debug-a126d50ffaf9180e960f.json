@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "external/boost/libs/log/libboost_log.a"
+			"path" : "external/boost/libs/log/libboost_log_setup.a"
 		}
 	],
 	"backtrace" : 1,
@@ -31,19 +31,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 447,
+				"line" : 600,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 473,
+				"line" : 621,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 525,
+				"line" : 646,
 				"parent" : 0
 			},
 			{
@@ -64,13 +64,13 @@
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 465,
+				"line" : 614,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 458,
+				"line" : 606,
 				"parent" : 0
 			}
 		]
@@ -140,11 +140,11 @@
 				},
 				{
 					"backtrace" : 3,
-					"define" : "BOOST_LOG_BUILDING_THE_LIB"
+					"define" : "BOOST_LOG_NO_LIB"
 				},
 				{
 					"backtrace" : 3,
-					"define" : "BOOST_LOG_NO_LIB"
+					"define" : "BOOST_LOG_SETUP_BUILDING_THE_LIB"
 				},
 				{
 					"backtrace" : 3,
@@ -160,11 +160,11 @@
 				},
 				{
 					"backtrace" : 2,
-					"define" : "BOOST_RANDOM_NO_LIB"
+					"define" : "BOOST_SERIALIZATION_NO_LIB"
 				},
 				{
 					"backtrace" : 2,
-					"define" : "BOOST_RANDOM_STATIC_LINK"
+					"define" : "BOOST_SERIALIZATION_STATIC_LINK"
 				},
 				{
 					"backtrace" : 3,
@@ -208,10 +208,6 @@
 				{
 					"backtrace" : 7,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/log/src"
-				},
-				{
-					"backtrace" : 7,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/external/boost/libs/log/src"
 				},
 				{
 					"backtrace" : 2,
@@ -407,19 +403,15 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/align/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/atomic/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/asio/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/thread/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/context/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/pool/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/chrono/include"
 				},
 				{
 					"backtrace" : 2,
@@ -427,15 +419,23 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/interprocess/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/ratio/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/random/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/property_tree/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/dynamic_bitset/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/any/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/multi_index/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/serialization/include"
 				},
 				{
 					"backtrace" : 2,
@@ -447,23 +447,23 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/thread/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/atomic/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/chrono/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/ratio/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/pool/include"
 				},
 				{
 					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/asio/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/align/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/context/include"
 				}
 			],
 			"language" : "CXX",
@@ -471,6 +471,7 @@
 			{
 				"backtraces" : 
 				[
+					8,
 					8,
 					8,
 					2,
@@ -493,39 +494,14 @@
 			"sourceIndexes" : 
 			[
 				1,
+				2,
 				3,
 				4,
+				5,
 				6,
+				8,
 				9,
-				10,
-				11,
-				12,
-				13,
-				14,
-				15,
-				16,
-				19,
-				20,
-				21,
-				23,
-				24,
-				25,
-				26,
-				27,
-				28,
-				29,
-				30,
-				31,
-				32,
-				34,
-				35,
-				36,
-				37,
-				38,
-				39,
-				40,
-				41,
-				43
+				11
 			]
 		}
 	],
@@ -533,15 +509,11 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "boost_chrono::@ba2fa923337ba8da527c"
+			"id" : "boost_random::@34a61d4ae111c80ed67c"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "boost_container::@b930a84827d1b3bb4ac5"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "boost_context::@88f9e115f38d20b7bf75"
+			"id" : "boost_serialization::@dfd8c61321f7ff43aa38"
 		},
 		{
 			"backtrace" : 2,
@@ -553,11 +525,11 @@
 		},
 		{
 			"backtrace" : 2,
-			"id" : "boost_optional::@a76016fda4acd1107840"
+			"id" : "boost_log::@40df6d70e75668d751b7"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "boost_random::@34a61d4ae111c80ed67c"
+			"id" : "boost_optional::@a76016fda4acd1107840"
 		},
 		{
 			"backtrace" : 2,
@@ -566,11 +538,23 @@
 		{
 			"backtrace" : 2,
 			"id" : "boost_atomic::@9bd428892d004da19406"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_chrono::@ba2fa923337ba8da527c"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_container::@b930a84827d1b3bb4ac5"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_context::@88f9e115f38d20b7bf75"
 		}
 	],
-	"id" : "boost_log::@40df6d70e75668d751b7",
-	"name" : "boost_log",
-	"nameOnDisk" : "libboost_log.a",
+	"id" : "boost_log_setup::@40df6d70e75668d751b7",
+	"name" : "boost_log_setup",
+	"nameOnDisk" : "libboost_log_setup.a",
 	"paths" : 
 	{
 		"build" : "external/boost/libs/log",
@@ -583,15 +567,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				2,
-				5,
 				7,
-				8,
-				17,
-				18,
-				22,
-				33,
-				42
+				10
 			]
 		},
 		{
@@ -599,39 +576,14 @@
 			"sourceIndexes" : 
 			[
 				1,
+				2,
 				3,
 				4,
+				5,
 				6,
+				8,
 				9,
-				10,
-				11,
-				12,
-				13,
-				14,
-				15,
-				16,
-				19,
-				20,
-				21,
-				23,
-				24,
-				25,
-				26,
-				27,
-				28,
-				29,
-				30,
-				31,
-				32,
-				34,
-				35,
-				36,
-				37,
-				38,
-				39,
-				40,
-				41,
-				43
+				11
 			]
 		}
 	],
@@ -639,256 +591,71 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "external/boost/libs/log/src/alignment_gap_between.hpp",
+			"path" : "external/boost/libs/log/src/setup/parser_utils.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/attribute_name.cpp",
+			"path" : "external/boost/libs/log/src/setup/parser_utils.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "external/boost/libs/log/src/attribute_set_impl.hpp",
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/log/src/setup/init_from_stream.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/log/src/setup/init_from_settings.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/log/src/setup/settings_parser.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/log/src/setup/filter_parser.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/log/src/setup/formatter_parser.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "external/boost/libs/log/src/setup/default_filter_factory.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/attribute_set.cpp",
+			"path" : "external/boost/libs/log/src/setup/default_filter_factory.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/attribute_value_set.cpp",
+			"path" : "external/boost/libs/log/src/setup/matches_relation_factory.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "external/boost/libs/log/src/bit_tools.hpp",
+			"path" : "external/boost/libs/log/src/setup/default_formatter_factory.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/code_conversion.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "external/boost/libs/log/src/stateless_allocator.hpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "external/boost/libs/log/src/unique_ptr.hpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/core.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/record_ostream.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/severity_level.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/global_logger_storage.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/named_scope.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/process_name.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/process_id.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/thread_id.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "external/boost/libs/log/src/id_formatting.hpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "external/boost/libs/log/src/murmur3.hpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/timer.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/exceptions.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/default_attribute_names.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "external/boost/libs/log/src/default_sink.hpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/default_sink.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/text_ostream_backend.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/text_file_backend.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/text_multifile_backend.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/thread_specific.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/once_block.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/timestamp.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/threadsafe_queue.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/event.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/trivial.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "external/boost/libs/log/src/spirit_encoding.hpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/spirit_encoding.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/format_parser.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/date_time_format_parser.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/named_scope_format_parser.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/permissions.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/dump.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/syslog_backend.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/posix/object_name.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "external/boost/libs/log/src/posix/ipc_sync_wrappers.hpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/log/src/posix/ipc_reliable_message_queue.cpp",
+			"path" : "external/boost/libs/log/src/setup/default_formatter_factory.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

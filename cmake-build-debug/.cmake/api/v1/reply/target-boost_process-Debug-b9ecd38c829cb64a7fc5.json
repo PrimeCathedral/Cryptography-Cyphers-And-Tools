@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "external/boost/libs/date_time/libboost_date_time.a"
+			"path" : "external/boost/libs/process/libboost_process.a"
 		}
 	],
 	"backtrace" : 1,
@@ -19,7 +19,7 @@
 		],
 		"files" : 
 		[
-			"external/boost/libs/date_time/CMakeLists.txt",
+			"external/boost/libs/process/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -36,19 +36,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 18,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 37,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 45,
+				"line" : 66,
 				"parent" : 0
 			},
 			{
@@ -69,7 +69,7 @@
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 16,
+				"line" : 31,
 				"parent" : 0
 			}
 		]
@@ -94,16 +94,40 @@
 					"define" : "BOOST_CONTAINER_STATIC_LINK"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
+					"define" : "BOOST_CONTEXT_EXPORT="
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_CONTEXT_NO_LIB="
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_CONTEXT_STATIC_LINK="
+				},
+				{
+					"backtrace" : 2,
 					"define" : "BOOST_DATE_TIME_NO_LIB"
 				},
 				{
+					"backtrace" : 2,
+					"define" : "BOOST_DATE_TIME_STATIC_LINK"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_FILESYSTEM_NO_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BOOST_FILESYSTEM_STATIC_LINK=1"
+				},
+				{
 					"backtrace" : 3,
-					"define" : "BOOST_DATE_TIME_SOURCE"
+					"define" : "BOOST_PROCESS_SOURCE=1"
 				},
 				{
 					"backtrace" : 4,
-					"define" : "BOOST_DATE_TIME_STATIC_LINK"
+					"define" : "BOOST_PROCESS_STATIC_LINK"
 				}
 			],
 			"includes" : 
@@ -118,7 +142,7 @@
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/date_time/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/process/include"
 				},
 				{
 					"backtrace" : 2,
@@ -254,6 +278,34 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/asio/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/align/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/context/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/pool/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/integer/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/date_time/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/lexical_cast/include"
 				},
 				{
@@ -278,7 +330,19 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/filesystem/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_index/include"
 				}
 			],
 			"language" : "CXX",
@@ -289,13 +353,39 @@
 					2,
 					2,
 					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
 					2
 				],
 				"standard" : "23"
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16
 			]
 		}
 	],
@@ -303,20 +393,36 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "boost_container::@b930a84827d1b3bb4ac5"
+			"id" : "boost_date_time::@6afdf494e79f77a1efd5"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_filesystem::@e07629d57e311bf56451"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "boost_optional::@a76016fda4acd1107840"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_atomic::@9bd428892d004da19406"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_container::@b930a84827d1b3bb4ac5"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_context::@88f9e115f38d20b7bf75"
 		}
 	],
-	"id" : "boost_date_time::@6afdf494e79f77a1efd5",
-	"name" : "boost_date_time",
-	"nameOnDisk" : "libboost_date_time.a",
+	"id" : "boost_process::@27d4c839853f098a6997",
+	"name" : "boost_process",
+	"nameOnDisk" : "libboost_process.a",
 	"paths" : 
 	{
-		"build" : "external/boost/libs/date_time",
-		"source" : "external/boost/libs/date_time"
+		"build" : "external/boost/libs/process",
+		"source" : "external/boost/libs/process"
 	},
 	"sourceGroups" : 
 	[
@@ -324,7 +430,23 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16
 			]
 		}
 	],
@@ -333,7 +455,103 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/date_time/src/gregorian/greg_month.cpp",
+			"path" : "external/boost/libs/process/src/detail/environment_posix.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/detail/environment_win.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/detail/last_error.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/detail/process_handle_windows.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/detail/throw_error.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/detail/utf8.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/ext/cmd.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/ext/cwd.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/ext/env.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/ext/exe.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/ext/proc_info.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/posix/close_handles.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/windows/default_launcher.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/environment.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/error.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/pid.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/boost/libs/process/src/shell.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
