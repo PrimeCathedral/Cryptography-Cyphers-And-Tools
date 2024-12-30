@@ -37,13 +37,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 248,
+				"line" : 228,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 228,
+				"line" : 248,
 				"parent" : 0
 			},
 			{
@@ -141,11 +141,11 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"define" : "BOOST_ATOMIC_NO_LIB"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"define" : "BOOST_ATOMIC_STATIC_LINK"
 				},
 				{
@@ -208,127 +208,127 @@
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/filesystem/src"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/assert/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container_hash/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/describe/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mp11/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/detail/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/core/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_assert/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/preprocessor/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_traits/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/io/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/iterator/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/concept_check/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function_types/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/mpl/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/predef/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/utility/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/fusion/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tuple/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/typeof/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/functional/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/bind/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/optional/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/smart_ptr/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/system/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/variant2/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/winapi/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/scope/include"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/atomic/include"
 				}
 			],
@@ -347,14 +347,14 @@
 					17,
 					17,
 					17,
-					3,
-					3,
-					3,
-					3,
-					3,
-					3,
-					3,
-					2
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					3
 				],
 				"standard" : "23"
 			},
@@ -376,11 +376,11 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "boost_atomic::@9bd428892d004da19406"
+			"id" : "boost_optional::@a76016fda4acd1107840"
 		},
 		{
 			"backtrace" : 3,
-			"id" : "boost_optional::@a76016fda4acd1107840"
+			"id" : "boost_atomic::@9bd428892d004da19406"
 		}
 	],
 	"id" : "boost_filesystem::@e07629d57e311bf56451",

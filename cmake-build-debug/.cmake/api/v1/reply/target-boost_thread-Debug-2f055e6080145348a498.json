@@ -369,10 +369,6 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "boost_atomic::@9bd428892d004da19406"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "boost_chrono::@ba2fa923337ba8da527c"
 		},
 		{
@@ -386,6 +382,10 @@
 		{
 			"backtrace" : 2,
 			"id" : "boost_optional::@a76016fda4acd1107840"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_atomic::@9bd428892d004da19406"
 		}
 	],
 	"id" : "boost_thread::@acde8bb2e11c9adb3f24",

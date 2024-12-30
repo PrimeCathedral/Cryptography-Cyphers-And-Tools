@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "external/boost/libs/contract/libboost_contract.a"
+			"path" : "external/boost/libs/type_erasure/libboost_type_erasure.a"
 		}
 	],
 	"backtrace" : 1,
@@ -19,7 +19,7 @@
 		],
 		"files" : 
 		[
-			"external/boost/libs/contract/CMakeLists.txt",
+			"external/boost/libs/type_erasure/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -42,13 +42,13 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 37,
+				"line" : 36,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 46,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
@@ -110,14 +110,6 @@
 					"define" : "BOOST_CONTAINER_STATIC_LINK"
 				},
 				{
-					"backtrace" : 3,
-					"define" : "BOOST_CONTRACT_NO_LIB"
-				},
-				{
-					"backtrace" : 4,
-					"define" : "BOOST_CONTRACT_STATIC_LINK"
-				},
-				{
 					"backtrace" : 2,
 					"define" : "BOOST_DATE_TIME_NO_LIB"
 				},
@@ -136,6 +128,14 @@
 				{
 					"backtrace" : 2,
 					"define" : "BOOST_THREAD_USE_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "BOOST_TYPE_ERASURE_NO_LIB"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "BOOST_TYPE_ERASURE_STATIC_LINK"
 				}
 			],
 			"includes" : 
@@ -150,19 +150,7 @@
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/contract/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/any/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_erasure/include"
 				},
 				{
 					"backtrace" : 2,
@@ -170,7 +158,23 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_index/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/config/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/core/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_assert/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/throw_exception/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/fusion/include"
 				},
 				{
 					"backtrace" : 2,
@@ -186,38 +190,6 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/core/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/static_assert/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/exception/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/smart_ptr/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tuple/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_traits/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/bind/include"
-				},
-				{
-					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function_types/include"
 				},
 				{
@@ -227,6 +199,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/preprocessor/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/type_traits/include"
 				},
 				{
 					"backtrace" : 2,
@@ -246,7 +222,43 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/tuple/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/typeof/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/functional/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/function/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/bind/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/iterator/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/concept_check/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/optional/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/smart_ptr/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/vmd/include"
 				},
 				{
 					"backtrace" : 2,
@@ -286,14 +298,6 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/typeof/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/concept_check/include"
-				},
-				{
-					"backtrace" : 2,
 					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/container/include"
 				},
 				{
@@ -314,15 +318,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/iterator/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/fusion/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/functional/include"
+					"path" : "/Users/jimmy/CLionProjects/Crypto/external/boost/libs/exception/include"
 				},
 				{
 					"backtrace" : 2,
@@ -376,10 +372,6 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "boost_atomic::@9bd428892d004da19406"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "boost_chrono::@ba2fa923337ba8da527c"
 		},
 		{
@@ -397,15 +389,19 @@
 		{
 			"backtrace" : 2,
 			"id" : "boost_thread::@acde8bb2e11c9adb3f24"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_atomic::@9bd428892d004da19406"
 		}
 	],
-	"id" : "boost_contract::@4ba127efa9adbf2e40b1",
-	"name" : "boost_contract",
-	"nameOnDisk" : "libboost_contract.a",
+	"id" : "boost_type_erasure::@bfebafa5d56c239cda13",
+	"name" : "boost_type_erasure",
+	"nameOnDisk" : "libboost_type_erasure.a",
 	"paths" : 
 	{
-		"build" : "external/boost/libs/contract",
-		"source" : "external/boost/libs/contract"
+		"build" : "external/boost/libs/type_erasure",
+		"source" : "external/boost/libs/type_erasure"
 	},
 	"sourceGroups" : 
 	[
@@ -422,7 +418,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "external/boost/libs/contract/src/contract.cpp",
+			"path" : "external/boost/libs/type_erasure/src/dynamic_binding.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -430,10 +430,6 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "boost_atomic::@9bd428892d004da19406"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "boost_chrono::@ba2fa923337ba8da527c"
 		},
 		{
@@ -451,6 +447,10 @@
 		{
 			"backtrace" : 2,
 			"id" : "boost_thread::@acde8bb2e11c9adb3f24"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "boost_atomic::@9bd428892d004da19406"
 		}
 	],
 	"id" : "boost_serialization::@dfd8c61321f7ff43aa38",
