@@ -28,16 +28,14 @@ add_library(Primes Utilities/Primes.cpp Utilities/Primes.h)
 
 # Link Google Test, Google Mock, and utilities library to the test executables
 target_link_libraries(Crypto Utilities ModularArithmetic Primes Boost::multiprecision Boost::integer)
-target_link_libraries(Primes Utilities ModularArithmetic        Boost::multiprecision)
-target_link_libraries(ModularArithmetic                         Boost::multiprecision)
-target_link_libraries(Utilities                                 Boost::multiprecision)
+target_link_libraries(Primes Utilities ModularArithmetic Boost::multiprecision)
+target_link_libraries(ModularArithmetic Boost::multiprecision)
+target_link_libraries(Utilities Boost::multiprecision)
 
 # Tests
-target_link_libraries(ModularArithmeticTest ModularArithmetic                                                   gtest gmock)
-target_link_libraries(UtilitiesTest                             Utilities Boost::multiprecision                 gtest gmock)
-target_link_libraries(PrimesTest Primes     ModularArithmetic   Utilities Boost::multiprecision Boost::integer  gtest gmock)
-
-
+target_link_libraries(ModularArithmeticTest ModularArithmetic gtest gmock)
+target_link_libraries(UtilitiesTest Utilities Boost::multiprecision gtest gmock)
+target_link_libraries(PrimesTest Primes ModularArithmetic Utilities Boost::multiprecision Boost::integer gtest gmock)
 
 # Add the tests to CMake's testing framework
 add_test(NAME ModularArithmeticTest COMMAND ModularArithmeticTest)

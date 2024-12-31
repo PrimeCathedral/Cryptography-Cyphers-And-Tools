@@ -3,7 +3,7 @@
 //
 
 #include "Primes.h"
-#include "./Utilities.h"
+#include "Utilities.h"
 
 // TODO remove these defines and find a proper way to do this
 #define MA Crypto::ModularArithmetic

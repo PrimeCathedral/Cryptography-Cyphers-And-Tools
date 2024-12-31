@@ -2,8 +2,8 @@
 // Created by Jimmy on 12/22/24.
 //
 
-#ifndef UTILITIES_H
-#define UTILITIES_H
+#ifndef MODULAR_ARITHMETIC_H
+#define MODULAR_ARITHMETIC_H
 
 #include <stdexcept>
 #include <boost/multiprecision/cpp_int.hpp>
@@ -23,4 +23,4 @@ class ModularArithmetic {
 
 } // Crypto
 
-#endif //UTILITIES_H
+#endif //MODULAR_ARITHMETIC_H

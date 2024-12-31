@@ -8,7 +8,7 @@
 #include <boost/multiprecision/cpp_int.hpp>
 #include <boost/random/random_number_generator.hpp>
 #include "ModularArithmetic.h"
-#include "./Utilities.h"
+#include "Utilities.h"
 
 class Primes {
 
