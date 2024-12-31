@@ -460,7 +460,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Crypto
+CMAKE_PROJECT_NAME:STATIC=Cryptography-Ciphers-And-Tools
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=1.15.2
@@ -550,6 +550,15 @@ Crypto_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Crypto_SOURCE_DIR:STATIC=/Users/jimmy/CLionProjects/Crypto
+
+//Value Computed by CMake
+Cryptography-Ciphers-And-Tools_BINARY_DIR:STATIC=/Users/jimmy/CLionProjects/Crypto/cmake-build-debug
+
+//Value Computed by CMake
+Cryptography-Ciphers-And-Tools_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Cryptography-Ciphers-And-Tools_SOURCE_DIR:STATIC=/Users/jimmy/CLionProjects/Crypto
 
 //Use Abseil and RE2. Requires Abseil and RE2 to be separately
 // added to the build.
