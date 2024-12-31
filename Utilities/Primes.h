@@ -6,7 +6,6 @@
 #define PRIMES_H
 #include <random>
 #include <boost/multiprecision/cpp_int.hpp>
-#include <boost/multiprecision/cpp_int.hpp>
 #include <boost/random/random_number_generator.hpp>
 
 class Primes {
@@ -14,6 +13,8 @@ class Primes {
 public:
     static bool FermatPrimalityTest(const boost::multiprecision::cpp_int& potential_prime);
     static bool FermatPrimalityTest(const boost::multiprecision::cpp_int& potential_prime, int times);
+    static bool MillerRabinPrimalityTest(const boost::multiprecision::cpp_int& potential_prime);
+    static bool MillerRabinPrimalityTest(const boost::multiprecision::cpp_int& potential_prime, int iterations);
 
 };
 

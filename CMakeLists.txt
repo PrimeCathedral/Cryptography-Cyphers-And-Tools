@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD 23)
 # Add the executables (target, source files)
 add_executable(ModularArithmeticTest tests/ModularArithmeticTest.cpp)
 add_executable(PrimesTest tests/PrimesTest.cpp)
+add_executable(UtilitiesTest tests/UtilitiesTest.cpp)
+
 
 # Enable testing
 enable_testing()
@@ -20,14 +22,18 @@ add_subdirectory(external/googletest)
 
 # Add your source files to a library
 add_library(ModularArithmetic Utilities/ModularArithmetic.cpp Utilities/ModularArithmetic.h)
+add_library(Utilities Utilities/Utilities.cpp Utilities/Utilities.h)
 add_library(Primes Utilities/Primes.cpp Utilities/Primes.h)
 
 # Link Google Test, Google Mock, and utilities library to the test executables
 target_link_libraries(ModularArithmetic Boost::multiprecision)
 target_link_libraries(ModularArithmeticTest ModularArithmetic gtest gmock)
 target_link_libraries(Primes ModularArithmetic Boost::multiprecision)
-target_link_libraries(PrimesTest Primes ModularArithmetic Boost::multiprecision Boost::integer gtest gmock)
+target_link_libraries(PrimesTest Primes ModularArithmetic Utilities Boost::multiprecision Boost::integer gtest gmock)
+target_link_libraries(Utilities Boost::multiprecision)
+target_link_libraries(UtilitiesTest Utilities Boost::multiprecision gtest gmock )
 
 # Add the tests to CMake's testing framework
 add_test(NAME ModularArithmeticTest COMMAND ModularArithmeticTest)
 add_test(NAME PrimesTest COMMAND PrimesTest)
+add_test(NAME UtilitiesTest COMMAND UtilitiesTest)

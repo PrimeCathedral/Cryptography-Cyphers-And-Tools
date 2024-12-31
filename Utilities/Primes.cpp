@@ -114,46 +114,60 @@ cpp_int FactorPowersOfTwo(const cpp_int& n) {
 
 
 bool Primes::MillerRabinPrimalityTest(const cpp_int& potential_prime, int iterations) {
+    if (potential_prime <= 1) return false;
+    if (potential_prime == 2) return true;
 
     // Input n has to be odd and n > 2
-    if (isEven(potential_prime) && potential_prime > 2) return false;
+    if (isEven(potential_prime) && potential_prime > 2) {
+        return false;
+    }
 
-    // Variables and containers used:
-    auto s {0};
-    auto s_copy {};
-    cpp_int d {potential_prime - 1};
-    cpp_int random_a {0};
-    cpp_int x, y;
+    // Initialize variables and RNG setup
+    auto s = 0;
+    auto s_copy = 0;
+    cpp_int d = potential_prime - 1;
+    cpp_int random_a = 0;
+    cpp_int x = 0, y = 0;
 
-    // Setup RNG
-    // TODO setup so dist is a global variable with upper limit being changed by each method as necessary
+    // Setup RNG (Random Number Generator)
+    // TODO: Make `dist` a global variable with an adjustable upper limit
     const boost::random::uniform_int_distribution<MP::cpp_int> dist(2, potential_prime - 2);
 
-    // Compute n - 1 = 2^s * d
+    // Decompose n - 1 as 2^s * d (find s and odd d)
     while (isEven(d)) {
         d >>= 1;
         s++;
     }
 
+    // Perform the Miller-Rabin test for the given number of iterations
     while (iterations--) {
-        // Generate a random number between [e, p - 2]
+        // Generate a random number in the range [2, potential_prime - 2]
         random_a = dist(gen);
 
-        // Compute a^d % n
+        // Compute x = random_a^d % potential_prime
         x = Crypto::ModularArithmetic::modularExponentiation(random_a, d, potential_prime);
 
+        // Check through repeated squaring
         s_copy = s;
-        // For each power of 2 (s)
-        while (s_copy) {
-            // y = x^2 % n
+        while (s_copy--) {
+            // Compute y = x^2 % potential_prime
             y = Crypto::ModularArithmetic::modularExponentiation(x, 2, potential_prime);
 
-            if (y == 1 && x != 1 && x != potential_prime - 1) return false;
+            // Check for nontrivial square roots of 1 modulo potential_prime
+            if (y == 1 && x != 1 && x != potential_prime - 1) {
+                return false; // Composite detected
+            }
 
+            // Update x for the next iteration
             x = y;
         }
-        if (y != 1) return false;
+
+        // If y != 1, the number is composite
+        if (y != 1) {
+            return false;
+        }
     }
 
+    // If all iterations pass, the number is probably prime
     return true;
 }

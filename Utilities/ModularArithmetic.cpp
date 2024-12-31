@@ -5,11 +5,6 @@
 #include "ModularArithmetic.h"
 
 #include <boost/multiprecision/cpp_int.hpp>
-#include <boost/multiprecision/cpp_int.hpp>
-#include <boost/multiprecision/cpp_int.hpp>
-#include <boost/multiprecision/cpp_int.hpp>
-#include <boost/multiprecision/cpp_int.hpp>
-#include <boost/multiprecision/cpp_int.hpp>
 
 namespace Crypto {
 
@@ -59,6 +54,9 @@ namespace Crypto {
      */
     cpp_int ModularArithmetic::modularMultiplicativeInverse(const cpp_int& base, const cpp_int& modulus) {
 
+        if (modulus == 0) throw std::runtime_error("Math error: division by Zero");
+        if (modulus == 1) return 0;
+
         cpp_int base_copy      {base};
         cpp_int modulus_copy   {modulus};
 
@@ -67,9 +65,6 @@ namespace Crypto {
 
         // Ensure the base is always positive
         if (isNegative(base_copy)) base_copy = -base_copy;
-
-        // Multiplicative inverse under modulus 1 does not exist
-        if (modulus == 1) throw std::runtime_error("Multiplicative Inverse under Modulo = 1 does not exist.");
 
         cpp_int x, y;
         cpp_int gcd {extendedGCD(base_copy, modulus_copy, x, y)};
@@ -95,7 +90,8 @@ namespace Crypto {
      */
     cpp_int ModularArithmetic::modularExponentiation(const cpp_int& base, const cpp_int& power, const cpp_int& mod) {
         // Edge cases
-        if (power == 0 && base == 0) throw std::runtime_error("Math Error: 0^0 is undefined.");
+        if (mod == 1) return 0;;
+        if (power == 0 && base == 0) return 1;;
         if (power == 0) return 1;
         if (power == -1) {
             return modularMultiplicativeInverse(base, mod);
@@ -132,29 +128,5 @@ namespace Crypto {
         return result;
     }
 
-    cpp_int binaryExponentiation(cpp_int base, cpp_int power) {
 
-        // Edge cases
-        if (base == 0 && power == 0) throw std::runtime_error("Math Error: 0^0 is undefined.");
-        if (base == 0) return 0;
-        if (power == 0) return 1;
-
-        // Initialize variables
-        cpp_int result {1};
-
-        // While power has bits to calculate
-        while (power > 0) {
-
-            // If the current bit is 1, multiply result by base
-            if (power & 1) result *= base;
-
-            // Regardless of value of bit, square the result
-            base *= base;
-
-            // Shift bits in power one to the right
-            power >>= 1;
-        }
-        return result;
-
-    }
 } // namespace Crypto
