@@ -4,8 +4,10 @@
 
 #ifndef PRIMES_H
 #define PRIMES_H
-
+#include <random>
 #include <boost/multiprecision/cpp_int.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/random/random_number_generator.hpp>
 
 class Primes {
 

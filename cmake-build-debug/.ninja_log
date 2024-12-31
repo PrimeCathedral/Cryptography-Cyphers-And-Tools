@@ -577,3 +577,12 @@
 22	72	1735619378612638052	/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/cmake.verify_globs	d5bafaa18cb1b14a
 106	1476	1735619378696094164	CMakeFiles/PrimesTest.dir/tests/PrimesTest.cpp.o	7d51b3bb710a386e
 1477	1591	1735619380066653043	PrimesTest	4f8e3629a1db1055
+20	72	1735619928413991489	/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/cmake.verify_globs	d5bafaa18cb1b14a
+118	1246	1735619928511134745	CMakeFiles/Primes.dir/Utilities/Primes.cpp.o	920fba79ac3e9f49
+1247	1326	1735619929640275717	libPrimes.a	2fe2fd8553575b2b
+1326	1463	1735619929719518699	PrimesTest	4f8e3629a1db1055
+25	89	1735620091538744913	/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/cmake.verify_globs	d5bafaa18cb1b14a
+147	1569	1735620091660935494	CMakeFiles/Primes.dir/Utilities/Primes.cpp.o	920fba79ac3e9f49
+1570	1604	1735620093083989736	libPrimes.a	2fe2fd8553575b2b
+148	1609	1735620091661378870	CMakeFiles/PrimesTest.dir/tests/PrimesTest.cpp.o	7d51b3bb710a386e
+1609	1738	1735620093122962538	PrimesTest	4f8e3629a1db1055
