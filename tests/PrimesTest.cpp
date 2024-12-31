@@ -13,7 +13,6 @@ TEST(FermatPrimalityTest, IdentifiesPrimes) {
     EXPECT_EQ(Primes::FermatPrimalityTest(7, 10), true);
     EXPECT_EQ(Primes::FermatPrimalityTest(11, 10), true);
     EXPECT_EQ(Primes::FermatPrimalityTest(13, 10), true);
-
     EXPECT_EQ(Primes::FermatPrimalityTest(15485837, 3), true);
     EXPECT_EQ(Primes::FermatPrimalityTest(15485843, 3), true);
     EXPECT_EQ(Primes::FermatPrimalityTest(15485849, 3), true);
@@ -36,9 +35,10 @@ TEST(FermatPrimalityTest, IdentifiesComposites) {
 }
 
 TEST(FermatPrimalityTest, AcceptsMersennePrimes) {
-    boost::multiprecision::cpp_int m{"170141183460469231731687303715884105727"};
+    cpp_int m{"170141183460469231731687303715884105727"};
     EXPECT_EQ(Primes::FermatPrimalityTest(m, 10), true);
-    // EXPECT_EQ(Primes::FermatPrimalityTest(Utilities::binaryExponentiation()), true);
+    cpp_int mersenne {Utilities::binaryExponentiation(2, 136279841) - 1};
+    // EXPECT_EQ(Primes::FermatPrimalityTest(mersenne, 50), true);
 }
 
 TEST(FermatPrimalityTest, RejectCarmichaelNumbers) {

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "external/boost/libs/numeric/odeint",
+		"source" : "external/boost/libs/numeric/odeint"
+	}
+}

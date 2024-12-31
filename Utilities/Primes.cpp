@@ -3,8 +3,7 @@
 //
 
 #include "Primes.h"
-
-#include "ModularArithmetic.h"
+#include "./Utilities.h"
 
 // TODO remove these defines and find a proper way to do this
 #define MA Crypto::ModularArithmetic
@@ -89,36 +88,23 @@ bool Primes::FermatPrimalityTest(const MP::cpp_int& potential_prime, int times) 
     return true;
 }
 
-bool isOdd(const cpp_int& number) {
-    // If the rightmost bit is one, it is odd
-    if (number & 1) return true;
-    return false;
-}
-
-bool isEven(const cpp_int& number) {
-    // If the rightmost bit is one, it is odd
-    if (number & 1) return false;
-    return true;
-}
-
 cpp_int FactorPowersOfTwo(const cpp_int& n) {
     auto s {0};
     auto d {n};
 
-    while (isEven(d)) {
+    while (Utilities::isEven(d)) {
         d >>= 1;
         s++;
     }
     return s;
 }
 
-
 bool Primes::MillerRabinPrimalityTest(const cpp_int& potential_prime, int iterations) {
     if (potential_prime <= 1) return false;
     if (potential_prime == 2) return true;
 
     // Input n has to be odd and n > 2
-    if (isEven(potential_prime) && potential_prime > 2) {
+    if (Utilities::isEven(potential_prime) && potential_prime > 2) {
         return false;
     }
 
@@ -134,7 +120,7 @@ bool Primes::MillerRabinPrimalityTest(const cpp_int& potential_prime, int iterat
     const boost::random::uniform_int_distribution<MP::cpp_int> dist(2, potential_prime - 2);
 
     // Decompose n - 1 as 2^s * d (find s and odd d)
-    while (isEven(d)) {
+    while (Utilities::isEven(d)) {
         d >>= 1;
         s++;
     }
