@@ -3,14 +3,14 @@ project(Cryptography-Ciphers-And-Tools)
 
 set(CMAKE_CXX_STANDARD 23)
 
-# Add the main Crypto executable (target, source files)
+# Add the executables (target, source files)
 add_executable(ModularArithmeticTest tests/ModularArithmeticTest.cpp)
 
 # Enable testing
 enable_testing()
 
 # Add directories
-include_directories(external/boost) # boost library
+#include_directories(external/boost) # boost library
 include_directories(external/googletest/googletest/include) # Gtest libraries
 
 # Add the Google Test submodule
@@ -22,9 +22,9 @@ add_library(ModularArithmetic Utilities/ModularArithmetic.cpp Utilities/ModularA
 
 # Link Google Test, Google Mock, and utilities library to the test executables
 target_link_libraries(ModularArithmetic Boost::multiprecision)
-target_link_libraries(ModularArithmeticTest ModularArithmetic gtest gmock Boost::multiprecision)
+target_link_libraries(ModularArithmeticTest ModularArithmetic gtest gmock)
 
 # Add the tests to CMake's testing framework
-add_test(NAME TestModularArithmetic COMMAND ModularArithmeticTest)
+add_test(NAME ModularArithmeticTest COMMAND ModularArithmeticTest)
 
 

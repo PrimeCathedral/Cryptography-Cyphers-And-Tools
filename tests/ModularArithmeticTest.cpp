@@ -76,54 +76,54 @@ TEST(TestModularExponentiation, PowerIsOne) {
 
 // Modular inverse: https://www.dcode.fr/modular-inverse
 
-TEST(TestModularInverse, ModularInverseExists) {
+TEST(TestModularMultiplicativeInverse, ModularInverseExists) {
     Crypto::ModularArithmetic ModularArithmetic{};
-    EXPECT_EQ(ModularArithmetic.modularInverse(3, 7), 5);
+    EXPECT_EQ(ModularArithmetic.modularMultiplicativeInverse(3, 7), 5);
 }
 
-TEST(TestModularInverse, ModularInverseDoesNotExist) {
+TEST(TestModularMultiplicativeInverse, ModularInverseDoesNotExist) {
     Crypto::ModularArithmetic ModularArithmetic{};
-    EXPECT_THROW(ModularArithmetic.modularInverse(4, 8), std::runtime_error);
+    EXPECT_THROW(ModularArithmetic.modularMultiplicativeInverse(4, 8), std::runtime_error);
 }
 
-TEST(TestModularInverse, LE20Digit) {
+TEST(TestModularMultiplicativeInverse, LE20Digit) {
     Crypto::ModularArithmetic ModularArithmetic{};
     cpp_int a {cpp_int("12345678901234567890")};
     cpp_int mod {cpp_int("98765432109876543211")};
-    EXPECT_EQ(ModularArithmetic.modularInverse(a, mod), cpp_int("94316753668893093070")); // Precomputed result
+    EXPECT_EQ(ModularArithmetic.modularMultiplicativeInverse(a, mod), cpp_int("94316753668893093070")); // Precomputed result
 }
 
-TEST(TestModularInverse, NegativeBase) {
+TEST(TestModularMultiplicativeInverse, NegativeBase) {
     Crypto::ModularArithmetic ModularArithmetic{};
 
-    EXPECT_EQ(ModularArithmetic.modularInverse(-5, 7), 3);
+    EXPECT_EQ(ModularArithmetic.modularMultiplicativeInverse(-5, 7), 3);
     // TODO add better testcases. Code handles this by swapping symbols
 }
 
-TEST(TestModularInverse, BaseIsOne) {
+TEST(TestModularMultiplicativeInverse, BaseIsOne) {
     Crypto::ModularArithmetic ModularArithmetic{};
 
-    EXPECT_EQ(ModularArithmetic.modularInverse(1, 13), 1);
+    EXPECT_EQ(ModularArithmetic.modularMultiplicativeInverse(1, 13), 1);
 }
 
-TEST(TestModularInverse, ModulusIsOne) {
+TEST(TestModularMultiplicativeInverse, ModulusIsOne) {
     Crypto::ModularArithmetic ModularArithmetic{};
 
     // Modular inverse does not exist when the modulus is 1
-    EXPECT_THROW(ModularArithmetic.modularInverse(5, 1), std::runtime_error);
+    EXPECT_THROW(ModularArithmetic.modularMultiplicativeInverse(5, 1), std::runtime_error);
 }
 
-TEST(TestModularInverse, NotCoprime) {
+TEST(TestModularMultiplicativeInverse, NotCoprime) {
     Crypto::ModularArithmetic ModularArithmetic{};
 
     // GCD is not 1
-    EXPECT_THROW(ModularArithmetic.modularInverse(12, 15), std::runtime_error);
+    EXPECT_THROW(ModularArithmetic.modularMultiplicativeInverse(12, 15), std::runtime_error);
 }
 
 // Extended Euclidean Algorithm: https://www.dcode.fr/gcd
 
 
-TEST(ExtendedGCD, BaseCase) {
+TEST(TestExtendedGCD, BaseCase) {
     cpp_int x, y;
     cpp_int base = 10, modulus = 0;
     cpp_int gcd = Crypto::ModularArithmetic::extendedGCD(base, modulus, x, y);
@@ -133,7 +133,7 @@ TEST(ExtendedGCD, BaseCase) {
     EXPECT_EQ(y, 0);     // y should be 0
 }
 
-TEST(ExtendedGCD, CoprimeNumbers) {
+TEST(TestExtendedGCD, CoprimeNumbers) {
     cpp_int x, y;
     cpp_int base = 17, modulus = 13;
     cpp_int gcd = Crypto::ModularArithmetic::extendedGCD(base, modulus, x, y);
@@ -142,7 +142,7 @@ TEST(ExtendedGCD, CoprimeNumbers) {
     EXPECT_EQ(17 * x + 13 * y, gcd);
 }
 
-TEST(ExtendedGCD, NonCoprimeNumbers) {
+TEST(TestExtendedGCD, NonCoprimeNumbers) {
     cpp_int x, y;
     cpp_int base = 12, modulus = 8;
     cpp_int gcd = Crypto::ModularArithmetic::extendedGCD(base, modulus, x, y);
@@ -151,7 +151,7 @@ TEST(ExtendedGCD, NonCoprimeNumbers) {
     EXPECT_EQ(12 * x + 8 * y, gcd);
 }
 
-TEST(ExtendedGCD, NegativeBase) {
+TEST(TestExtendedGCD, NegativeBase) {
     cpp_int x, y;
     cpp_int base = -3, modulus = 7;
     cpp_int gcd = Crypto::ModularArithmetic::extendedGCD(base, modulus, x, y);
@@ -160,7 +160,7 @@ TEST(ExtendedGCD, NegativeBase) {
     EXPECT_EQ(-3 * x + 7 * y, gcd);
 }
 
-TEST(ExtendedGCD, LE20Digit) {
+TEST(TestExtendedGCD, LE20Digit) {
 
     cpp_int x, y;
     cpp_int base    {"12345678901234567890"};

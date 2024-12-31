@@ -8,15 +8,16 @@
 
 namespace Crypto {
 
-    std::random_device rd;
-    std::mt19937 gen(rd());  // Mersenne Twister engine
-
-    int ModularArithmetic::random(const int min, const int max) {
-        std::uniform_int_distribution<> dis(min, max);
-        return dis(gen);
-    }
-
-    cpp_int ModularArithmetic::extendedGCD(cpp_int base, cpp_int modulus, cpp_int& x, cpp_int& y) {
+    /**
+     * Computes the Extended Euclidean Algorithm for the given inputs.
+     *
+     * @param base The first number (a).
+     * @param modulus The second number (b).
+     * @param x Output parameter representing the coefficient for base in the equation ax + by = gcd(a, b).
+     * @param y Output parameter representing the coefficient for modulus in the equation ax + by = gcd(a, b).
+     * @return The greatest common divisor (gcd) of base and modulus.
+     */
+    cpp_int ModularArithmetic::extendedGCD(cpp_int base, const cpp_int& modulus, cpp_int& x, cpp_int& y) {
         if (modulus == 0) {
             x = 1;
             y = 0;
@@ -32,22 +33,33 @@ namespace Crypto {
         return gcd;
     }
 
-    // This function is here purely to improve code readability
-    bool isNegative(cpp_int x) {
+    /**
+     * Checks if a given number is negative.
+     *
+     * @param x The number to check.
+     * @return True if the number is negative, false otherwise.
+     */
+    bool isNegative(const cpp_int &x) {
         if (x < 0) return true;
         return false;
     }
 
-    cpp_int ModularArithmetic::modularInverse(cpp_int base, cpp_int modulus) {
-
+    /**
+     * Computes the modular multiplicative inverse of a given base under a given modulus.
+     *
+     * @param base The number for which to compute the inverse.
+     * @param modulus The modulus under which the inverse is computed.
+     * @return The modular multiplicative inverse of base under modulus.
+     * @throws std::runtime_error If the modulus is 1 or if the inverse does not exist (gcd(base, modulus) != 1).
+     */
+    cpp_int ModularArithmetic::modularMultiplicativeInverse(cpp_int base, cpp_int modulus) {
         // Ensure the modulo is always positive before computing the inverse
         if (isNegative(modulus)) modulus = -modulus;
 
-        // Ensure the base is always positive (negatives do not exist in modulo)
-        // if (isNegative(base)) base = (base % modulus + modulus) % modulus;
+        // Ensure the base is always positive
         if (isNegative(base)) base = -base;
 
-        // Multiplicative inverse under 1 does not exist
+        // Multiplicative inverse under modulus 1 does not exist
         if (modulus == 1) throw std::runtime_error("Multiplicative Inverse under Modulo = 1 does not exist.");
 
         cpp_int x, y;
@@ -57,20 +69,27 @@ namespace Crypto {
             throw std::runtime_error("Modular inverse does not exist");
         }
 
-            // Calculate the inverse
+        // Calculate the inverse
         cpp_int result {(x % modulus + modulus) % modulus};
 
         return result;
     }
 
+    /**
+     * Performs modular exponentiation: computes (base^power) % mod.
+     *
+     * @param base The base of the exponentiation.
+     * @param power The exponent.
+     * @param mod The modulus.
+     * @return The result of (base^power) % mod.
+     * @throws std::runtime_error If power and base are both 0 (undefined) or if mod is invalid.
+     */
     cpp_int ModularArithmetic::modularExponentiation(const cpp_int& base, const cpp_int& power, const cpp_int& mod) {
-
-        // Edge cases 0 and 1
+        // Edge cases
         if (power == 0 && base == 0) throw std::runtime_error("Math Error: 0^0 is undefined.");
         if (power == 0) return 1;
         if (power == -1) {
-            return modularInverse(base, mod);
-            // TODO check if this is really what I want to return on powm(base, power, mod)
+            return modularMultiplicativeInverse(base, mod);
         }
         if (power == 1) return base % mod;
         if (base == 0)  return 0;
@@ -81,9 +100,6 @@ namespace Crypto {
         if (result == mod) return 1;
 
         // Find out how many bits the exponent has
-        // Leftmost bit is actually the INDEX of the most significant
-        // bit, basing at zero. So if power has 10 bits, leftmost will
-        // contain 9.
         std::size_t current_bit {msb(power)};
         constexpr std::size_t rightmost_bit {0};
 
@@ -93,7 +109,7 @@ namespace Crypto {
             result = (result * result) % mod;
 
             // If the current bit is 1
-            if (1 & (power >> (current_bit-1))) {
+            if (1 & (power >> (current_bit - 1))) {
                 // Multiply by base
                 result = (result * base) % mod;
             }
@@ -106,4 +122,30 @@ namespace Crypto {
         // Return the calculated value
         return result;
     }
-} //
+
+    cpp_int binaryExponentiation(cpp_int base, cpp_int power) {
+
+        // Edge cases
+        if (base == 0 && power == 0) throw std::runtime_error("Math Error: 0^0 is undefined.");
+        if (base == 0) return 0;
+        if (power == 0) return 1;
+
+        // Initialize variables
+        cpp_int result {1};
+
+        // While power has bits to calculate
+        while (power > 0) {
+
+            // If the current bit is 1, multiply result by base
+            if (power & 1) result *= base;
+
+            // Regardless of value of bit, square the result
+            base *= base;
+
+            // Shift bits in power one to the right
+            power >>= 1;
+        }
+        return result;
+
+    }
+} // namespace Crypto
