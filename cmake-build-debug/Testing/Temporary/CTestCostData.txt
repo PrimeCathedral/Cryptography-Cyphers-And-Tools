@@ -1,3 +1,0 @@
-PrimesTest 1 0.315762
-UtilitiesTest 2 0.00522238
----
