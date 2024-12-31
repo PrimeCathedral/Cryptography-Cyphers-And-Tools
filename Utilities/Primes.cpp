@@ -9,6 +9,8 @@
 #include <boost/random/random_number_generator.hpp>
 
 #include "ModularArithmetic.h"
+
+// TODO remove these defibnes and find a proper way to do this
 #define MA Crypto::ModularArithmetic
 #define MP boost::multiprecision
 
