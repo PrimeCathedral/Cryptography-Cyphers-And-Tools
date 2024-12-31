@@ -4,7 +4,12 @@
 
 #include "ModularArithmetic.h"
 
-#include <stdexcept>
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
 
 namespace Crypto {
 
@@ -52,18 +57,22 @@ namespace Crypto {
      * @return The modular multiplicative inverse of base under modulus.
      * @throws std::runtime_error If the modulus is 1 or if the inverse does not exist (gcd(base, modulus) != 1).
      */
-    cpp_int ModularArithmetic::modularMultiplicativeInverse(cpp_int base, cpp_int modulus) {
+    cpp_int ModularArithmetic::modularMultiplicativeInverse(const cpp_int& base, const cpp_int& modulus) {
+
+        cpp_int base_copy      {base};
+        cpp_int modulus_copy   {modulus};
+
         // Ensure the modulo is always positive before computing the inverse
-        if (isNegative(modulus)) modulus = -modulus;
+        if (isNegative(modulus_copy)) modulus_copy = -modulus_copy;
 
         // Ensure the base is always positive
-        if (isNegative(base)) base = -base;
+        if (isNegative(base_copy)) base_copy = -base_copy;
 
         // Multiplicative inverse under modulus 1 does not exist
         if (modulus == 1) throw std::runtime_error("Multiplicative Inverse under Modulo = 1 does not exist.");
 
         cpp_int x, y;
-        cpp_int gcd = extendedGCD(base, modulus, x, y);
+        cpp_int gcd {extendedGCD(base_copy, modulus_copy, x, y)};
 
         if (gcd != 1) {
             throw std::runtime_error("Modular inverse does not exist");

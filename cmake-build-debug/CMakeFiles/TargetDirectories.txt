@@ -1,5 +1,7 @@
 /Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/ModularArithmeticTest.dir
+/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/PrimesTest.dir
 /Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/ModularArithmetic.dir
+/Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/Primes.dir
 /Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/test.dir
 /Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/jimmy/CLionProjects/Crypto/cmake-build-debug/CMakeFiles/rebuild_cache.dir
