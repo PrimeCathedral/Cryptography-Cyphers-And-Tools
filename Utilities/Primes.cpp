@@ -6,8 +6,9 @@
 #include "Utilities.h"
 
 // TODO remove these defines and find a proper way to do this
+using cpp_int = boost::multiprecision::cpp_int;
+
 #define MA Crypto::ModularArithmetic
-#define MP boost::multiprecision
 
 std::random_device rd;  // a seed source for the random number engine
 std::mt19937 gen(rd()); // mersenne_twister_engine seeded with rd()
@@ -23,12 +24,14 @@ std::mt19937 gen(rd()); // mersenne_twister_engine seeded with rd()
  * @param potential_prime The number to test for primality.
  * @return True if the number is likely prime, false otherwise.
  */
-bool Primes::FermatPrimalityTest(const MP::cpp_int& potential_prime) {
+bool Primes::FermatPrimalityTest(const cpp_int& potential_prime) {
+
+    // TODO: change this to run k runs of primality test depending on candidate digit count
     if (potential_prime == 1) return false;
     if (potential_prime <= 3) return true;
 
     // Setup for Random Number Generator (RNG)
-    const boost::random::uniform_int_distribution<MP::cpp_int> dist(2, potential_prime - 2);
+    const boost::random::uniform_int_distribution<cpp_int> dist(2, potential_prime - 2);
 
     // Generate a random cpp_int between [2, prime - 2] that has uniform distribution
     const cpp_int rand = dist(gen);
@@ -59,14 +62,14 @@ bool Primes::FermatPrimalityTest(const MP::cpp_int& potential_prime) {
  * @param times The number of iterations to run the test.
  * @return True if the number is likely prime, false otherwise.
  */
-bool Primes::FermatPrimalityTest(const MP::cpp_int& potential_prime, int times) {
+bool Primes::FermatPrimalityTest(const cpp_int& potential_prime, int times) {
     if (potential_prime == 1) return false;
     if (potential_prime <= 3) return true;
 
     // Setup for Random Number Generator (RNG)
     cpp_int rand {};
     const cpp_int limit {potential_prime - 2};
-    const boost::random::uniform_int_distribution<MP::cpp_int> dist(2, limit);
+    const boost::random::uniform_int_distribution<cpp_int> dist(2, limit);
 
     while (times > 0) {
 
@@ -117,7 +120,7 @@ bool Primes::MillerRabinPrimalityTest(const cpp_int& potential_prime, int iterat
 
     // Setup RNG (Random Number Generator)
     // TODO: Make `dist` a global variable with an adjustable upper limit
-    const boost::random::uniform_int_distribution<MP::cpp_int> dist(2, potential_prime - 2);
+    const boost::random::uniform_int_distribution<cpp_int> dist(2, potential_prime - 2);
 
     // Decompose n - 1 as 2^s * d (find s and odd d)
     while (Utilities::isEven(d)) {
