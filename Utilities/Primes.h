@@ -19,7 +19,7 @@ public:
     static bool FermatPrimalityTest(const cpp_int& potential_prime, int times);
     static bool MillerRabinPrimalityTest(const cpp_int& candidate);
     static bool MillerRabinPrimalityTest(const cpp_int& potential_prime, int iterations);
-
+    // TODO: define expanded versions of Primality Tests to work with custom iterations
 };
 
 

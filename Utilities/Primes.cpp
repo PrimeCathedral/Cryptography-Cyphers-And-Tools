@@ -3,7 +3,6 @@
 //
 
 #include "Primes.h"
-#include "Utilities.h"
 
 // TODO: Find a better way to manage this macro
 #define MA Crypto::ModularArithmetic
@@ -144,16 +143,22 @@ bool Primes::MillerRabinPrimalityTest(const cpp_int& candidate) {
  * @throws std::runtime_error If numBits < 2 (primes cannot be smaller than 2 bits).
  */
 cpp_int Primes::generatePrime(const int& numBits) {
-
     // TODO: Fix bug that prevents generating primes of bit size = 2
 
-    if (numBits < 3) {
-        throw std::runtime_error("Number of bits must be at least 3.");
+    if (numBits < 2) {
+        throw std::runtime_error("Number of bits must be at least 2.");
+    }
+    if (numBits == 2) {
+        return 2;
     }
 
     // Calculate bit boundaries
-    const cpp_int lower_bound = cpp_int(1) << (numBits - 1); // 2^(numBits - 1)
-    const cpp_int upper_bound = (cpp_int(1) << numBits) - 1; // 2^numBits - 1
+    const cpp_int lower_bound {Utilities::binaryExponentiation(2, numBits - 1)}; // 2^(numBits - 1)
+    const cpp_int upper_bound {Utilities::binaryExponentiation(2, numBits) - 1}; // 2^numBits - 1
+#ifdef DEBUG_MACRO
+    std::cout << "lower bound: " << lower_bound << ""\nUpper bound: " << upper_bound << "\n";"
+#endif
+
     const boost::random::uniform_int_distribution<cpp_int> dist(lower_bound, upper_bound);
 
     // Generate candidate primes
