@@ -37,6 +37,11 @@ target_link_libraries(ModularArithmeticTest ModularArithmetic gtest gmock)
 target_link_libraries(UtilitiesTest Utilities Boost::multiprecision gtest gmock)
 target_link_libraries(PrimesTest Primes ModularArithmetic Utilities Boost::multiprecision Boost::integer gtest gmock)
 
+# Compile definitions
+target_compile_definitions(PrimesTest PRIVATE $<$<CONFIG:Debug>:DEBUG_MACRO>)
+target_compile_definitions(UtilitiesTest PRIVATE $<$<CONFIG:Debug>:DEBUG_MACRO>)
+target_compile_definitions(ModularArithmeticTest PRIVATE $<$<CONFIG:Debug>:DEBUG_MACRO>)
+
 # Add the tests to CMake's testing framework
 add_test(NAME ModularArithmeticTest COMMAND ModularArithmeticTest)
 add_test(NAME PrimesTest COMMAND PrimesTest)

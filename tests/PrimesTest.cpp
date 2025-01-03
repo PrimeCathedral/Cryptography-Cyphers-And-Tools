@@ -148,5 +148,6 @@ TEST(GeneratePrimesTest, RejectInvalidBitLengths) {
 // Main entry point for the test runner
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
+
     return RUN_ALL_TESTS();
 }

@@ -68,7 +68,7 @@ bool Utilities::isNegative(const cpp_int& number) {
  */
 cpp_int Utilities::binaryExponentiation(const cpp_int& base, const cpp_int& power) {
     // Edge cases
-    // TODO define negative exponent functionality. Might have to refer to cpp_rational
+    // TODO define negative exponent functionality. Might have to refer to cpp_rational because fractions and cpp_int is unsigned(maybe)
     if (power < 0) throw std::runtime_error("Negative exponent functionality not yet defined.");
     if (base == 0 && power == 0) return 1; // Convention: 0^0 is 1
     if (base == 0) return 0;               // 0^x = 0 for x > 0
@@ -90,9 +90,6 @@ cpp_int Utilities::binaryExponentiation(const cpp_int& base, const cpp_int& powe
         // Shift bits in power one to the right
         power_copy >>= 1;
     }
-
-    // Adjust result for a negative base when the power is odd
-    if (isNegative(base) && isOdd(power)) return -result;
 
     return result;
 }

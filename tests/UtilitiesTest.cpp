@@ -20,7 +20,13 @@ TEST(TestBinaryExponentiation, NegativeBasePositiveExponent) {
     // Negative base with positive exponent
     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-2), 3), -8);       // (-2)^3 = -8
     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-2), 4), 16);       // (-2)^4 = 16
-    EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-1), 0), 1);        // (-1)^0 = 1
+    EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-1), 0), 1);
+    EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-2), 3), -8);     // (-2)^3 = -8
+    EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-2), 4), 16);     // (-2)^4 = 16
+    EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-5), 2), 25);     // (-5)^2 = 25
+    EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-5), 3), -125);   // (-5)^3 = -125
+    EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-1), 1000), 1);   // (-1)^1000 = 1
+    EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-1), 1001), -1);  // (-1)^1001 = -1// (-1)^0 = 1
 }
 
 TEST(TestBinaryExponentiation, PositiveBaseZeroExponent) {

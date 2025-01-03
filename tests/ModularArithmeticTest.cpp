@@ -14,8 +14,8 @@ TEST(TestModularExponentiation, PowersOfTwo) {
 TEST(TestModularExponentiation, ZeroToTheZero) {
     Crypto::ModularArithmetic ModularArithmetic{};
 
-    // 0^0
-    ASSERT_THROW(ModularArithmetic.modularExponentiation(0,0,2), std::runtime_error);
+    // 0^0 = 1 by programming convention
+    EXPECT_EQ(ModularArithmetic.modularExponentiation(0,0,2), 1);
 }
 
 TEST(TestModularExponentiation, PowerIsZero) {
@@ -119,7 +119,7 @@ TEST(TestModularMultiplicativeInverse, ModulusIsOne) {
     Crypto::ModularArithmetic ModularArithmetic{};
 
     // Modular inverse does not exist when the modulus is 1
-    EXPECT_THROW(ModularArithmetic.modularMultiplicativeInverse(5, 1), std::runtime_error);
+    EXPECT_EQ(ModularArithmetic.modularMultiplicativeInverse(5, 1), 0);
 }
 
 TEST(TestModularMultiplicativeInverse, NotCoprime) {
