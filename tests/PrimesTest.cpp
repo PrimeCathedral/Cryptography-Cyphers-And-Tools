@@ -119,6 +119,14 @@ TEST(GeneratePrimesTest, MediumPrimes) {
     EXPECT_TRUE(Primes::MillerRabinPrimalityTest(prime)); // Verify primality
 }
 
+TEST(GeneratePrimesTest, BoundaryCases) {
+    // Smallest valid prime (2 bits)
+    cpp_int prime = Primes::generatePrime(2);
+    EXPECT_GE(prime, 2);  // Lower bound for 2 bits
+    EXPECT_LT(prime, 4);  // Upper bound for 2 bits
+    EXPECT_TRUE(Primes::MillerRabinPrimalityTest(prime)); // Verify primality
+}
+
 TEST(GeneratePrimesTest, LargePrimes) {
     // Generate large primes (512 bits)
     cpp_int prime = Primes::generatePrime(512);
