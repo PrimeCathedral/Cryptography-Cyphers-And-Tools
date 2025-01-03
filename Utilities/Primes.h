@@ -10,12 +10,14 @@
 #include "ModularArithmetic.h"
 #include "Utilities.h"
 
-class Primes {
+#define ITERATIONS 40
 
+class Primes {
 public:
-    static bool FermatPrimalityTest(const cpp_int& potential_prime);
+    static cpp_int generatePrime(const int& numBits);
+    static bool FermatPrimalityTest(const cpp_int& candidate);
     static bool FermatPrimalityTest(const cpp_int& potential_prime, int times);
-    static bool MillerRabinPrimalityTest(const cpp_int& potential_prime);
+    static bool MillerRabinPrimalityTest(const cpp_int& candidate);
     static bool MillerRabinPrimalityTest(const cpp_int& potential_prime, int iterations);
 
 };
