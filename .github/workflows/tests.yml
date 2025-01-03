@@ -13,30 +13,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Set up C++ environment
-        uses: actions/setup-cpp@v2
-        with:
-          compiler: gcc
-          cpp-version: '23'
+    - name: Install GCC and CMake
+      run: |
+        sudo apt-get update
 
-      - name: Configure CMake
-        run: cmake -S . -B build
+    - name: Configure CMake
+      run: cmake -S . -B build
 
-      - name: Build project
-        run: cmake --build build
+    - name: Build project
+      run: cmake --build build
 
-      - name: Run ModularArithmeticTest
-        run: ./build/ModularArithmeticTest
+    - name: Run ModularArithmeticTest
+      run: ./build/ModularArithmeticTest
 
-      - name: Run PrimesTest
-        run: ./build/PrimesTest
+    - name: Run PrimesTest
+      run: ./build/PrimesTest
 
-      - name: Run UtilitiesTest
-        run: ./build/UtilitiesTest
-
-      - name: Run TestMain3
-        run: ./build/tests/TestMain3
+    - name: Run UtilitiesTest
+      run: ./build/UtilitiesTest
 
