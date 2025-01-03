@@ -9,7 +9,6 @@ add_executable(ModularArithmeticTest tests/ModularArithmeticTest.cpp)
 add_executable(PrimesTest tests/PrimesTest.cpp)
 add_executable(UtilitiesTest tests/UtilitiesTest.cpp)
 
-
 # Enable testing
 enable_testing()
 

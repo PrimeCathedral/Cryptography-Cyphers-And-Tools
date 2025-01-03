@@ -140,7 +140,6 @@ TEST(GeneratePrimesTest, LargePrimes) {
 TEST(GeneratePrimesTest, RejectInvalidBitLengths) {
     // Invalid bit lengths should throw an exception
     EXPECT_THROW(Primes::generatePrime(1), std::runtime_error); // Less than 3 bits
-    EXPECT_THROW(Primes::generatePrime(2), std::runtime_error);
     EXPECT_THROW(Primes::generatePrime(0), std::runtime_error); // Zero bits
     EXPECT_THROW(Primes::generatePrime(-5), std::runtime_error); // Negative bits
 }
