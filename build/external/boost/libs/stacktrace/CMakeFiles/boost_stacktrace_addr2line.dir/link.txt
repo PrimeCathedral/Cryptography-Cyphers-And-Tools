@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libboost_stacktrace_addr2line.a CMakeFiles/boost_stacktrace_addr2line.dir/src/addr2line.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libboost_stacktrace_addr2line.a
