@@ -1,6 +1,0 @@
-PrimesTest 1 0
-ModularArithmeticTest 1 0.374262
-UtilitiesTest 0 0
----
-PrimesTest
-UtilitiesTest
