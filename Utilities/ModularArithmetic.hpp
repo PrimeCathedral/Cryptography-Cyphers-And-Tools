@@ -12,7 +12,8 @@
 namespace Crypto {
 
 class ModularArithmetic {
-    using cpp_int = boost::multiprecision::cpp_int;
+    private:
+        using cpp_int = boost::multiprecision::cpp_int;
     public:
         static cpp_int extendedGCD(cpp_int base, const cpp_int& modulus, cpp_int& x, cpp_int& y);
         static cpp_int modularMultiplicativeInverse(const cpp_int & base, const cpp_int & modulus);

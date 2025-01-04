@@ -2,7 +2,7 @@
 // Created by Jimmy on 12/31/24.
 //
 
-#include "Utilities.h"
+#include "Utilities.hpp"
 
 using cpp_int = boost::multiprecision::cpp_int;
 

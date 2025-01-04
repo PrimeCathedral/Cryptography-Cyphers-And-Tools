@@ -4,15 +4,17 @@
 
 #ifndef PRIMES_H
 #define PRIMES_H
+
 #include <random>
 #include <boost/multiprecision/cpp_int.hpp>
 #include <boost/random/random_number_generator.hpp>
-#include "ModularArithmetic.h"
-#include "Utilities.h"
+#include "ModularArithmetic.hpp"
+#include "Utilities.hpp"
 
 #define ITERATIONS 40
 
 class Primes {
+    using cpp_int = boost::multiprecision::cpp_int;
 public:
     static cpp_int generatePrime(const int& numBits);
     static bool FermatPrimalityTest(const cpp_int& candidate);

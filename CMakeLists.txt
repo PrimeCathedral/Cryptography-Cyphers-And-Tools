@@ -22,9 +22,9 @@ add_subdirectory(external/boost)
 add_subdirectory(external/googletest)
 
 # Add your source files to a library
-add_library(ModularArithmetic Utilities/ModularArithmetic.cpp Utilities/ModularArithmetic.h)
-add_library(Utilities Utilities/Utilities.cpp Utilities/Utilities.h)
-add_library(Primes Utilities/Primes.cpp Utilities/Primes.h)
+add_library(ModularArithmetic Utilities/ModularArithmetic.cpp Utilities/ModularArithmetic.hpp)
+add_library(Utilities Utilities/Utilities.cpp Utilities/Utilities.hpp)
+add_library(Primes Utilities/Primes.cpp Utilities/Primes.hpp)
 add_library(IntegerFactorization Utilities/IntegerFactorization.cpp Utilities/IntegerFactorization.hpp)
 
 # Link Google Test, Google Mock, and utilities library to the test executables

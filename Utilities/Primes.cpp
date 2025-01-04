@@ -2,10 +2,12 @@
 // Created by Jimmy on 12/30/24.
 //
 
-#include "Primes.h"
+#include "Primes.hpp"
 
 // TODO: Find a better way to manage this macro
 #define MA Crypto::ModularArithmetic
+
+using cpp_int = boost::multiprecision::cpp_int;
 
 // Random number generator setup
 std::random_device rd;  // Seed source for the random number engine

@@ -2,9 +2,8 @@
 // Created by Jimmy on 12/22/24.
 //
 
-#include "ModularArithmetic.h"
+#include "ModularArithmetic.hpp"
 
-#include <boost/multiprecision/cpp_int.hpp>
 using cpp_int = boost::multiprecision::cpp_int;
 namespace Crypto {
 
