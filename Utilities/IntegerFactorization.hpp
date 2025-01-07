@@ -11,8 +11,8 @@
 class IntegerFactorization {
     using cpp_int = boost::multiprecision::cpp_int;
 public:
-    static std::vector<cpp_int>& TrialDivision(const cpp_int& number);
-    static std::vector<cpp_int> WheelFactorization(const cpp_int& number);
+    static void TrialDivision(const cpp_int& number, std::vector<cpp_int>& factors);
+    static void WheelFactorization(const cpp_int& number, std::vector<cpp_int>& factors);
 };
 
 

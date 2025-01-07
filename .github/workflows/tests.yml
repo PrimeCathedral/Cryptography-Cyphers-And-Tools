@@ -38,3 +38,6 @@ jobs:
     - name: Run UtilitiesTest
       run: ./build/UtilitiesTest
 
+    - name: Run IntegerFactorizationTest
+      run: ./build/IntegerFactorizationTest
+

@@ -32,13 +32,13 @@ target_link_libraries(Crypto Utilities ModularArithmetic Primes Boost::multiprec
 target_link_libraries(Primes Utilities ModularArithmetic Boost::multiprecision)
 target_link_libraries(ModularArithmetic Boost::multiprecision)
 target_link_libraries(Utilities Boost::multiprecision)
-target_link_libraries(IntegerFactorization Boost::multiprecision)
+target_link_libraries(IntegerFactorization Utilities Boost::multiprecision)
 
 # Tests
 target_link_libraries(ModularArithmeticTest ModularArithmetic gtest gmock)
 target_link_libraries(UtilitiesTest Utilities Boost::multiprecision gtest gmock)
 target_link_libraries(PrimesTest Primes ModularArithmetic Utilities Boost::multiprecision Boost::integer gtest gmock)
-target_link_libraries(IntegerFactorizationTest IntegerFactorization Boost::multiprecision gtest gmock)
+target_link_libraries(IntegerFactorizationTest IntegerFactorization  Utilities Boost::multiprecision gtest gmock)
 
 # Compile definitions
 target_compile_definitions(PrimesTest PRIVATE $<$<CONFIG:Debug>:DEBUG_MACRO>)

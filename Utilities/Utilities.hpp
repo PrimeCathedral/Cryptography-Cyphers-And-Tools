@@ -17,6 +17,8 @@ public:
     static bool isEven(const cpp_int& number);
     static bool isPositive(const cpp_int& number);
     static bool isNegative(const cpp_int& number);
+    static bool isNotPositive(const cpp_int& number);
+    static bool isNotNegative(const cpp_int& number);
     static cpp_int binaryExponentiation(const cpp_int& base, const cpp_int& power);
 
 };

@@ -56,6 +56,14 @@ bool Utilities::isNegative(const cpp_int& number) {
     return (number < 0);
 }
 
+bool Utilities::isNotPositive(const cpp_int& number) {
+    return (number <= 0);
+}
+
+bool Utilities::isNotNegative(const cpp_int& number) {
+    return (number >= 0);
+}
+
 /**
  * Computes the result of raising a base to a power using binary exponentiation.
  *
