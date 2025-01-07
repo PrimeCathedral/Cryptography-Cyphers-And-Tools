@@ -2,7 +2,9 @@
 // Created by Jimmy on 12/22/24.
 //
 #include <gtest/gtest.h>
-#include "../Utilities/ModularArithmetic.h"
+#include "../Utilities/ModularArithmetic.hpp"
+
+using cpp_int = boost::multiprecision::cpp_int;
 
 TEST(TestModularExponentiation, PowersOfTwo) {
     Crypto::ModularArithmetic ModularArithmetic{};

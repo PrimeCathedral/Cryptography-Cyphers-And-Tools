@@ -4,8 +4,9 @@
 
 
 #include <gtest/gtest.h>
-#include "../Utilities/Utilities.h"
+#include "../Utilities/Utilities.hpp"
 
+using cpp_int = boost::multiprecision::cpp_int;
 
 // Binary Exponentiation: https://www.dcode.fr/exponentiation-calculation
 

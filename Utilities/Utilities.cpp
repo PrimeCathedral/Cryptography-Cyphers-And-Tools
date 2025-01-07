@@ -2,7 +2,7 @@
 // Created by Jimmy on 12/31/24.
 //
 
-#include "Utilities.h"
+#include "Utilities.hpp"
 
 using cpp_int = boost::multiprecision::cpp_int;
 
@@ -54,6 +54,14 @@ bool Utilities::isPositive(const cpp_int& number) {
  */
 bool Utilities::isNegative(const cpp_int& number) {
     return (number < 0);
+}
+
+bool Utilities::isNotPositive(const cpp_int& number) {
+    return (number <= 0);
+}
+
+bool Utilities::isNotNegative(const cpp_int& number) {
+    return (number >= 0);
 }
 
 /**

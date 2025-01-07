@@ -3,8 +3,10 @@
 //
 
 #include <gtest/gtest.h>
-#include "../Utilities/Primes.h"
-#include "../Utilities/Utilities.h"
+#include "../Utilities/Primes.hpp"
+#include "../Utilities/Utilities.hpp"
+
+using cpp_int = boost::multiprecision::cpp_int;
 
 // Fermat Primality Test: Tests for identifying prime numbers
 TEST(FermatPrimalityTest, IdentifiesPrimes) {
