@@ -81,3 +81,27 @@ void IntegerFactorization::WheelFactorization(const cpp_int& number, std::vector
     if (Utilities::isNegative(number)) factors.emplace_back(-1);
 }
 
+
+std::vector<bool> IntegerFactorization::SieveOfEratosthenes(const cpp_int& n) {
+    // Create a vector 'is_prime' to track primality of numbers up to n.
+    // Initialize all elements to true.
+    std::vector<bool> is_prime((n + 1).convert_to<long long>(), true);
+
+    // Set 0 and 1 as not prime (false)
+    is_prime[0] = false;
+    is_prime[1] = false;
+
+    // Iterate through all numbers from 2 to n
+    for (long long i {2}; i <= n; ++i) {
+        // If i is prime and i^2 is less than or equal to n
+        if (is_prime[i] && i * i <= n) {
+            // Mark all multiples of i as not prime
+            for (long long j {i * i}; j <= n; j += i) {
+                is_prime[j] = false;
+            }
+        }
+    }
+
+    // Return the vector with the primality status of all numbers up to n
+    return is_prime;
+}
