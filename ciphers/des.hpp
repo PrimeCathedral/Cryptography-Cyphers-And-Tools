@@ -20,14 +20,14 @@ public:
 
 private:
     // Constants (e.g., IP, FP, E, S-boxes, P, PC-1, PC-2)
-    static const int IP[64];
-    static const int FP[64];
-    static const int E[48];
-    static const int P[32];
-    static const int PC1[56];
-    static const int PC2[48];
-    static const int S_BOXES[8][4][16];
-    static const int SHIFT_SCHEDULE[16];
+    static const std::vector<int> IP;
+    static const std::vector<int> FP;
+    static const std::vector<int> E;
+    static const std::vector<int> P;
+    static const std::vector<int> PC1;
+    static const std::vector<int> PC2;
+    static const std::vector<const std::vector<const std::vector<int>>> S_BOXES;
+    static const std::vector<int> SHIFT_SCHEDULE;
 
     // Member variables
     uint64_t key;                          // Original 64-bit key
