@@ -11,14 +11,14 @@ using std::vector;
 
     // Initial Permutation Box (IP)
     const vector<int> DataEncryptionStandard::IP {
-        58,	50,	42,	34,	26,	18,	10,	2,
-        60,	52,	44,	36,	28,	20,	12,	4,
-        62,	54,	46,	38,	30,	22,	14,	6,
-        64,	56,	48,	40,	32,	24,	16,	8,
-        57,	49,	41,	33,	25,	17,	9,	1,
-        59,	51,	43,	35,	27,	19,	11,	3,
-        61,	53,	45,	37,	29,	21,	13,	5,
-        63,	55,	47,	39,	31,	23,	15,	7
+        58,	50,	42,	34,	26,	18,	10,	2,  // 7
+        60,	52,	44,	36,	28,	20,	12,	4,  // 15
+        62,	54,	46,	38,	30,	22,	14,	6,  // 23
+        64,	56,	48,	40,	32,	24,	16,	8,  // 31
+        57,	49,	41,	33,	25,	17,	9,	1,  // 39
+        59,	51,	43,	35,	27,	19,	11,	3,  // 47
+        61,	53,	45,	37,	29,	21,	13,	5,  // 55
+        63,	55,	47,	39,	31,	23,	15,	7   // 63
     };
 
     // Final Permutation (IP ^-1)
@@ -142,30 +142,73 @@ using std::vector;
 // SHIFT_SCHEDULE[i] returns the number of bits to shift in round i
 const vector<int> DataEncryptionStandard::SHIFT_SCHEDULE {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
 
-bool operator()(const bitset<56>& set, const int index) {
-    return set[set.size() - index];
-}
+DataEncryptionStandard::DES::DES(const uint64_t key) : key(key) {};
 
-bitset<56> initialPermutation(const uint64_t input){
+// TODO: Check if all permutations can be resolved by defining one templated function that takes the box as argument
+bitset<64> DataEncryptionStandard::DES::initialPermutation(const uint64_t& input){
 
     // Make the code a bit more readable
     using DataEncryptionStandard::IP;
 
     bitset<64> plain_text(input);
-    bitset<56> permuted_text(0);
+
+    // Permuted text is all zeros
+    bitset<64> permuted_text;
 
     const auto boxSize {IP.size()};
     constexpr auto leftmostBit {63};
 
     // Fill it up
-    for (int i {0}; i < 64; i++) {
+    for (int i {0}; i < boxSize; i++) {
         permuted_text[i] = plain_text[IP[leftmostBit-i]-1];
     }
 
     // Return the permuted text
     return permuted_text;
 }
+// template<size_t Output, size_t Input>
+// bitset<Output> boxPermute(const vector<int>& Box, const bitset<Input>& original) {
+//     bitset<Output> permuted_text;
+//
+//     const auto boxSize {Box.size()};
+//
+//     // Iterate through the given box
+//     for (int box_iterator {0}, currentBit {Output - 1}; box_iterator < boxSize; box_iterator++, --currentBit) {
+//         auto bitFromOriginal {Box[box_iterator]-1};
+//         permuted_text.set(currentBit, original[bitFromOriginal]);
+//     }
+//
+//     return permuted_text;
+// }
 
+namespace DataEncryptionStandard{
+template <size_t Output, size_t Input>
+bitset<Output> boxPermute(const vector<int>& Box, const bitset<Input>& original) {
+    bitset<Output> permuted_text;
+
+    // Ensure the size of the Box matches the Output size
+    if (Box.size() != Output) {
+        throw std::invalid_argument("Box size must match Output size.");
+    }
+
+    // Perform the permutation
+    for (size_t i = 0; i < Box.size(); ++i) {
+        int bitFromOriginal = Box[i] - 1; // Convert 1-based index to 0-based
+
+        // Validate the index
+        if (bitFromOriginal < 0 || bitFromOriginal >= Input) {
+            throw std::out_of_range("Invalid index in Box for the given Input size.");
+        }
+
+        // Set the corresponding bit in permuted_text
+        // permuted_text.set(Output - 1 - i, original[bitFromOriginal]); // Fill from MSB to LSB
+        permuted_text.set(i, original[bitFromOriginal]);
+
+    }
+
+    return permuted_text;
+}
+}
 // void DataEncryptionStandard::DES::generateRoundKeys() {
 //     // 64-bit key
 //     bitset<64> key(this->key);
