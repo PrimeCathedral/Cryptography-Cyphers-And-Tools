@@ -4,7 +4,7 @@
 
 #include "des.hpp"
 
-    // Initial permutation (IP)
+    // Initial Permutation Box (IP)
     const std::vector<int> DataEncryptionStandard::IP {
         58,	50,	42,	34,	26,	18,	10,	2,
         60,	52,	44,	36,	28,	20,	12,	4,
@@ -17,7 +17,7 @@
     };
 
     // Final Permutation (IP ^-1)
-    const std::vector<int> FP {
+    const std::vector<int> DataEncryptionStandard::FP {
         40,	8, 48, 16, 56, 24, 64, 32,
         39,	7, 47, 15, 55, 23, 63, 31,
         38,	6, 46, 14, 54, 22, 62, 30,
@@ -29,7 +29,7 @@
     };
 
     // Expansion Function Box (E). Expands from 32 bits to 48 bits
-    const std::vector<int> E {
+    const std::vector<int> DataEncryptionStandard::E {
         32,	1,	2,	3,	4,	5,
         4,	5,	6,	7,	8,	9,
         8,	9,	10,	11,	12,	13,
@@ -41,7 +41,7 @@
     };
 
     // Permutation Box (P)
-    const std::vector<int> P {
+    const std::vector<int> DataEncryptionStandard::P {
         16,	07,	20,	21,	29,	12,	28,	17,
         01,	15,	23,	26,	05,	18,	31,	10,
         02,	 8,	24,	14,	32,	27,	03,	 9,
@@ -49,7 +49,7 @@
     };
 
     // Permuted choice 1 box (PC-1)
-    const std::vector<int> PC1 {
+    const std::vector<int> DataEncryptionStandard::PC1 {
         57,	49,	41,	33,	25,	17,	9,
         01,	58,	50,	42,	34,	26,	18,
         10,	02,	59,	51,	43,	35,	27,
@@ -61,7 +61,7 @@
     };
 
     // Permuted choice 2 box (PC-2)
-    const std::vector<int> PC2 {
+    const std::vector<int> DataEncryptionStandard::PC2 {
         14,	17,	11,	24,	1,	5,
         3,	28,	15,	6,	21,	10,
         23,	19,	12,	4,	26,	8,
@@ -75,7 +75,7 @@
     // S-Boxes used in the DES algorithm.
     // Each S-Box is a 4x16 table of values, defining how a 6-bit input is transformed into a 4-bit output.
     // There are 8 S-Boxes in total, each responsible for a specific transformation during the Feistel function.
-    const std::vector<const std::vector<const std::vector<int>>> S_BOXES {
+    const std::vector<const std::vector<const std::vector<int>>> DataEncryptionStandard::S_BOXES {
         // S-Box 1
         {
         {14,	4,	13,	1,	2,	15,	11,	8,	3,	10,	6,	12,	5,	9,	0,	7},
@@ -133,3 +133,6 @@
             {2,	1,	14,	7,	4,	10,	8,	13,	15,	12,	9,	0,	3,	5,	6,	11}
         }
     };
+
+// SHIFT_SCHEDULE[i] returns the number of bits to shift in round i
+const std::vector<int> DataEncryptionStandard::SHIFT_SCHEDULE {1, 1, 2,	2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};

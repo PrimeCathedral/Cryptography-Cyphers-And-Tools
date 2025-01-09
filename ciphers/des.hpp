@@ -32,15 +32,58 @@ namespace DataEncryptionStandard {
         uint32_t substitute(uint64_t input);   // Substitution using S-boxes
     };
 
-    // Constants (e.g., IP, FP, E, S-boxes, P, PC-1, PC-2)
-    const std::vector<int> IP;
-    const std::vector<int> FP;
-    const std::vector<int> E;
-    const std::vector<int> P;
-    const std::vector<int> PC1;
-    const std::vector<int> PC2;
-    const std::vector<const std::vector<const std::vector<int>>> S_BOXES;
-    const std::vector<int> SHIFT_SCHEDULE;
+
+    // `extern` indicates that these variables are declared here but defined in the .cpp file.
+
+    /**
+     * Initial Permutation (IP) Box
+     * Takes a 64-bit block and permutes it according to elements in the table.
+     */
+    extern const std::vector<int> IP;
+
+    /**
+     * Final Permutation (FP) Box
+     * Inverse to the Initial Permutation (IP).
+     */
+    extern const std::vector<int> FP;
+
+    /**
+     * Expansion (E) Box
+     * Expands 32-bit blocks to 48 bits by duplicating certain bits.
+     */
+    extern const std::vector<int> E;
+
+    /**
+     * Permutation (P) Box
+     * Shuffles a 32-bit block to increase diffusion.
+     */
+    extern const std::vector<int> P;
+
+    /**
+     * Permuted Choice 1 (PC1) Box
+     * Transforms the original 64-bit key into a 56-bit key by permuting and discarding 8 parity bits.
+     */
+    extern const std::vector<int> PC1;
+
+    /**
+     * Permuted Choice 2 (PC2) Box
+     * Selects the 48-bit subkey for each round from the 56-bit key-schedule state.
+     * Note: This permutation ignores 8 specific bits (e.g., 9, 18, 22, 25, 35, 38, 43, 54).
+     */
+    extern const std::vector<int> PC2;
+
+    /**
+     * Substitution Boxes (S-Boxes)
+     * A collection of 8 substitution boxes used in the Feistel function.
+     * Each S-box maps a 6-bit input to a 4-bit output.
+     */
+    extern const std::vector<const std::vector<const std::vector<int>>> S_BOXES;
+
+    /**
+     * Shift Schedule
+     * Determines how much to left-shift the key halves during key schedule generation for each round.
+     */
+    extern const std::vector<int> SHIFT_SCHEDULE;
 }
 
 
