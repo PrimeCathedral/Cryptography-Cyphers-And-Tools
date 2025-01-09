@@ -20,6 +20,9 @@ public:
 
     // Determines prime numbers up to n
     static std::vector<bool> SieveOfEratosthenes(const cpp_int& n);
+
+    static std::vector<cpp_int> PollardsRho(const cpp_int& number);
+
 };
 
 
