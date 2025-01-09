@@ -9,7 +9,7 @@
 using cpp_int = boost::multiprecision::cpp_int;
 
 // TODO: find a way to make these functions take only one parameter, the number to factorize, and return an array of prime factors, without copying (using pointers properly)
-// TODO 2: Check with professor if Prime factorization should be defined for negaitve numbers
+// TODO 2: Check with professor if Prime factorization should be defined for negative numbers
 
 // Please never use this one
 void IntegerFactorization::TrialDivision(const cpp_int& number, std::vector<cpp_int>& factors) {

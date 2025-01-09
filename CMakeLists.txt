@@ -4,7 +4,9 @@ project(Cryptography-Ciphers-And-Tools)
 set(CMAKE_CXX_STANDARD 23)
 
 # Add the executables (target, source files)
-add_executable(Crypto main.cpp)
+add_executable(Crypto main.cpp
+        ciphers/des.cpp
+        ciphers/des.hpp)
 add_executable(ModularArithmeticTest tests/ModularArithmeticTest.cpp)
 add_executable(PrimesTest tests/PrimesTest.cpp)
 add_executable(UtilitiesTest tests/UtilitiesTest.cpp)
