@@ -144,30 +144,6 @@ const vector<int> DataEncryptionStandard::SHIFT_SCHEDULE {1, 1, 2, 2, 2, 2, 2, 2
 
 DataEncryptionStandard::DES::DES(const uint64_t key) : key(key) {};
 
-// TODO: Check if all permutations can be resolved by defining one templated function that takes the box as argument
-bitset<64> DataEncryptionStandard::DES::initialPermutation(const uint64_t& input){
-
-    // Make the code a bit more readable
-    using DataEncryptionStandard::IP;
-
-    bitset<64> plain_text(input);
-
-    // Permuted text is all zeros
-    bitset<64> permuted_text;
-
-    const auto boxSize {IP.size()};
-    constexpr auto leftmostBit {63};
-
-    // Fill it up
-    for (int i {0}; i < boxSize; i++) {
-        permuted_text[i] = plain_text[IP[leftmostBit-i]-1];
-    }
-
-    // Return the permuted text
-    return permuted_text;
-}
-
-
 namespace DataEncryptionStandard{
 template <size_t Output, size_t Input>
 bitset<Output> boxPermute(const vector<int>& Box, const bitset<Input>& original) {
@@ -182,8 +158,7 @@ bitset<Output> boxPermute(const vector<int>& Box, const bitset<Input>& original)
     for (size_t i {0}; i < Output; ++i) {
         int bitFromOriginal = (Input - 1) - (Box[i] - 1); // Convert 1-based index to 0-based
         int newValue = original[bitFromOriginal];
-        int bitToChange = Output - 1 - i; // The bit we want to change is i from left to right, and bitset works right to left
-
+        int bitToChange = (Output - 1) - i; // The bit we want to change is i from left to right, and bitset works right to left
 
         // Validate the index
         if (bitFromOriginal < 0 || bitFromOriginal >= Input) {
@@ -196,12 +171,4 @@ bitset<Output> boxPermute(const vector<int>& Box, const bitset<Input>& original)
     return permuted_text;
 }
 }
-// void DataEncryptionStandard::DES::generateRoundKeys() {
-//     // 64-bit key
-//     bitset<64> key(this->key);
-//
-//     // PC-1
-//
-//     //
-//
-// }
+
