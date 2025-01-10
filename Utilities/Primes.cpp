@@ -21,11 +21,11 @@ std::mt19937 gen(rd()); // Mersenne Twister engine seeded with rd()
  * @param num The candidate number.
  * @return The number of iterations to use for the test.
  */
-int defineIterations(const cpp_int& num) {
-    if (ITERATIONS >= num) {
-        return (num >> 1).convert_to<int>();
-    }
-    return ITERATIONS;
+int defineIterations(const cpp_int &num) {
+  if (ITERATIONS >= num) {
+    return (num >> 1).convert_to<int>();
+  }
+  return ITERATIONS;
 }
 
 /**
@@ -35,15 +35,15 @@ int defineIterations(const cpp_int& num) {
  * @param n The input number.
  * @return The odd component after factoring out powers of 2.
  */
-cpp_int FactorPowersOfTwo(const cpp_int& n) {
-    auto s = 0;
-    auto d = n;
+cpp_int FactorPowersOfTwo(const cpp_int &n) {
+  auto s = 0;
+  auto d = n;
 
-    while (Utilities::isEven(d)) {
-        d >>= 1;
-        s++;
-    }
-    return s;
+  while (Utilities::isEven(d)) {
+    d >>= 1;
+    s++;
+  }
+  return s;
 }
 
 /**
@@ -53,87 +53,92 @@ cpp_int FactorPowersOfTwo(const cpp_int& n) {
  * @param candidate The number to test for primality.
  * @return True if the number is likely prime, false otherwise.
  */
-bool Primes::FermatPrimalityTest(const cpp_int& candidate) {
-    if (candidate == 1) return false;
-    if (candidate <= 3) return true;
-
-    // Determine number of iterations
-    int iterations = defineIterations(candidate);
-
-    // Setup for random number generator (RNG)
-    cpp_int rand {};
-    const cpp_int limit = candidate - 2;
-    const boost::random::uniform_int_distribution<cpp_int> dist(2, limit);
-
-    while (iterations--) {
-        // Generate a random number between [2, candidate - 2]
-        rand = dist(gen);
-
-        // Check if candidate and rand are coprime
-        if (boost::integer::gcd(candidate, rand) != 1) {
-            return false;
-        }
-
-        // Verify Fermat's Little Theorem
-        if (MA::modularExponentiation(rand, candidate - 1, candidate) != 1) {
-            return false;
-        }
-    }
+bool Primes::FermatPrimalityTest(const cpp_int &candidate) {
+  if (candidate == 1)
+    return false;
+  if (candidate <= 3)
     return true;
+
+  // Determine number of iterations
+  int iterations = defineIterations(candidate);
+
+  // Setup for random number generator (RNG)
+  cpp_int rand{};
+  const cpp_int limit = candidate - 2;
+  const boost::random::uniform_int_distribution<cpp_int> dist(2, limit);
+
+  while (iterations--) {
+    // Generate a random number between [2, candidate - 2]
+    rand = dist(gen);
+
+    // Check if candidate and rand are coprime
+    if (boost::integer::gcd(candidate, rand) != 1) {
+      return false;
+    }
+
+    // Verify Fermat's Little Theorem
+    if (MA::modularExponentiation(rand, candidate - 1, candidate) != 1) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /**
  * Performs the Miller-Rabin Primality Test on a candidate number.
- * This test is probabilistic and provides higher accuracy than the Fermat Primality Test.
+ * This test is probabilistic and provides higher accuracy than the Fermat
+ * Primality Test.
  *
  * @param candidate The number to test for primality.
  * @return True if the number is likely prime, false otherwise.
  */
-bool Primes::MillerRabinPrimalityTest(const cpp_int& candidate) {
-    if (candidate <= 1) return false;
-    if (candidate == 2) return true;
-
-    // Determine number of iterations
-    int iterations = defineIterations(candidate);
-
-    // Ensure candidate is odd and greater than 2
-    if (Utilities::isEven(candidate) && candidate > 2) {
-        return false;
-    }
-
-    // Decompose candidate - 1 into 2^s * d
-    cpp_int d = candidate - 1;
-    int s = 0;
-    while (Utilities::isEven(d)) {
-        d >>= 1;
-        s++;
-    }
-
-    // Setup RNG
-    const boost::random::uniform_int_distribution<cpp_int> dist(2, candidate - 2);
-
-    // Perform Miller-Rabin test
-    while (iterations--) {
-        cpp_int random_a = dist(gen);
-        cpp_int x = MA::modularExponentiation(random_a, d, candidate);
-
-        // Check through repeated squaring
-        for (int i = 0; i < s; ++i) {
-            cpp_int y = MA::modularExponentiation(x, 2, candidate);
-
-            if (y == 1 && x != 1 && x != candidate - 1) {
-                return false; // Composite detected
-            }
-
-            x = y;
-        }
-
-        if (x != 1) {
-            return false;
-        }
-    }
-
+bool Primes::MillerRabinPrimalityTest(const cpp_int &candidate) {
+  if (candidate <= 1)
+    return false;
+  if (candidate == 2)
     return true;
+
+  // Determine number of iterations
+  int iterations = defineIterations(candidate);
+
+  // Ensure candidate is odd and greater than 2
+  if (Utilities::isEven(candidate) && candidate > 2) {
+    return false;
+  }
+
+  // Decompose candidate - 1 into 2^s * d
+  cpp_int d = candidate - 1;
+  int s = 0;
+  while (Utilities::isEven(d)) {
+    d >>= 1;
+    s++;
+  }
+
+  // Setup RNG
+  const boost::random::uniform_int_distribution<cpp_int> dist(2, candidate - 2);
+
+  // Perform Miller-Rabin test
+  while (iterations--) {
+    cpp_int random_a = dist(gen);
+    cpp_int x = MA::modularExponentiation(random_a, d, candidate);
+
+    // Check through repeated squaring
+    for (int i = 0; i < s; ++i) {
+      cpp_int y = MA::modularExponentiation(x, 2, candidate);
+
+      if (y == 1 && x != 1 && x != candidate - 1) {
+        return false; // Composite detected
+      }
+
+      x = y;
+    }
+
+    if (x != 1) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 /**
@@ -142,37 +147,44 @@ bool Primes::MillerRabinPrimalityTest(const cpp_int& candidate) {
  *
  * @param numBits The number of bits for the prime number.
  * @return A prime number with the specified number of bits.
- * @throws std::runtime_error If numBits < 2 (primes cannot be smaller than 2 bits).
+ * @throws std::runtime_error If numBits < 2 (primes cannot be smaller than 2
+ * bits).
  */
-cpp_int Primes::generatePrime(const int& numBits) {
-    // TODO: Fix bug that prevents generating primes of bit size = 2
+cpp_int Primes::generatePrime(const int &numBits) {
+  // TODO: Fix bug that prevents generating primes of bit size = 2
 
-    if (numBits < 2) {
-        throw std::runtime_error("Number of bits must be at least 2.");
-    }
-    if (numBits == 2) {
-        return 2;
-    }
+  if (numBits < 2) {
+    throw std::runtime_error("Number of bits must be at least 2.");
+  }
+  if (numBits == 2) {
+    return 2;
+  }
 
-    // Calculate bit boundaries
-    const cpp_int lower_bound {Utilities::binaryExponentiation(2, numBits - 1)}; // 2^(numBits - 1)
-    const cpp_int upper_bound {Utilities::binaryExponentiation(2, numBits) - 1}; // 2^numBits - 1
+  // Calculate bit boundaries
+  const cpp_int lower_bound{
+      Utilities::binaryExponentiation(2, numBits - 1)}; // 2^(numBits - 1)
+  const cpp_int upper_bound{Utilities::binaryExponentiation(2, numBits) -
+                            1}; // 2^numBits - 1
 #ifdef DEBUG_MACRO
-    std::cout << "lower bound: " << lower_bound << ""\nUpper bound: " << upper_bound << "\n";"
+  std::cout << "lower bound: " << lower_bound
+            << ""\nUpper bound
+      : " << upper_bound << "\n ";"
 #endif
 
-    const boost::random::uniform_int_distribution<cpp_int> dist(lower_bound, upper_bound);
+        const boost::random::uniform_int_distribution<cpp_int>
+            dist(lower_bound, upper_bound);
 
-    // Generate candidate primes
-    cpp_int candidate;
-    do {
-        candidate = dist(gen);
+  // Generate candidate primes
+  cpp_int candidate;
+  do {
+    candidate = dist(gen);
 
-        // Ensure candidate is odd
-        if (Utilities::isEven(candidate)) {
-            candidate += 1;
-        }
-    } while (!(MillerRabinPrimalityTest(candidate) && FermatPrimalityTest(candidate)));
+    // Ensure candidate is odd
+    if (Utilities::isEven(candidate)) {
+      candidate += 1;
+    }
+  } while (
+      !(MillerRabinPrimalityTest(candidate) && FermatPrimalityTest(candidate)));
 
-    return candidate;
+  return candidate;
 }
