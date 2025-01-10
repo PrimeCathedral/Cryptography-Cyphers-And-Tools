@@ -41,7 +41,7 @@ protected:
 TEST(BoxPermute, IdentityPermutation) {
     using namespace DataEncryptionStandard;
 
-    const std::bitset<8> input {0b11010011};
+    const std::bitset<8> input {0b10000000};
     const std::vector<int> identityBox = {1, 2, 3, 4, 5, 6, 7, 8}; // Identity permutation
 
     const auto output = boxPermute<8, 8>(identityBox, input);
@@ -52,10 +52,10 @@ TEST(BoxPermute, IdentityPermutation) {
 TEST(BoxPermute, ReversePermutation) {
     using namespace DataEncryptionStandard;
 
-    const std::bitset<8> input {0b10101111};
+    const std::bitset<8> input {0b00000001};
     const std::vector<int> reverseBox = {8, 7, 6, 5, 4, 3, 2, 1}; // Reverses the bit order
 
-    const std::bitset<8> expected {0b11110101}; // Reversed input
+    const std::bitset<8> expected {0b10000000}; // Reversed input
 
     const auto output = boxPermute<8, 8>(reverseBox, input);
 
@@ -65,10 +65,10 @@ TEST(BoxPermute, ReversePermutation) {
 TEST(BoxPermute, PartialPermutation) {
     using namespace DataEncryptionStandard;
 
-    const std::bitset<8> input {0b11010011};
-    const std::vector<int> partialBox = {1, 4, 6, 8}; // Maps bits 1, 4, 6, 8 to the output
+    const std::bitset<8> input {0b01010101};
+    const std::vector<int> partialBox = {2, 4, 6, 8}; // Maps bits 1, 4, 6, 8 to the output
 
-    const std::bitset<4> expected {0b1001}; // Bits from 1, 4, 6, 8 (from right to left)
+    const std::bitset<4> expected {0b1111}; // Bits from 1, 4, 6, 8 (from right to left)
 
     const auto output = boxPermute<4, 8>(partialBox, input);
 
@@ -78,12 +78,12 @@ TEST(BoxPermute, PartialPermutation) {
 TEST(BoxPermute, LargerOutput) {
     using namespace DataEncryptionStandard;
 
-    const std::bitset<4> input {0b0010};
-    const std::vector<int> largerBox = {1, 2, 2, 4, 3, 3}; // Repeats some input bits
+    const std::bitset<2> input {0b10};
+    const std::vector<int> largerBox = {1,2,1,2,1,2}; // Repeats some input bits
 
-    const std::bitset<6> expected {0b011000}; // From repeated and reordered bits
+    const std::bitset<6> expected {0b101010}; // From repeated and reordered bits
 
-    const auto output = boxPermute<6, 4>(largerBox, input);
+    const auto output = boxPermute<6, 2>(largerBox, input);
 
     EXPECT_EQ(expected, output); // Output should match the specified mapping
 }

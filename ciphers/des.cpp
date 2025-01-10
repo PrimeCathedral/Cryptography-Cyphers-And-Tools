@@ -166,20 +166,7 @@ bitset<64> DataEncryptionStandard::DES::initialPermutation(const uint64_t& input
     // Return the permuted text
     return permuted_text;
 }
-// template<size_t Output, size_t Input>
-// bitset<Output> boxPermute(const vector<int>& Box, const bitset<Input>& original) {
-//     bitset<Output> permuted_text;
-//
-//     const auto boxSize {Box.size()};
-//
-//     // Iterate through the given box
-//     for (int box_iterator {0}, currentBit {Output - 1}; box_iterator < boxSize; box_iterator++, --currentBit) {
-//         auto bitFromOriginal {Box[box_iterator]-1};
-//         permuted_text.set(currentBit, original[bitFromOriginal]);
-//     }
-//
-//     return permuted_text;
-// }
+
 
 namespace DataEncryptionStandard{
 template <size_t Output, size_t Input>
@@ -192,8 +179,11 @@ bitset<Output> boxPermute(const vector<int>& Box, const bitset<Input>& original)
     }
 
     // Perform the permutation
-    for (size_t i = 0; i < Box.size(); ++i) {
-        int bitFromOriginal = Box[i] - 1; // Convert 1-based index to 0-based
+    for (size_t i {0}; i < Output; ++i) {
+        int bitFromOriginal = (Input - 1) - (Box[i] - 1); // Convert 1-based index to 0-based
+        int newValue = original[bitFromOriginal];
+        int bitToChange = Output - 1 - i; // The bit we want to change is i from left to right, and bitset works right to left
+
 
         // Validate the index
         if (bitFromOriginal < 0 || bitFromOriginal >= Input) {
@@ -201,11 +191,8 @@ bitset<Output> boxPermute(const vector<int>& Box, const bitset<Input>& original)
         }
 
         // Set the corresponding bit in permuted_text
-        // permuted_text.set(Output - 1 - i, original[bitFromOriginal]); // Fill from MSB to LSB
-        permuted_text.set(i, original[bitFromOriginal]);
-
+        permuted_text.set(bitToChange, newValue);
     }
-
     return permuted_text;
 }
 }
