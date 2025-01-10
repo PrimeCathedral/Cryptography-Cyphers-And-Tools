@@ -34,7 +34,7 @@ private:
   vector<uint64_t> roundKeys; // 16 round keys (48-bit each)
 
   // Private functions
-  // TODO: void generateRoundKeys();              // Key scheduling
+  void generateRoundKeys(); // Key scheduling
   bitset<64> initialPermutation(
       const uint64_t &input); // Apply the initial permutation (IP)
   // TODO: uint64_t finalPermutation(uint64_t input);   // Apply the final
