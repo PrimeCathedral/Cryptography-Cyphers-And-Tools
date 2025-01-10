@@ -4,7 +4,7 @@
 
 #include "ModularArithmetic.hpp"
 
-using cpp_int = boost::multiprecision::cpp_int;
+using boost::multiprecision::cpp_int;
 namespace Crypto {
 
 /**
@@ -78,16 +78,13 @@ ModularArithmetic::modularMultiplicativeInverse(const cpp_int &base,
     base_copy = -base_copy;
 
   cpp_int x, y;
-  cpp_int gcd{extendedGCD(base_copy, modulus_copy, x, y)};
 
-  if (gcd != 1) {
+  if (const cpp_int gcd{extendedGCD(base_copy, modulus_copy, x, y)}; gcd != 1) {
     throw std::runtime_error("Modular inverse does not exist");
   }
 
-  // Calculate the inverse
-  cpp_int result{(x % modulus + modulus) % modulus};
-
-  return result;
+  // Return the inverse
+  return (x % modulus + modulus) % modulus;
 }
 
 /**
@@ -106,10 +103,8 @@ cpp_int ModularArithmetic::modularExponentiation(const cpp_int &base,
   // Edge cases
   if (mod == 1)
     return 0;
-  ;
   if (power == 0 && base == 0)
     return 1;
-  ;
   if (power == 0)
     return 1;
   if (power == -1) {
