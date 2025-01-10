@@ -137,6 +137,7 @@ bitset<Output> boxPermute(const vector<int> &Box,
 }
 } // namespace DataEncryptionStandard
 
+// TODO: Test this
 // Function for splitting a bitset into segments.
 template <size_t OriginalSize, size_t SplitSize>
 vector<bitset<SplitSize>> splitBitset(const bitset<OriginalSize> &original) {
@@ -145,14 +146,15 @@ vector<bitset<SplitSize>> splitBitset(const bitset<OriginalSize> &original) {
     throw std::invalid_argument(
         "Original bitset size must be evenly divisible by SplitSize.");
   }
+
   auto segments{OriginalSize / SplitSize};
 
   // Initialize a vector that contains empty bitsets of size SplitSize
   vector<bitset<SplitSize>> splits(segments, bitset<SplitSize>());
 
   // Populate the segments
-  for (size_t seg = 0; seg < segments; ++seg) {
-    for (size_t bit = 0; bit < SplitSize; ++bit) {
+  for (size_t seg{0}; seg < segments; ++seg) {
+    for (size_t bit{0}; bit < SplitSize; ++bit) {
       splits[seg][bit] = original[seg * SplitSize + bit];
     }
   }
@@ -160,9 +162,12 @@ vector<bitset<SplitSize>> splitBitset(const bitset<OriginalSize> &original) {
   return splits;
 }
 
+// TODO: RotateLeft function
+
 void DataEncryptionStandard::DES::generateRoundKeys() {
   // Remove parity bits from key
-  bitset<64> pc1_key{boxPermute<64, 64>(PC1, this->key)};
+  const bitset<56> pc1_key{boxPermute<56, 64>(PC1, this->key)};
 
-  // Split key into 28-bit halves L- and R0
+  // Split key into 28-bit halves L0 and R0
+  auto keys{splitBitset<56, 28>(pc1_key)};
 }
