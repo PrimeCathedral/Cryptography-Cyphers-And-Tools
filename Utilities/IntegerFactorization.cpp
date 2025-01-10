@@ -3,20 +3,17 @@
 //
 
 #include "IntegerFactorization.hpp"
-
 #include "Utilities.hpp"
-
-using cpp_int = boost::multiprecision::cpp_int;
 
 // TODO: find a way to make these functions take only one parameter, the number
 // to factorize, and return an array of prime factors, without copying (using
-// pointers properly)
+// pointers properly) (maybe a class member vector<cpp_int> factors??)
 // TODO 2: Check with professor if Prime factorization should be defined for
 // negative numbers
 
 // Please never use this one
 void IntegerFactorization::TrialDivision(const cpp_int &number,
-                                         std::vector<cpp_int> &factors) {
+                                         vector<cpp_int> &factors) {
   // Make sure the given vector is empty
   factors.clear();
 
@@ -33,7 +30,7 @@ void IntegerFactorization::TrialDivision(const cpp_int &number,
     composite *= -1;
 
   // Compute the square root. factor(n) !> √n
-  cpp_int sqrt{boost::multiprecision::sqrt(composite)};
+  const cpp_int sqrt{boost::multiprecision::sqrt(composite)};
 
   // Start at 2 and go all the way to √number
   for (cpp_int factor{2}; factor <= sqrt; ++factor) {
@@ -53,7 +50,7 @@ void IntegerFactorization::TrialDivision(const cpp_int &number,
 }
 
 void IntegerFactorization::WheelFactorization(const cpp_int &number,
-                                              std::vector<cpp_int> &factors) {
+                                              vector<cpp_int> &factors) {
 
   // Make sure the given vector is empty
   factors.clear();
@@ -71,7 +68,7 @@ void IntegerFactorization::WheelFactorization(const cpp_int &number,
     composite *= -1;
 
   // Compute the square root. factor(n) !> √n
-  cpp_int sqrt{boost::multiprecision::sqrt(composite)};
+  const cpp_int sqrt{boost::multiprecision::sqrt(composite)};
 
   // Eliminate/add all even factors (this eliminates 50% of numbers to try)
   while (composite % 2 == 0) {
@@ -96,10 +93,10 @@ void IntegerFactorization::WheelFactorization(const cpp_int &number,
     factors.emplace_back(-1);
 }
 
-std::vector<bool> IntegerFactorization::SieveOfEratosthenes(const cpp_int &n) {
+vector<bool> IntegerFactorization::SieveOfEratosthenes(const cpp_int &n) {
   // Create a vector 'is_prime' to track primality of numbers up to n.
   // Initialize all elements to true.
-  std::vector<bool> is_prime((n + 1).convert_to<long long>(), true);
+  vector<bool> is_prime((n + 1).convert_to<long long>(), true);
 
   // Set 0 and 1 as not prime (false)
   is_prime[0] = false;

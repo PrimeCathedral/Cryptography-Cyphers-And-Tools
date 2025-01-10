@@ -24,8 +24,7 @@ protected:
 };
 
 TEST(BoxPermute, IdentityPermutation) {
-
-  const std::bitset<8> input{0b10000000};
+  constexpr std::bitset<8> input{0b10000000};
   const std::vector<int> identityBox = {1, 2, 3, 4,
                                         5, 6, 7, 8}; // Identity permutation
 
@@ -35,12 +34,11 @@ TEST(BoxPermute, IdentityPermutation) {
 }
 
 TEST(BoxPermute, ReversePermutation) {
-
-  const std::bitset<8> input{0b00000001};
+  constexpr std::bitset<8> input{0b00000001};
   const std::vector<int> reverseBox = {8, 7, 6, 5,
                                        4, 3, 2, 1}; // Reverses the bit order
 
-  const std::bitset<8> expected{0b10000000}; // Reversed input
+  constexpr std::bitset<8> expected{0b10000000}; // Reversed input
 
   const auto output = boxPermute<8, 8>(reverseBox, input);
 
@@ -48,12 +46,11 @@ TEST(BoxPermute, ReversePermutation) {
 }
 
 TEST(BoxPermute, PartialPermutation) {
-
-  const std::bitset<8> input{0b01010101};
+  constexpr std::bitset<8> input{0b01010101};
   const std::vector<int> partialBox = {2, 4, 6,
                                        8}; // Maps bits 1, 4, 6, 8 to the output
 
-  const std::bitset<4> expected{
+  constexpr std::bitset<4> expected{
       0b1111}; // Bits from 1, 4, 6, 8 (from right to left)
 
   const auto output = boxPermute<4, 8>(partialBox, input);
@@ -62,12 +59,12 @@ TEST(BoxPermute, PartialPermutation) {
 }
 
 TEST(BoxPermute, LargerOutput) {
-
-  const std::bitset<2> input{0b10};
+  constexpr std::bitset<2> input{0b10};
   const std::vector<int> largerBox = {1, 2, 1,
                                       2, 1, 2}; // Repeats some input bits
 
-  const std::bitset<6> expected{0b101010}; // From repeated and reordered bits
+  constexpr std::bitset<6> expected{
+      0b101010}; // From repeated and reordered bits
 
   const auto output = boxPermute<6, 2>(largerBox, input);
 
