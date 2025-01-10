@@ -5,82 +5,63 @@
 #include "../Utilities/Utilities.hpp"
 #include <gtest/gtest.h>
 
-using cpp_int = boost::multiprecision::cpp_int;
+using boost::multiprecision::cpp_int;
 
 // Binary Exponentiation: https://www.dcode.fr/exponentiation-calculation
 
 TEST(TestBinaryExponentiation, PositiveBasePositiveExponent) {
   // Positive base with positive exponent
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(2), 10),
-      1024); // 2^10 = 1024
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(5), 3),
-      125); // 5^3 = 125
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(7), 0),
-      1); // 7^0 = 1
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(2), 10),
+            1024); // 2^10 = 1024
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(5), 3),
+            125); // 5^3 = 125
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(7), 0),
+            1); // 7^0 = 1
 }
 
 TEST(TestBinaryExponentiation, NegativeBasePositiveExponent) {
   // Negative base with positive exponent
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-2), 3),
-      -8); // (-2)^3 = -8
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-2), 4),
-      16); // (-2)^4 = 16
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-1), 0),
-      1);
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-2), 3),
-      -8); // (-2)^3 = -8
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-2), 4),
-      16); // (-2)^4 = 16
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-5), 2),
-      25); // (-5)^2 = 25
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-5), 3),
-      -125); // (-5)^3 = -125
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-1), 1000),
-      1); // (-1)^1000 = 1
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-1), 1001),
-      -1); // (-1)^1001 = -1// (-1)^0 = 1
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-2), 3),
+            -8); // (-2)^3 = -8
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-2), 4),
+            16); // (-2)^4 = 16
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-1), 0), 1);
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-2), 3),
+            -8); // (-2)^3 = -8
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-2), 4),
+            16); // (-2)^4 = 16
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-5), 2),
+            25); // (-5)^2 = 25
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-5), 3),
+            -125); // (-5)^3 = -125
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-1), 1000),
+            1); // (-1)^1000 = 1
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-1), 1001),
+            -1); // (-1)^1001 = -1// (-1)^0 = 1
 }
 
 TEST(TestBinaryExponentiation, PositiveBaseZeroExponent) {
   // Positive base with zero exponent
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(10), 0),
-      1); // 10^0 = 1
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(12345), 0),
-      1); // 12345^0 = 1
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(10), 0),
+            1); // 10^0 = 1
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(12345), 0),
+            1); // 12345^0 = 1
 }
 
 TEST(TestBinaryExponentiation, NegativeBaseZeroExponent) {
   // Negative base with zero exponent
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-5), 0),
-      1); // (-5)^0 = 1
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-999), 0),
-      1); // (-999)^0 = 1
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-5), 0),
+            1); // (-5)^0 = 1
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-999), 0),
+            1); // (-999)^0 = 1
 }
 
 TEST(TestBinaryExponentiation, ZeroBasePositiveExponent) {
   // Zero base with positive exponent
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(0), 5),
-      0); // 0^5 = 0
-  EXPECT_EQ(
-      Utilities::binaryExponentiation(boost::multiprecision::cpp_int(0), 100),
-      0); // 0^100 = 0
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(0), 5),
+            0); // 0^5 = 0
+  EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(0), 100),
+            0); // 0^100 = 0
 }
 
 TEST(TestBinaryExponentiation, BaseCases) {
@@ -109,7 +90,7 @@ TEST(TestBinaryExponentiation, TwoDigitExponents) {
 TEST(TestBinaryExponentiation, FiveDigitExponents) {
 
   // 2^50000
-  boost::multiprecision::cpp_int r{
+  cpp_int r{
       "316069943685631789613592465994569178898467638783493566684774315556494393"
       "790200955065106714492252942097428269034379806162289165024706009153359513"
       "017036586810809997011653108746704758372209378763967464976566207436646688"
@@ -323,7 +304,7 @@ TEST(TestBinaryExponentiation, FiveDigitExponents) {
   EXPECT_EQ(Utilities::binaryExponentiation(2, 50000), r);
 
   // 5^99999
-  boost::multiprecision::cpp_int r2{
+  cpp_int r2{
       "200199780759738833363252942638661249699869501661156009840566676015951701"
       "463249250407647152808634299582688714734534714382234174447107937078314916"
       "903092952084123681977367269362467219261670847475980840208452533373608967"
@@ -1298,142 +1279,114 @@ TEST(TestBinaryExponentiation, FiveDigitExponents) {
   EXPECT_EQ(Utilities::binaryExponentiation(5, 99999), r2);
 }
 
-// TODO enable these tests and negative exponenet functionality
+// TODO enable these tests and negative exponent functionality
 
 // TEST(TestBinaryExponentiation, NegativeExponentBasicCases) {
 //     // Basic cases with positive base and negative exponent
-//     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(2),
+//     EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(2),
 //     -1), 0.5);   // 2^-1 = 0.5
-//     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(2),
+//     EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(2),
 //     -3), 0.125); // 2^-3 = 0.125
-//     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(5),
+//     EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(5),
 //     -2), 0.04);  // 5^-2 = 0.04
 // }
 //
 // TEST(TestBinaryExponentiation, NegativeExponentNegativeBase) {
 //     // Negative base with negative exponent
-//     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-2),
+//     EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-2),
 //     -2), 0.25);  // (-2)^-2 = 0.25
-//     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-2),
+//     EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-2),
 //     -3), -0.125); // (-2)^-3 = -0.125
-//     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-5),
+//     EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-5),
 //     -1), -0.2);   // (-5)^-1 = -0.2
 // }
 //
 // TEST(TestBinaryExponentiation, NegativeExponentEdgeCases) {
 //     // Base 1 with negative exponent
-//     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(1),
+//     EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(1),
 //     -100), 1.0);   // 1^-100 = 1
-//     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(-1),
+//     EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(-1),
 //     -101), -1.0); // (-1)^-101 = -1
 //
 //     // Base 0 with negative exponent (should throw exception)
-//     EXPECT_THROW(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(0),
+//     EXPECT_THROW(Utilities::binaryExponentiation(cpp_int(0),
 //     -3), std::runtime_error);
-//     EXPECT_THROW(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(0),
+//     EXPECT_THROW(Utilities::binaryExponentiation(cpp_int(0),
 //     -1), std::runtime_error);
 // }
 //
 // TEST(TestBinaryExponentiation, NegativeExponentLargeInputs) {
 //     // Large inputs with negative exponent
-//     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(10),
+//     EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(10),
 //     -6), 0.000001); // 10^-6 = 0.000001
-//     EXPECT_EQ(Utilities::binaryExponentiation(boost::multiprecision::cpp_int(2),
+//     EXPECT_EQ(Utilities::binaryExponentiation(cpp_int(2),
 //     -20), 9.5367431640625e-7); // 2^-20
 // }
 
 TEST(TestIsOdd, PositiveNumbers) {
   // Positive odd numbers
-  EXPECT_TRUE(Utilities::isOdd(boost::multiprecision::cpp_int(1))); // 1 is odd
-  EXPECT_TRUE(Utilities::isOdd(boost::multiprecision::cpp_int(3))); // 3 is odd
-  EXPECT_TRUE(
-      Utilities::isOdd(boost::multiprecision::cpp_int(999))); // 999 is odd
+  EXPECT_TRUE(Utilities::isOdd(cpp_int(1)));   // 1 is odd
+  EXPECT_TRUE(Utilities::isOdd(cpp_int(3)));   // 3 is odd
+  EXPECT_TRUE(Utilities::isOdd(cpp_int(999))); // 999 is odd
 
   // Positive even numbers
-  EXPECT_FALSE(
-      Utilities::isOdd(boost::multiprecision::cpp_int(2))); // 2 is even
-  EXPECT_FALSE(
-      Utilities::isOdd(boost::multiprecision::cpp_int(100))); // 100 is even
-  EXPECT_FALSE(
-      Utilities::isOdd(boost::multiprecision::cpp_int(1000))); // 1000 is even
+  EXPECT_FALSE(Utilities::isOdd(cpp_int(2)));    // 2 is even
+  EXPECT_FALSE(Utilities::isOdd(cpp_int(100)));  // 100 is even
+  EXPECT_FALSE(Utilities::isOdd(cpp_int(1000))); // 1000 is even
 }
 
 TEST(TestIsOdd, NegativeNumbers) {
   // Negative odd numbers
-  EXPECT_TRUE(
-      Utilities::isOdd(boost::multiprecision::cpp_int(-1))); // -1 is odd
-  EXPECT_TRUE(
-      Utilities::isOdd(boost::multiprecision::cpp_int(-3))); // -3 is odd
-  EXPECT_TRUE(
-      Utilities::isOdd(boost::multiprecision::cpp_int(-999))); // -999 is odd
+  EXPECT_TRUE(Utilities::isOdd(cpp_int(-1)));   // -1 is odd
+  EXPECT_TRUE(Utilities::isOdd(cpp_int(-3)));   // -3 is odd
+  EXPECT_TRUE(Utilities::isOdd(cpp_int(-999))); // -999 is odd
 
   // Negative even numbers
-  EXPECT_FALSE(
-      Utilities::isOdd(boost::multiprecision::cpp_int(-2))); // -2 is even
-  EXPECT_FALSE(
-      Utilities::isOdd(boost::multiprecision::cpp_int(-100))); // -100 is even
-  EXPECT_FALSE(
-      Utilities::isOdd(boost::multiprecision::cpp_int(-1000))); // -1000 is even
+  EXPECT_FALSE(Utilities::isOdd(cpp_int(-2)));    // -2 is even
+  EXPECT_FALSE(Utilities::isOdd(cpp_int(-100)));  // -100 is even
+  EXPECT_FALSE(Utilities::isOdd(cpp_int(-1000))); // -1000 is even
 }
 
 TEST(TestIsOdd, EdgeCases) {
   // Zero is not odd
-  EXPECT_FALSE(
-      Utilities::isOdd(boost::multiprecision::cpp_int(0))); // 0 is even
+  EXPECT_FALSE(Utilities::isOdd(cpp_int(0))); // 0 is even
 
   // Large numbers
-  EXPECT_TRUE(Utilities::isOdd(
-      boost::multiprecision::cpp_int("123456789012345678901"))); // Odd
-  EXPECT_FALSE(Utilities::isOdd(
-      boost::multiprecision::cpp_int("123456789012345678900"))); // Even
+  EXPECT_TRUE(Utilities::isOdd(cpp_int("123456789012345678901")));  // Odd
+  EXPECT_FALSE(Utilities::isOdd(cpp_int("123456789012345678900"))); // Even
 }
 
 TEST(TestIsEven, PositiveNumbers) {
   // Positive even numbers
-  EXPECT_TRUE(
-      Utilities::isEven(boost::multiprecision::cpp_int(2))); // 2 is even
-  EXPECT_TRUE(
-      Utilities::isEven(boost::multiprecision::cpp_int(100))); // 100 is even
-  EXPECT_TRUE(
-      Utilities::isEven(boost::multiprecision::cpp_int(1000))); // 1000 is even
+  EXPECT_TRUE(Utilities::isEven(cpp_int(2)));    // 2 is even
+  EXPECT_TRUE(Utilities::isEven(cpp_int(100)));  // 100 is even
+  EXPECT_TRUE(Utilities::isEven(cpp_int(1000))); // 1000 is even
 
   // Positive odd numbers
-  EXPECT_FALSE(
-      Utilities::isEven(boost::multiprecision::cpp_int(1))); // 1 is odd
-  EXPECT_FALSE(
-      Utilities::isEven(boost::multiprecision::cpp_int(3))); // 3 is odd
-  EXPECT_FALSE(
-      Utilities::isEven(boost::multiprecision::cpp_int(999))); // 999 is odd
+  EXPECT_FALSE(Utilities::isEven(cpp_int(1)));   // 1 is odd
+  EXPECT_FALSE(Utilities::isEven(cpp_int(3)));   // 3 is odd
+  EXPECT_FALSE(Utilities::isEven(cpp_int(999))); // 999 is odd
 }
 
 TEST(TestIsEven, NegativeNumbers) {
   // Negative even numbers
-  EXPECT_TRUE(
-      Utilities::isEven(boost::multiprecision::cpp_int(-2))); // -2 is even
-  EXPECT_TRUE(
-      Utilities::isEven(boost::multiprecision::cpp_int(-100))); // -100 is even
-  EXPECT_TRUE(Utilities::isEven(
-      boost::multiprecision::cpp_int(-1000))); // -1000 is even
+  EXPECT_TRUE(Utilities::isEven(cpp_int(-2)));    // -2 is even
+  EXPECT_TRUE(Utilities::isEven(cpp_int(-100)));  // -100 is even
+  EXPECT_TRUE(Utilities::isEven(cpp_int(-1000))); // -1000 is even
 
   // Negative odd numbers
-  EXPECT_FALSE(
-      Utilities::isEven(boost::multiprecision::cpp_int(-1))); // -1 is odd
-  EXPECT_FALSE(
-      Utilities::isEven(boost::multiprecision::cpp_int(-3))); // -3 is odd
-  EXPECT_FALSE(
-      Utilities::isEven(boost::multiprecision::cpp_int(-999))); // -999 is odd
+  EXPECT_FALSE(Utilities::isEven(cpp_int(-1)));   // -1 is odd
+  EXPECT_FALSE(Utilities::isEven(cpp_int(-3)));   // -3 is odd
+  EXPECT_FALSE(Utilities::isEven(cpp_int(-999))); // -999 is odd
 }
 
 TEST(TestIsEven, EdgeCases) {
   // Zero is even
-  EXPECT_TRUE(
-      Utilities::isEven(boost::multiprecision::cpp_int(0))); // 0 is even
+  EXPECT_TRUE(Utilities::isEven(cpp_int(0))); // 0 is even
 
   // Large numbers
-  EXPECT_TRUE(Utilities::isEven(
-      boost::multiprecision::cpp_int("123456789012345678900"))); // Even
-  EXPECT_FALSE(Utilities::isEven(
-      boost::multiprecision::cpp_int("123456789012345678901"))); // Odd
+  EXPECT_TRUE(Utilities::isEven(cpp_int("123456789012345678900")));  // Even
+  EXPECT_FALSE(Utilities::isEven(cpp_int("123456789012345678901"))); // Odd
 }
 
 // Main entry point for the test runner
