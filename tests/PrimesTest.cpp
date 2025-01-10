@@ -69,11 +69,11 @@ TEST(MillerRabinPrimalityTest, IdentifiesPrimes) {
 
 TEST(MillerRabinPrimalityTest, AcceptsMersennePrimes) {
   // Mersenne prime 2^127 - 1
-  cpp_int mersenne1{"170141183460469231731687303715884105727"};
+  const cpp_int mersenne1{"170141183460469231731687303715884105727"};
   EXPECT_TRUE(Primes::MillerRabinPrimalityTest(mersenne1));
 
   // Very large Mersenne prime (may take longer to test)
-  cpp_int mersenne2{Utilities::binaryExponentiation(2, 1279) - 1};
+  const cpp_int mersenne2{Utilities::binaryExponentiation(2, 1279) - 1};
   EXPECT_TRUE(Primes::MillerRabinPrimalityTest(mersenne2));
 }
 
