@@ -135,7 +135,6 @@ bitset<Output> boxPermute(const vector<int> &Box,
   }
   return permuted_text;
 }
-} // namespace DataEncryptionStandard
 
 // TODO: Test this
 // Function for splitting a bitset into segments.
@@ -162,12 +161,49 @@ vector<bitset<SplitSize>> splitBitset(const bitset<OriginalSize> &original) {
   return splits;
 }
 
-// TODO: RotateLeft function
+// TODO: Test
+template <size_t Size>
+bitset<Size> &rotateBits(bitset<Size> &original, int bits_to_rotate) {
 
-void DataEncryptionStandard::DES::generateRoundKeys() {
-  // Remove parity bits from key
-  const bitset<56> pc1_key{boxPermute<56, 64>(PC1, this->key)};
+  // To accommodate for negative shifts, find a number that is congruent with
+  // bits_to_rotate and less than Size
+  const int congruent_btr{
+      (((bits_to_rotate % original.size()) + original.size()) %
+       original.size())};
 
-  // Split key into 28-bit halves L0 and R0
-  auto keys{splitBitset<56, 28>(pc1_key)};
+  // If full rotation return original
+  if (congruent_btr == 0)
+    return original;
+
+  // Make copy of original
+  bitset<Size> copy(original);
+
+  // Shift copy-bits all the way to the left (11000)
+  copy <<= Size - congruent_btr;
+
+  // Shift original bits to the right causing leftmost bits to be Zero (00111)
+  original >>= congruent_btr;
+
+  // XOR original and copy to merge them (11000 ^ 00111) = (11111)
+  original ^= copy;
+
+  return original;
 }
+
+} // namespace DataEncryptionStandard
+  // void DataEncryptionStandard::DES::generateRoundKeys() {
+  //   // Permute with PC1 and remove parity bits from key
+  //   const bitset<56> pc1_key{boxPermute<56, 64>(PC1, this->key)};
+  //
+  //   // Split key into 28-bit halves L0 and R0
+  //   auto keys{splitBitset<56, 28>(pc1_key)};
+  //
+  //     auto rounds {1};
+  //     while (rounds++ <= 16) {
+  //         // IN some specific rounds
+  //         if (round == 1 || round == 2 || round == 9 || round == 16) {
+  //             // Rotate left one bit
+  //
+  //         }
+  //     }
+  // }

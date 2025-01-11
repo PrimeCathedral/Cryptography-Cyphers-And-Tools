@@ -15,7 +15,7 @@ TEST(FermatPrimalityTest, IdentifiesPrimes) {
   EXPECT_TRUE(Primes::FermatPrimalityTest(7));
   EXPECT_TRUE(Primes::FermatPrimalityTest(11));
   EXPECT_TRUE(Primes::FermatPrimalityTest(13));
-  EXPECT_TRUE(Primes::FermatPrimalityTest(15485837)); // Prime near 15 million
+  EXPECT_TRUE(Primes::FermatPrimalityTest(15485837));
   EXPECT_TRUE(Primes::FermatPrimalityTest(15485843));
   EXPECT_TRUE(Primes::FermatPrimalityTest(15485849));
   EXPECT_TRUE(Primes::FermatPrimalityTest(15485857));
