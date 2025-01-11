@@ -165,11 +165,13 @@ vector<bitset<SplitSize>> splitBitset(const bitset<OriginalSize> &original) {
 template <size_t Size>
 bitset<Size> &rotateBits(bitset<Size> &original, int bits_to_rotate) {
 
+  // We define this here to be able to use the % operator with ints and
+  // accurately calculate modulus. Otherwise -1 % 5 returns -1 or conversion
+  // error
+  const int size{static_cast<int>(original.size())};
   // To accommodate for negative shifts, find a number that is congruent with
   // bits_to_rotate and less than Size
-  const int congruent_btr{
-      (((bits_to_rotate % original.size()) + original.size()) %
-       original.size())};
+  const int congruent_btr{((bits_to_rotate % size) + size) % size};
 
   // If full rotation return original
   if (congruent_btr == 0)
@@ -179,7 +181,7 @@ bitset<Size> &rotateBits(bitset<Size> &original, int bits_to_rotate) {
   bitset<Size> copy(original);
 
   // Shift copy-bits all the way to the left (11000)
-  copy <<= Size - congruent_btr;
+  copy <<= size - congruent_btr;
 
   // Shift original bits to the right causing leftmost bits to be Zero (00111)
   original >>= congruent_btr;

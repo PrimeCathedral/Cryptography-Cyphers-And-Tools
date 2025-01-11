@@ -123,7 +123,7 @@ TEST(rotateBits, LargePositiveShift) {
 }
 TEST(rotateBits, LargeNegativeShift) {
   bitset<4> original{0b1101};
-  constexpr bitset<4> expected{0b1011}; // Rotate left by 6 (6 % 4 = 2)
+  constexpr bitset<4> expected{0b0111}; // Rotate left by 6 (6 % 4 = 2)
   EXPECT_EQ(rotateBits(original, -6), expected);
 }
 TEST(rotateBits, ShiftZeroBits) {
