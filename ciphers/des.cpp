@@ -123,7 +123,7 @@ bitset<Output> boxPermute(const vector<int> &Box,
     int newValue = original[bitFromOriginal];
     int bitToChange =
         (Output - 1) - i; // The bit we want to change is i from left to right,
-                          // and bitset works right to left
+    // and bitset works right to left
 
     // Validate the index
     if (bitFromOriginal < 0 || bitFromOriginal >= Input) {
@@ -160,15 +160,35 @@ vector<bitset<SplitSize>> splitBitset(const bitset<OriginalSize> &original) {
 
   return splits;
 }
-
-// TODO: Test
+/**
+ * Rotates the bits of a bitset by a specified number of positions,
+ * accommodating both positive (right rotation) and negative (left rotation)
+ * shifts.
+ *
+ * The rotation wraps around the bitset, so bits shifted out on one side
+ * reappear on the opposite side. Negative values for `bits_to_rotate` result in
+ * a left rotation, while positive values result in a right rotation. The number
+ * of rotations is normalized to avoid redundant full rotations.
+ *
+ * @tparam Size The size of the bitset to rotate.
+ * @param original The bitset to be rotated. This bitset is modified in place.
+ * @param bits_to_rotate The number of positions to rotate the bits. Positive
+ * values rotate the bits to the right, while negative values rotate the bits to
+ * the left.
+ * @return A reference to the rotated bitset (`original`) for convenience.
+ *
+ * @note The rotation is performed in place, modifying the input bitset
+ * directly. If `bits_to_rotate` is a multiple of `Size`, the bitset remains
+ * unchanged.
+ */
 template <size_t Size>
-bitset<Size> &rotateBits(bitset<Size> &original, int bits_to_rotate) {
+bitset<Size> &rotateBits(bitset<Size> &original, const int bits_to_rotate) {
 
   // We define this here to be able to use the % operator with ints and
   // accurately calculate modulus. Otherwise -1 % 5 returns -1 or conversion
-  // error
+  // error from downgrading size_t to int.
   const int size{static_cast<int>(original.size())};
+
   // To accommodate for negative shifts, find a number that is congruent with
   // bits_to_rotate and less than Size
   const int congruent_btr{((bits_to_rotate % size) + size) % size};
@@ -191,21 +211,70 @@ bitset<Size> &rotateBits(bitset<Size> &original, int bits_to_rotate) {
 
   return original;
 }
+/**
+ * Concatenates two bitsets into a single bitset, where the first argument's
+ * bits appear first in the resulting bitset, followed by the second argument's
+ * bits.
+ *
+ * The order of the arguments is significant: the bits of the first bitset
+ * (`B1`) will occupy the higher-order bits of the concatenated result, while
+ * the bits of the second bitset (`B2`) will occupy the lower-order bits.
+ *
+ * @tparam S1 The size of the first bitset (B1).
+ * @tparam S2 The size of the second bitset (B2).
+ * @param B1 The first bitset, whose bits will appear first in the concatenated
+ * result.
+ * @param B2 The second bitset, whose bits will appear second in the
+ * concatenated result.
+ * @return A new bitset of size S1 + S2, containing the concatenation of `B1`
+ * and `B2`.
+ */
+template <size_t S1, size_t S2>
+bitset<S1 + S2> concatenateBitsets(const bitset<S1> &B1, const bitset<S2> &B2) {
+  bitset<S1 + S2> result;
+
+  // Copy bits from B2 (LSB-first) into the lower part of result
+  for (size_t i = 0; i < S2; ++i) {
+    result[i] = B2[i];
+  }
+
+  // Copy bits from B1 (LSB-first) into the upper part of result
+  for (size_t i = 0; i < S1; ++i) {
+    result[S2 + i] = B1[i];
+  }
+
+  return result;
+}
 
 } // namespace DataEncryptionStandard
-  // void DataEncryptionStandard::DES::generateRoundKeys() {
-  //   // Permute with PC1 and remove parity bits from key
-  //   const bitset<56> pc1_key{boxPermute<56, 64>(PC1, this->key)};
-  //
-  //   // Split key into 28-bit halves L0 and R0
-  //   auto keys{splitBitset<56, 28>(pc1_key)};
-  //
-  //     auto rounds {1};
-  //     while (rounds++ <= 16) {
-  //         // IN some specific rounds
-  //         if (round == 1 || round == 2 || round == 9 || round == 16) {
-  //             // Rotate left one bit
-  //
-  //         }
-  //     }
-  // }
+
+void DataEncryptionStandard::DES::generateRoundKeys() {
+  // Permute with PC1 and remove parity bits from key
+  const bitset<56> pc1_key{boxPermute<56, 64>(PC1, this->key)};
+
+  // Split key into 28-bit halves L0 and R0
+  auto keys{splitBitset<56, 28>(pc1_key)};
+
+  auto round{0};
+
+  while (round++ < 16) {
+    // In some specific rounds
+    if (round == 0 || round == 1 || round == 8 || round == 15) {
+      // Rotate the halves one bit to the left
+      rotateBits(keys[0], -1);
+      rotateBits(keys[1], -1);
+    } else { // In all other rounds rotate the halves two bits to the left
+      rotateBits(keys[0], -2);
+      rotateBits(keys[1], -2);
+    }
+
+    // Join the two halves
+    const auto concatenated_key{concatenateBitsets(keys[0], keys[1])};
+
+    // Permute them
+    const auto permuted_key{boxPermute<48, 56>(PC2, concatenated_key)};
+
+    // Save them as a round key
+    this->roundKeys[round] = permuted_key;
+  }
+}

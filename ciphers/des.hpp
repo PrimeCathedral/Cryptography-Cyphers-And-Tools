@@ -30,8 +30,8 @@ private:
 #endif
 
   // Member variables
-  uint64_t key;               // Original 64-bit key
-  vector<uint64_t> roundKeys; // 16 round keys (48-bit each)
+  uint64_t key;                 // Original 64-bit key
+  vector<bitset<48>> roundKeys; // 16 round keys (48-bit each)
 
   // Private functions
   void generateRoundKeys(); // Key scheduling

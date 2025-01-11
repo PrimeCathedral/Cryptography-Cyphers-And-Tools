@@ -182,6 +182,41 @@ TEST(rotateBits, NegativeRotation) {
   constexpr bitset<4> shifted{0b1011};
   EXPECT_EQ(rotateBits(original, -1), shifted);
 }
+TEST(concatenateBitsets, SmallBitsets) {
+  constexpr bitset<4> B1{0b1010};
+  constexpr bitset<4> B2{0b0101};
+  constexpr bitset<8> expected{0b10100101};
+
+  EXPECT_EQ(concatenateBitsets(B1, B2), expected);
+}
+TEST(concatenateBitsets, DifferentSizes) {
+  constexpr bitset<5> B1{0b10101};
+  constexpr bitset<3> B2{0b110};
+  constexpr bitset<8> expected{0b10101110};
+
+  EXPECT_EQ(concatenateBitsets(B1, B2), expected);
+}
+TEST(concatenateBitsets, ZeroBitset) {
+  constexpr bitset<4> B1{0b0000};
+  constexpr bitset<4> B2{0b0000};
+  constexpr bitset<8> expected{0b00000000};
+
+  EXPECT_EQ(concatenateBitsets(B1, B2), expected);
+}
+TEST(concatenateBitsets, LargeBitsets) {
+  constexpr bitset<16> B1{0b1111000011110000};
+  constexpr bitset<16> B2{0b0000111100001111};
+  constexpr bitset<32> expected{0b11110000111100000000111100001111};
+
+  EXPECT_EQ(concatenateBitsets(B1, B2), expected);
+}
+TEST(concatenateBitsets, SingleBitset) {
+  constexpr bitset<4> B1{0b1010};
+  constexpr bitset<0> B2{}; // Empty bitset
+  constexpr bitset<4> expected{0b1010};
+
+  EXPECT_EQ(concatenateBitsets(B1, B2), expected);
+}
 
 // Main entry point for the test runner
 int main(int argc, char **argv) {
