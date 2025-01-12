@@ -4,6 +4,7 @@
 
 #include "des.hpp"
 
+#include <__ranges/split_view.h>
 #include <bitset>
 
 using std::bitset;
@@ -135,31 +136,46 @@ bitset<Output> boxPermute(const vector<int> &Box,
   }
   return permuted_text;
 }
+template <size_t Size>
+void changeBit(bitset<Size> &bitset, const int bit_to_change,
+               const bool new_value) {
+  bitset.set(Size - 1 - bit_to_change, new_value);
+}
 
 // TODO: Test this
 // Function for splitting a bitset into segments.
-template <size_t OriginalSize, size_t SplitSize>
+template <size_t SplitSize, size_t OriginalSize>
 vector<bitset<SplitSize>> splitBitset(const bitset<OriginalSize> &original) {
+
+  if (SplitSize == OriginalSize)
+    throw std::invalid_argument("SplitSize must be smaller than OriginalSize.");
+
+  const int originalSize{static_cast<int>(OriginalSize)};
+  const int size_of_segment{static_cast<int>(SplitSize)};
+  const int number_of_segments{originalSize / size_of_segment};
+  const unsigned long long mask{bitset<SplitSize>().flip().to_ullong()};
+
   // Check that the original size is evenly divisible by the split size
-  if (OriginalSize % SplitSize != 0) {
+  if (originalSize % size_of_segment != 0) {
     throw std::invalid_argument(
         "Original bitset size must be evenly divisible by SplitSize.");
   }
 
-  auto segments{OriginalSize / SplitSize};
+  unsigned long long og{original.to_ullong()};
 
   // Initialize a vector that contains empty bitsets of size SplitSize
-  vector<bitset<SplitSize>> splits(segments, bitset<SplitSize>());
+  vector<bitset<SplitSize>> segments_vector(number_of_segments,
+                                            bitset<SplitSize>());
 
-  // Populate the segments
-  for (size_t seg{0}; seg < segments; ++seg) {
-    for (size_t bit{0}; bit < SplitSize; ++bit) {
-      splits[seg][bit] = original[seg * SplitSize + bit];
-    }
+  for (int current_segment{number_of_segments - 1}; current_segment >= 0;
+       --current_segment) {
+    segments_vector[current_segment] = og & mask;
+    og >>= size_of_segment;
   }
 
-  return splits;
+  return segments_vector;
 }
+
 /**
  * Rotates the bits of a bitset by a specified number of positions,
  * accommodating both positive (right rotation) and negative (left rotation)
@@ -253,7 +269,7 @@ void DataEncryptionStandard::DES::generateRoundKeys() {
   const bitset<56> pc1_key{boxPermute<56, 64>(PC1, this->key)};
 
   // Split key into 28-bit halves L0 and R0
-  auto keys{splitBitset<56, 28>(pc1_key)};
+  auto keys{splitBitset<28>(pc1_key)};
 
   auto round{0};
 

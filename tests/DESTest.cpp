@@ -100,6 +100,76 @@ TEST(BoxPermute, IPAndFPBoxTest) {
   EXPECT_EQ(p2, r2);
 }
 
+// Test: Splitting a 16-bit bitset into 4-bit segments
+TEST(SplitBitset, SplitIntoEqualSegments) {
+  constexpr bitset<16> original{0b1111000011110000};
+  const auto result = splitBitset<4>(original);
+
+  ASSERT_EQ(result.size(), 4); // Should produce 4 segments
+  EXPECT_EQ(result[0], bitset<4>{0b1111});
+  EXPECT_EQ(result[1], bitset<4>{0b0000});
+  EXPECT_EQ(result[2], bitset<4>{0b1111});
+  EXPECT_EQ(result[3], bitset<4>{0b0000});
+}
+
+// Test: Splitting a 12-bit bitset into 4-bit segments
+TEST(SplitBitset, SplitUnevenSegments) {
+  constexpr bitset<12> original{0b101010111100};
+  const auto result{splitBitset<4>(original)};
+
+  ASSERT_EQ(result.size(), 3); // Should produce 3 segments
+  EXPECT_EQ(result[0], bitset<4>{0b1010});
+  EXPECT_EQ(result[1], bitset<4>{0b1011});
+  EXPECT_EQ(result[2], bitset<4>{0b1100});
+}
+
+// Test: Splitting a 64-bit bitset into 8-bit segments
+TEST(SplitBitset, LargeBitsetSplit) {
+  constexpr bitset<64> original{
+      0x0123456789ABCDEF}; // Hexadecimal initialization
+  const auto result = splitBitset<8>(original);
+
+  ASSERT_EQ(result.size(), 8);                 // Should produce 8 segments
+  EXPECT_EQ(result[7], bitset<8>{0b11101111}); // Least significant 8 bits
+  EXPECT_EQ(result[6], bitset<8>{0b11001101}); //
+  EXPECT_EQ(result[5], bitset<8>{0b10101011}); //
+  EXPECT_EQ(result[4], bitset<8>{0b10001001}); //
+  EXPECT_EQ(result[3], bitset<8>{0b01100111}); //
+  EXPECT_EQ(result[2], bitset<8>{0b01000101}); //
+  EXPECT_EQ(result[1], bitset<8>{0b00100011}); //
+  EXPECT_EQ(result[0], bitset<8>{0b00000001}); // Most significant 8 bits
+}
+
+// Test: Edge case with 1-bit splits
+TEST(SplitBitset, SingleBitSegments) {
+  constexpr bitset<8> original{0b10110011};
+  const auto result = splitBitset<1>(original);
+
+  ASSERT_EQ(result.size(), 8); // Should produce 8 segments
+  EXPECT_EQ(result[7], bitset<1>{1});
+  EXPECT_EQ(result[6], bitset<1>{1});
+  EXPECT_EQ(result[5], bitset<1>{0});
+  EXPECT_EQ(result[4], bitset<1>{0});
+  EXPECT_EQ(result[3], bitset<1>{1});
+  EXPECT_EQ(result[2], bitset<1>{1});
+  EXPECT_EQ(result[1], bitset<1>{0});
+  EXPECT_EQ(result[0], bitset<1>{1});
+}
+
+// Test: Throwing an exception for invalid split sizes
+TEST(SplitBitset, InvalidSplitSize) {
+  constexpr bitset<10> original{0b1111000000};
+
+  // 3 is not a divisor fo 10
+  EXPECT_THROW(splitBitset<3>(original), std::invalid_argument);
+}
+
+// Test: No-op with the same split size as original size
+TEST(SplitBitset, SplitSameAsOriginalSize) {
+  constexpr bitset<8> original{0b11001010};
+  ASSERT_THROW(splitBitset<8>(original), std::invalid_argument);
+}
+
 TEST(rotateBits, PositiveShift) {
   bitset<5> original{0b10101};
   constexpr bitset<5> expected{0b11010}; // Rotate right by 1 bit

@@ -48,7 +48,7 @@ target_link_libraries(DESTest DataEncryptionStandard gtest gmock)
 target_compile_definitions(PrimesTest PRIVATE $<$<CONFIG:Debug>:DEBUG_MACRO>)
 target_compile_definitions(UtilitiesTest PRIVATE $<$<CONFIG:Debug>:DEBUG_MACRO>)
 target_compile_definitions(ModularArithmeticTest PRIVATE $<$<CONFIG:Debug>:DEBUG_MACRO>)
-target_compile_definitions(DESTest PRIVATE UNIT_TESTING)
+target_compile_definitions(DESTest PRIVATE UNIT_TESTING $<$<CONFIG:Debug>:DEBUG_MACRO>)
 
 # Add the tests to CMake's testing framework
 add_test(NAME ModularArithmeticTest COMMAND ModularArithmeticTest)
