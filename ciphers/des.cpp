@@ -142,38 +142,54 @@ void changeBit(bitset<Size> &bitset, const int bit_to_change,
   bitset.set(Size - 1 - bit_to_change, new_value);
 }
 
-// TODO: Test this
-// Function for splitting a bitset into segments.
-template <size_t SplitSize, size_t OriginalSize>
-vector<bitset<SplitSize>> splitBitset(const bitset<OriginalSize> &original) {
-
-  if (SplitSize == OriginalSize)
-    throw std::invalid_argument("SplitSize must be smaller than OriginalSize.");
-
-  const int originalSize{static_cast<int>(OriginalSize)};
-  const int size_of_segment{static_cast<int>(SplitSize)};
-  const int number_of_segments{originalSize / size_of_segment};
-  const unsigned long long mask{bitset<SplitSize>().flip().to_ullong()};
-
-  // Check that the original size is evenly divisible by the split size
-  if (originalSize % size_of_segment != 0) {
+/**
+ * Splits a bitset into smaller segments of a specified size.
+ * The order of the segments in the output matches the bit order in the original
+ * bitset.
+ *
+ * @tparam size_of_segment The size of each segment in the resulting vector.
+ * @tparam size_of_original The size of the original bitset to be split.
+ * @param original The original bitset to be split into smaller segments.
+ * @return A vector of bitsets, each of size `size_of_segment`, representing the
+ * segments of the original bitset.
+ *
+ * @throws std::invalid_argument If the size of the original bitset is not
+ * evenly divisible by the segment size.
+ * @throws std::invalid_argument If the size of the original bitset is the same
+ * as the segment size.
+ */
+template <size_t size_of_segment, size_t size_of_original>
+vector<bitset<size_of_segment>>
+splitBitset(const bitset<size_of_original> &original) {
+  // Validate input: ensure split size divides original size
+  if (size_of_original % size_of_segment != 0) {
     throw std::invalid_argument(
         "Original bitset size must be evenly divisible by SplitSize.");
   }
-
-  unsigned long long og{original.to_ullong()};
-
-  // Initialize a vector that contains empty bitsets of size SplitSize
-  vector<bitset<SplitSize>> segments_vector(number_of_segments,
-                                            bitset<SplitSize>());
-
-  for (int current_segment{number_of_segments - 1}; current_segment >= 0;
-       --current_segment) {
-    segments_vector[current_segment] = og & mask;
-    og >>= size_of_segment;
+  if (size_of_original == size_of_segment) {
+    throw std::invalid_argument(
+        "Original size and segment size must not be the same");
   }
 
-  return segments_vector;
+  // Precompute constants
+  constexpr int number_of_segments{size_of_original / size_of_segment};
+  constexpr unsigned long long mask{
+      bitset<size_of_segment>().flip().to_ullong()};
+
+  // Copy the original bitset to a modifiable value
+  unsigned long long copy{original.to_ullong()};
+
+  // Create a vector for segments
+  vector<bitset<size_of_segment>> segments;
+
+  // Extract segments using the mask
+  for (int i{0}; i < number_of_segments; ++i) {
+    segments.emplace_back(copy & mask);
+    copy >>= size_of_segment;
+  }
+  // Reverse the order of segments to match the correct bit order
+  reverse(segments.begin(), segments.end());
+  return segments;
 }
 
 /**
