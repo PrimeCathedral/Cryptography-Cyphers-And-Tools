@@ -104,7 +104,9 @@ const vector<const vector<const vector<int>>> DataEncryptionStandard::S_BOXES{
 const vector<int> DataEncryptionStandard::SHIFT_SCHEDULE{
     1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
 
-DataEncryptionStandard::DES::DES(const uint64_t key) : key(key){};
+DataEncryptionStandard::DES::DES(const uint64_t key) : key(key) {
+  this->generateRoundKeys();
+};
 
 namespace DataEncryptionStandard {
 template <size_t Output, size_t Input>
@@ -280,14 +282,23 @@ bitset<S1 + S2> concatenateBitsets(const bitset<S1> &B1, const bitset<S2> &B2) {
 
 } // namespace DataEncryptionStandard
 
+void DataEncryptionStandard::DES::setKey(const uint64_t key) {
+
+  // Save new key
+  this->key = bitset<64>(key);
+
+  // Generate new round keys based on new_key
+  this->generateRoundKeys();
+}
+
 void DataEncryptionStandard::DES::generateRoundKeys() {
   // Permute with PC1 and remove parity bits from key
   const bitset<56> pc1_key{boxPermute<56, 64>(PC1, this->key)};
 
   // Split key into 28-bit halves L0 and R0
-  auto keys{splitBitset<28>(pc1_key)};
+  vector<bitset<28>> keys{splitBitset<28>(pc1_key)};
 
-  auto round{0};
+  int round{0};
 
   while (round++ < 16) {
     // In some specific rounds
@@ -301,10 +312,10 @@ void DataEncryptionStandard::DES::generateRoundKeys() {
     }
 
     // Join the two halves
-    const auto concatenated_key{concatenateBitsets(keys[0], keys[1])};
+    const bitset<56> concatenated_key{concatenateBitsets(keys[0], keys[1])};
 
     // Permute them
-    const auto permuted_key{boxPermute<48, 56>(PC2, concatenated_key)};
+    const bitset<48> permuted_key{boxPermute<48, 56>(PC2, concatenated_key)};
 
     // Save them as a round key
     this->roundKeys[round] = permuted_key;

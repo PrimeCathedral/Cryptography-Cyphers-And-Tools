@@ -24,21 +24,20 @@ public:
   // Decryption function
   uint64_t decrypt(uint64_t ciphertext);
 
+  void setKey(uint64_t key);
+
 #ifndef UNIT_TESTING // This enables me to test private methods but still
                      // compiles correctly for user
 private:
 #endif
 
   // Member variables
-  uint64_t key;                 // Original 64-bit key
+  bitset<64> key;               // Original 64-bit key
   vector<bitset<48>> roundKeys; // 16 round keys (48-bit each)
 
   // Private functions
   void generateRoundKeys(); // Key scheduling
-  bitset<64> initialPermutation(
-      const uint64_t &input); // Apply the initial permutation (IP)
-  // TODO: uint64_t finalPermutation(uint64_t input);   // Apply the final
-  // permutation (FP)
+
   // TODO: uint64_t feistelFunction(uint32_t R, uint64_t roundKey); // Feistel
   // function
   // TODO: uint64_t permute(uint64_t input, const int* table, int size); //
