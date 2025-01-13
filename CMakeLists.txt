@@ -2,12 +2,19 @@ cmake_minimum_required(VERSION 3.27)
 project(Cryptography-Ciphers-And-Tools)
 
 set(CMAKE_CXX_STANDARD 23)
+set(CXX_STANDARD_REQUIRED ON)
 
-# Enable testing
-enable_testing()
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
 
-# Add the Google Test submodule
-add_subdirectory(external/googletest)
+# # Add the Google Test submodule
+# add_subdirectory(external/googletest)
 
 # Add the Boost submodule (if not done already)
 add_subdirectory(external/boost)
@@ -38,11 +45,11 @@ target_link_libraries(Utilities ${COMMON_LIBS})
 target_link_libraries(IntegerFactorization Utilities ${COMMON_LIBS})
 
 # Tests - link GTest and GMock to test executables
-target_link_libraries(ModularArithmeticTest ModularArithmetic gtest gmock)
-target_link_libraries(UtilitiesTest Utilities ${COMMON_LIBS} gtest gmock)
-target_link_libraries(PrimesTest Primes ModularArithmetic Utilities ${COMMON_LIBS} gtest gmock)
-target_link_libraries(IntegerFactorizationTest IntegerFactorization Utilities ${COMMON_LIBS} gtest gmock)
-target_link_libraries(DESTest DataEncryptionStandard gtest gmock)
+target_link_libraries(ModularArithmeticTest ModularArithmetic GTest::gtest_main)
+target_link_libraries(UtilitiesTest Utilities ${COMMON_LIBS} GTest::gtest_main)
+target_link_libraries(PrimesTest Primes ModularArithmetic Utilities ${COMMON_LIBS} GTest::gtest_main)
+target_link_libraries(IntegerFactorizationTest IntegerFactorization Utilities ${COMMON_LIBS} GTest::gtest_main)
+target_link_libraries(DESTest DataEncryptionStandard GTest::gtest_main)
 
 # Compile definitions
 target_compile_definitions(PrimesTest PRIVATE $<$<CONFIG:Debug>:DEBUG_MACRO>)
@@ -56,3 +63,9 @@ add_test(NAME PrimesTest COMMAND PrimesTest)
 add_test(NAME UtilitiesTest COMMAND UtilitiesTest)
 add_test(NAME IntegerFactorizationTest COMMAND IntegerFactorizationTest)
 add_test(NAME DESTest COMMAND DESTest)
+
+
+enable_testing()
+
+include(GoogleTest)
+gtest_discover_tests(ModularArithmeticTest UtilitiesTest PrimesTest IntegerFactorizationTest DESTest)

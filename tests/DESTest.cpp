@@ -14,10 +14,7 @@ protected:
   DES *desEncryptor{nullptr};
 
   // Setup before each test
-  void SetUp() override {
-    constexpr uint64_t sampleKey = 0x133457799BBCDFF1; // Example 64-bit key
-    desEncryptor = new DES(sampleKey);
-  }
+  void SetUp() override { desEncryptor = new DES(0); }
 
   // Teardown after each test
   void TearDown() override { delete desEncryptor; }
@@ -287,6 +284,117 @@ TEST(concatenateBitsets, SingleBitset) {
 
   EXPECT_EQ(concatenateBitsets(B1, B2), expected);
 }
+// // Test Case 1: Verify correct number of round keys
+// TEST(GenerateRoundKeys, CorrectNumberOfRoundKeys) {
+//     DataEncryptionStandard::DES des;
+//     des.key = 0x133457799BBCDFF1; // Example key
+//     des.generateRoundKeys();
+//
+//     // Ensure that exactly 16 round keys are generated
+//     for (int i = 1; i <= 16; ++i) {
+//         EXPECT_EQ(des.roundKeys[i].size(), 48) << "Round key " << i << " is
+//         not of size 48.";
+//     }
+// }
+
+TEST_F(DESFixture, generateRoundKeys_CorrectNumberOfKeys) {
+  desEncryptor->setKey(0x133457799BBCDFF1); // Example key
+
+  // Ensure that exactly 16 round keys are generated
+  for (int i = 0; i <= 15; ++i) {
+    EXPECT_EQ(desEncryptor->roundKeys[i].size(), 48);
+  }
+}
+//
+// // Test Case 2: Verify round key values for a known input key
+// TEST(GenerateRoundKeys, KnownKeyTest) {
+//     DataEncryptionStandard::DES des;
+//     des.key = 0x133457799BBCDFF1; // Example key
+//     des.generateRoundKeys();
+//
+//     // Expected round keys for the given key
+//     std::vector<bitset<48>> expectedRoundKeys{
+//         // Add the expected round keys here based on your known results
+//         // Example: bitset<48>("expected_binary_value_for_round_1"),
+//     };
+//
+//     for (int i = 0; i < expectedRoundKeys.size(); ++i) {
+//         EXPECT_EQ(des.roundKeys[i + 1], expectedRoundKeys[i]) << "Mismatch in
+//         round key " << (i + 1);
+//     }
+// }
+//
+// // Test Case 3: Test with an all-zero key
+// TEST(GenerateRoundKeys, AllZeroKey) {
+//     DataEncryptionStandard::DES des;
+//     des.key = 0x0; // All-zero key
+//     des.generateRoundKeys();
+//
+//     // Verify all round keys are not zero
+//     for (int i = 1; i <= 16; ++i) {
+//         EXPECT_NE(des.roundKeys[i].to_ullong(), 0) << "Round key " << i << "
+//         should not be zero.";
+//     }
+// }
+//
+// // Test Case 4: Test with an all-one key
+// TEST(GenerateRoundKeys, AllOneKey) {
+//     DataEncryptionStandard::DES des;
+//     des.key = 0xFFFFFFFFFFFFFFFF; // All-one key
+//     des.generateRoundKeys();
+//
+//     // Verify all round keys are generated correctly
+//     for (int i = 1; i <= 16; ++i) {
+//         EXPECT_NE(des.roundKeys[i].to_ullong(), 0) << "Round key " << i << "
+//         should not be zero.";
+//     }
+// }
+//
+// // Test Case 5: Edge case - Key with alternating bits
+// TEST(GenerateRoundKeys, AlternatingBitsKey) {
+//     DataEncryptionStandard::DES des;
+//     des.key = 0xAAAAAAAAAAAAAAAA; // Alternating bits
+//     des.generateRoundKeys();
+//
+//     // Verify no errors occur and round keys are non-zero
+//     for (int i = 1; i <= 16; ++i) {
+//         EXPECT_NE(des.roundKeys[i].to_ullong(), 0) << "Round key " << i << "
+//         should not be zero.";
+//     }
+// }
+//
+// // Test Case 6: Verify round key permutation consistency
+// TEST(GenerateRoundKeys, PermutationConsistency) {
+//     DataEncryptionStandard::DES des;
+//     des.key = 0x133457799BBCDFF1; // Example key
+//     des.generateRoundKeys();
+//
+//     // Ensure all round keys are unique
+//     std::set<bitset<48>> uniqueKeys;
+//     for (int i = 1; i <= 16; ++i) {
+//         uniqueKeys.insert(des.roundKeys[i]);
+//     }
+//
+//     EXPECT_EQ(uniqueKeys.size(), 16) << "Some round keys are duplicated.";
+// }
+// constexpr bitset<48> K0 {0b000110110000001011101111111111000111000001110010};
+// constexpr bitset<48> K1 {0b011110011010111011011001110110111100100111100101};
+// constexpr bitset<48> K2 {0b010101011111110010001010010000101100111110011001};
+// constexpr bitset<48> K3 {0b011100101010110111010110110110110011010100011101};
+// constexpr bitset<48> K4 {0b011111001110110000000111111010110101001110101000};
+// constexpr bitset<48> K5 {0b011000111010010100111110010100000111101100101111};
+// constexpr bitset<48> K6 {0b111011001000010010110111111101100001100010111100};
+// constexpr bitset<48> K7 {0b111101111000101000111010110000010011101111111011};
+// constexpr bitset<48> K8 {0b111000001101101111101011111011011110011110000001};
+// constexpr bitset<48> K9 {0b101100011111001101000111101110100100011001001111};
+// constexpr bitset<48> K10
+// {0b001000010101111111010011110111101101001110000110}; constexpr bitset<48>
+// K11 {0b011101010111000111110101100101000110011111101001}; constexpr
+// bitset<48> K12 {0b100101111100010111010001111110101011101001000001};
+// constexpr bitset<48> K13
+// {0b010111110100001110110111111100101110011100111010}; constexpr bitset<48>
+// K14 {0b101111111001000110001101001111010011111100001010}; constexpr
+// bitset<48> K15 {0b110010110011110110001011000011100001011111110101};
 
 // Main entry point for the test runner
 int main(int argc, char **argv) {
