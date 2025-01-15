@@ -6,6 +6,8 @@
 
 #include <__ranges/split_view.h>
 #include <bitset>
+#include <iostream>
+#include <ostream>
 
 using std::bitset;
 using std::vector;
@@ -285,21 +287,37 @@ void DataEncryptionStandard::DES::setKey(const uint64_t key) {
 }
 
 void DataEncryptionStandard::DES::generateRoundKeys() {
+
+    // Make sure vector is clear
+    roundKeys.clear();
+
   // Permute with PC1 and remove parity bits from key
   const bitset<56> pc1_key{boxPermute<56, 64>(PC1, this->key)};
-
+#ifdef DEBUG_MACRO
+    std::cout << "PC1_key: " << pc1_key << std::endl;
+#endif
   // Split key into 28-bit halves L0 and R0
   vector<bitset<28>> keys{splitBitset<28>(pc1_key)};
-
+#ifdef DEBUG_MACRO
+    for (const auto &key : keys) {
+        std::cout << "key: " << key << std::endl;
+    }
+#endif
   int round{0};
 
-  while (round++ < 16) {
+  while (round < 16) {
     // In some specific rounds
     if (round == 0 || round == 1 || round == 8 || round == 15) {
+#ifdef DEBUG_MACRO
+      std::cout << "Special round: " << round << std::endl;
+#endif
       // Rotate the halves one bit to the left
       rotateBits(keys[0], -1);
       rotateBits(keys[1], -1);
     } else { // In all other rounds rotate the halves two bits to the left
+#ifdef DEBUG_MACRO
+        std::cout << "Normal round: " << round << std::endl;
+#endif
       rotateBits(keys[0], -2);
       rotateBits(keys[1], -2);
     }
@@ -311,6 +329,9 @@ void DataEncryptionStandard::DES::generateRoundKeys() {
     const bitset<48> permuted_key{boxPermute<48, 56>(PC2, concatenated_key)};
 
     // Save them as a round key
-    this->roundKeys[round] = permuted_key;
+    roundKeys.emplace_back(permuted_key);
+
+    // Move to next round
+    round++;
   }
 }
