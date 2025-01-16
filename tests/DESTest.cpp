@@ -360,6 +360,33 @@ TEST_F(DESFixture, GenerateRoundKeys_PermutationConsistency) {
     EXPECT_EQ(uniqueKeys.size(), 16) << "Some round keys are duplicated.";
 }
 
+TEST(ConcatenateBitsets, Basic_Concatenation) {
+  constexpr bitset<4> a {0b1111};
+  constexpr bitset<4> b {0b0000};
+  constexpr bitset<4> c {0b1100};
+  const vector<bitset<4>> z {a, b, c};
+  constexpr bitset<12> r {0b111100001100};
+
+  EXPECT_EQ(concatenateBitsets<12>(z), r);
+}
+
+TEST(ConcatenateBitsets, EdgeCase_AllZeros) {
+  const vector<bitset<4>> z {{0b0000},{0b0000},{0b0000}};
+  constexpr bitset<12> output {0b000000000000};
+  EXPECT_EQ(concatenateBitsets<12>(z), output);
+}
+
+TEST(ConcatenateBitsets, EdgeCase_SingleBitset) {
+  const vector<bitset<4>> z {{0b1100}};
+  constexpr bitset<4> expected {0b1100};
+  EXPECT_EQ(expected, concatenateBitsets<4>(z));
+}
+
+TEST(ConcatenateBitsets, EdgeCase_InvalidInput) {
+  const vector<bitset<4>> z {0b1010, 0b1100};
+  EXPECT_THROW(concatenateBitsets<10>(z), std::invalid_argument);
+}
+
 // Main entry point for the test runner
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

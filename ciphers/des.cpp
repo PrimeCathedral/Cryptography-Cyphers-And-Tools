@@ -335,22 +335,47 @@ bitset<4> sBox (const bitset<6>& input, const vector<const vector<int>>& SBox) {
   column[2] = input[3];
   column[3] = input[4];
 
+  // TODO: simplify this. This is ugly AF
   return {static_cast<unsigned long long>(SBox[row.to_ulong()][column.to_ulong()])};
-
 }
 
 
+namespace DataEncryptionStandard {
+  template <size_t OutputSize, size_t InputSize>
+  std::bitset<OutputSize> concatenateBitsets(const std::vector<std::bitset<InputSize>> &bitsets) {
+    // Ensure the total size of the concatenated bitset matches OutputSize
+    if (bitsets.size() * InputSize != OutputSize) {
+      throw std::invalid_argument("Concatenation size must match the total size of the input bitsets.");
+    }
+
+    // Initialize the output bitset
+    std::bitset<OutputSize> result;
+
+    // Iterate through the input bitsets
+    for (size_t i {0}; i < bitsets.size(); ++i) {
+      // Shift the current bitset to its position in the result
+      size_t shiftAmount {(bitsets.size() - i - 1) * InputSize};
+      result |= (std::bitset<OutputSize>(bitsets[i].to_ullong()) << shiftAmount);
+    }
+
+    return result;
+  }
+}
+
 // bitset<32> DataEncryptionStandard::DES::substitute(const bitset<48> expanded_input) {
 //   // Divide into 8 segments of 6-bits
-//   vector<bitset<6>> segments {splitBitset<6>(expanded_input)};
+//   const vector<bitset<6>> split_segments {splitBitset<6>(expanded_input)};
+//   vector<bitset<4>> resulting_segments;
 //
 //   // Initialize empty container for output
 //   bitset<32> output;
 //
-//   // Iterate through each of the 8 segments
+//   // Use the S-boxes to find their 4-bit entry
 //   for (int i{0}; i < 8; ++i) {
-//
+//     resulting_segments.emplace_back(sBox(split_segments[i], S_BOXES[i]));
 //   }
+//
+//   // Merge the split segments
 //
 //
 // }
