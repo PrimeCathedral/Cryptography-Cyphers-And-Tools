@@ -77,6 +77,7 @@ bool Primes::FermatPrimalityTest(const cpp_int &candidate) {
     }
 
     // Verify Fermat's Little Theorem
+    // TODO change this!!!!
     if (MA::modularExponentiation(rand, candidate - 1, candidate) != 1) {
       return false;
     }

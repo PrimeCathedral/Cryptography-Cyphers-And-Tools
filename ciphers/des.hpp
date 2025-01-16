@@ -42,7 +42,7 @@ private:
   // function
   // TODO: uint64_t permute(uint64_t input, const int* table, int size); //
   // General permutation
-  // TODO: uint32_t substitute(uint64_t input);   // Substitution using S-boxes
+  bitset<32> substitute(bitset<48> expanded_input);   // Substitution using S-boxes
 };
 
 // `extern` indicates that these variables are declared here but defined in the

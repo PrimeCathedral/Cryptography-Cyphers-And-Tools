@@ -6,7 +6,6 @@
 
 #include <__ranges/split_view.h>
 #include <bitset>
-#include <iostream>
 #include <ostream>
 
 using std::bitset;
@@ -323,3 +322,35 @@ void DataEncryptionStandard::DES::generateRoundKeys() {
     round++;
   }
 }
+
+bitset<4> sBox (const bitset<6>& input, const vector<const vector<int>>& SBox) {
+  bitset<2> row;
+  bitset<4> column;
+
+  row[0] = input[0];
+  row[1] = input[5];
+
+  column[0] = input[1];
+  column[1] = input[2];
+  column[2] = input[3];
+  column[3] = input[4];
+
+  return {static_cast<unsigned long long>(SBox[row.to_ulong()][column.to_ulong()])};
+
+}
+
+
+// bitset<32> DataEncryptionStandard::DES::substitute(const bitset<48> expanded_input) {
+//   // Divide into 8 segments of 6-bits
+//   vector<bitset<6>> segments {splitBitset<6>(expanded_input)};
+//
+//   // Initialize empty container for output
+//   bitset<32> output;
+//
+//   // Iterate through each of the 8 segments
+//   for (int i{0}; i < 8; ++i) {
+//
+//   }
+//
+//
+// }

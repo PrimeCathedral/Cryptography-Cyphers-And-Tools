@@ -89,6 +89,7 @@ TEST(BoxPermute, IPAndFPBoxTest) {
   EXPECT_EQ(e2, a2);
 
   // Reverse first half
+  // TODO: remove auto
   const auto r1{boxPermute<64, 64>(FP, a1)};
   EXPECT_EQ(p1, r1);
 
@@ -325,7 +326,7 @@ TEST_F(DESFixture, GenerateRoundKeys_AllZeroKey) {
     desEncryptor->setKey(0x0); // All-zero key
 
     // Verify all round keys are zero
-    for (int i = 1; i <= 16; ++i) {
+    for (int i {0}; i < 16; ++i) {
         EXPECT_EQ(desEncryptor->roundKeys[i].to_ullong(), 0) << "Round key " << i << "should be zero.";
     }
 }
