@@ -11,6 +11,8 @@
 using std::bitset;
 using std::vector;
 
+// TODO: Implement cipher abstract class (interface)
+// TODO: Add comment checker (checks that there are enough comments) in Github
 namespace DataEncryptionStandard {
 class DES {
 
@@ -43,7 +45,7 @@ private:
   // function
   // TODO: uint64_t permute(uint64_t input, const int* table, int size); //
   // General permutation
-  bitset<32> feistel_function(bitset<48> input);   // Substitution using S-boxes
+  bitset<32> feistel_function(bitset<32> input);   // Substitution using S-boxes
 };
 
 // `extern` indicates that these variables are declared here but defined in the

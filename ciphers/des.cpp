@@ -360,9 +360,7 @@ namespace DataEncryptionStandard {
   }
 }
 
-// TODO: Implement cipher abstract class (interface)
-// TODO: Add comment checker (checks that there are enough comments) in Github
-bitset<32> DataEncryptionStandard::DES::feistel_function(const bitset<48> input) {
+bitset<32> DataEncryptionStandard::DES::feistel_function(const bitset<32> input) {
 
   // Expand input
   const auto expanded_input {boxPermute<48>(kExpansionFunctionBox, input)};
@@ -383,3 +381,40 @@ bitset<32> DataEncryptionStandard::DES::feistel_function(const bitset<48> input)
   // Merge segments, permute with P-Box, and return
   return boxPermute<32>(kPermutationBox, concatenateBitsets<32>(resulting_segments));
 }
+
+uint64_t DataEncryptionStandard::DES::encrypt(const uint64_t plaintext) {
+
+  // Make sure current round is Zero
+  current_round = 0;
+
+  // Initial permutation
+  const auto initial_permutation {boxPermute<64,64>(kInitialPermutationBox, bitset<64>{plaintext})};
+
+  // Split into left and right
+  const auto split_permutation {splitBitset<32>(initial_permutation)};
+  auto previous_left {split_permutation[0]};
+  auto previous_right {split_permutation[1]};
+  auto new_left {bitset<32>{}};
+  auto new_right {bitset<32>{}};
+
+  // For each round i:
+    // L_i = R_(i-1)
+    // R_i = L_(i-1) XOR FeistelFunction(R_(i-1), k_i)
+  do {
+    new_left = previous_right;
+    new_right = previous_left ^ feistel_function(previous_right);
+
+    previous_left = new_left;
+    previous_right = new_right;
+  } while (current_round++ < 15);
+
+  // Concatenate the two halves
+  const auto post_round_text {concatenateBitsets(new_left, new_right)};
+
+  // Permute them with the final permutation box
+  const auto cipher_text {boxPermute<64>(kFinalPermutationBox, post_round_text)};
+
+  // Return encrypted text
+  return cipher_text.to_ullong();
+}
+
