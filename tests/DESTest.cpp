@@ -75,7 +75,7 @@ TEST(BoxPermute, IPAndFPBoxTest) {
       0b1111111111111111111111111111111100000000000000000000000000000000};
   constexpr bitset<64> e1{
       0b0000111100001111000011110000111100001111000011110000111100001111};
-  const auto a1{boxPermute<64, 64>(IP, p1)};
+  const auto a1{boxPermute<64, 64>(kInitialPermutationBox, p1)};
 
   EXPECT_EQ(e1, a1);
 
@@ -84,17 +84,17 @@ TEST(BoxPermute, IPAndFPBoxTest) {
       0b0000000000000000000000000000000011111111111111111111111111111111};
   constexpr bitset<64> e2{
       0b1111000011110000111100001111000011110000111100001111000011110000};
-  const auto a2{boxPermute<64, 64>(IP, p2)};
+  const auto a2{boxPermute<64, 64>(kInitialPermutationBox, p2)};
 
   EXPECT_EQ(e2, a2);
 
   // Reverse first half
   // TODO: remove auto
-  const auto r1{boxPermute<64, 64>(FP, a1)};
+  const auto r1{boxPermute<64, 64>(kFinalPermutationBox, a1)};
   EXPECT_EQ(p1, r1);
 
   // Reverse second half
-  const auto r2{boxPermute<64, 64>(FP, a2)};
+  const auto r2{boxPermute<64, 64>(kFinalPermutationBox, a2)};
   EXPECT_EQ(p2, r2);
 }
 

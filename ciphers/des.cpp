@@ -3,8 +3,6 @@
 //
 
 #include "des.hpp"
-
-#include <__ranges/split_view.h>
 #include <bitset>
 #include <ostream>
 
@@ -12,38 +10,38 @@ using std::bitset;
 using std::vector;
 
 // Initial Permutation Box (IP)
-const vector<int> DataEncryptionStandard::IP{
+const vector<int> DataEncryptionStandard::kInitialPermutationBox{
     58, 50, 42, 34, 26, 18, 10, 2, 60, 52, 44, 36, 28, 20, 12, 4,
     62, 54, 46, 38, 30, 22, 14, 6, 64, 56, 48, 40, 32, 24, 16, 8,
     57, 49, 41, 33, 25, 17, 9,  1, 59, 51, 43, 35, 27, 19, 11, 3,
     61, 53, 45, 37, 29, 21, 13, 5, 63, 55, 47, 39, 31, 23, 15, 7};
 
 // Final Permutation (IP ^-1)
-const vector<int> DataEncryptionStandard::FP{
+const vector<int> DataEncryptionStandard::kFinalPermutationBox{
     40, 8, 48, 16, 56, 24, 64, 32, 39, 7, 47, 15, 55, 23, 63, 31,
     38, 6, 46, 14, 54, 22, 62, 30, 37, 5, 45, 13, 53, 21, 61, 29,
     36, 4, 44, 12, 52, 20, 60, 28, 35, 3, 43, 11, 51, 19, 59, 27,
     34, 2, 42, 10, 50, 18, 58, 26, 33, 1, 41, 9,  49, 17, 57, 25};
 
 // Expansion Function Box (E). Expands from 32 bits to 48 bits
-const vector<int> DataEncryptionStandard::E{
+const vector<int> DataEncryptionStandard::kExpansionFunctionBox{
     32, 1,  2,  3,  4,  5,  4,  5,  6,  7,  8,  9,  8,  9,  10, 11,
     12, 13, 12, 13, 14, 15, 16, 17, 16, 17, 18, 19, 20, 21, 20, 21,
     22, 23, 24, 25, 24, 25, 26, 27, 28, 29, 28, 29, 30, 31, 32, 1};
 
 // Permutation Box (P)
-const vector<int> DataEncryptionStandard::P{
+const vector<int> DataEncryptionStandard::kPermutationBox{
     16, 07, 20, 21, 29, 12, 28, 17, 01, 15, 23, 26, 05, 18, 31, 10,
     02, 8,  24, 14, 32, 27, 03, 9,  19, 13, 30, 06, 22, 11, 04, 25};
 
 // Permuted choice 1 box (PC-1)
-const vector<int> DataEncryptionStandard::PC1{
+const vector<int> DataEncryptionStandard::kPermutedChoiceOneBox{
     57, 49, 41, 33, 25, 17, 9,  01, 58, 50, 42, 34, 26, 18, 10, 02, 59, 51, 43,
     35, 27, 19, 11, 03, 60, 52, 44, 36, 63, 55, 47, 39, 31, 23, 15, 07, 62, 54,
     46, 38, 30, 22, 14, 6,  61, 53, 45, 37, 29, 21, 13, 05, 28, 20, 12, 04};
 
 // Permuted choice 2 box (PC-2)
-const vector<int> DataEncryptionStandard::PC2{
+const vector<int> DataEncryptionStandard::kPermutedChoiceTwoBox{
     14, 17, 11, 24, 1,  5,  3,  28, 15, 6,  21, 10, 23, 19, 12, 4,
     26, 8,  16, 7,  27, 20, 13, 2,  41, 52, 31, 37, 47, 55, 30, 40,
     51, 45, 33, 48, 44, 49, 39, 56, 34, 53, 46, 42, 50, 36, 29, 32};
@@ -52,7 +50,7 @@ const vector<int> DataEncryptionStandard::PC2{
 // Each S-Box is a 4x16 table of values, defining how a 6-bit input is
 // transformed into a 4-bit output. There are 8 S-Boxes in total, each
 // responsible for a specific transformation during the Feistel function.
-const vector<const vector<const vector<int>>> DataEncryptionStandard::S_BOXES{
+const vector<const vector<const vector<int>>> DataEncryptionStandard::kSBoxes{
     // S-Box 1
     {{14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7},
      {0, 15, 7, 4, 14, 2, 13, 1, 10, 6, 12, 11, 9, 5, 3, 8},
@@ -95,12 +93,12 @@ const vector<const vector<const vector<int>>> DataEncryptionStandard::S_BOXES{
      {2, 1, 14, 7, 4, 10, 8, 13, 15, 12, 9, 0, 3, 5, 6, 11}}};
 
 // SHIFT_SCHEDULE[i] returns the number of bits to shift in round i
-const vector<int> DataEncryptionStandard::SHIFT_SCHEDULE{
+const vector<int> DataEncryptionStandard::kShiftSchedule{
     1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
 
-DataEncryptionStandard::DES::DES(const uint64_t key) : key(key) {
+DataEncryptionStandard::DES::DES(const uint64_t key) : key(key), current_round(0) {
   this->generateRoundKeys();
-};
+}
 
 namespace DataEncryptionStandard {
 template <size_t Output, size_t Input>
@@ -291,7 +289,7 @@ void DataEncryptionStandard::DES::generateRoundKeys() {
     roundKeys.clear();
 
   // Permute with PC1 and remove parity bits from key
-  const bitset<56> pc1_key{boxPermute<56, 64>(PC1, this->key)};
+  const bitset<56> pc1_key{boxPermute<56, 64>(kPermutedChoiceOneBox, this->key)};
 
   // Split key into 28-bit halves L0 and R0
   vector<bitset<28>> keys{splitBitset<28>(pc1_key)};
@@ -313,7 +311,7 @@ void DataEncryptionStandard::DES::generateRoundKeys() {
     const bitset<56> concatenated_key{concatenateBitsets(keys[0], keys[1])};
 
     // Permute them
-    const bitset<48> permuted_key{boxPermute<48, 56>(PC2, concatenated_key)};
+    const bitset<48> permuted_key{boxPermute<48, 56>(kPermutedChoiceTwoBox, concatenated_key)};
 
     // Save them as a round key
     roundKeys.emplace_back(permuted_key);
@@ -362,20 +360,26 @@ namespace DataEncryptionStandard {
   }
 }
 
-// bitset<32> DataEncryptionStandard::DES::substitute(const bitset<48> expanded_input) {
-//   // Divide into 8 segments of 6-bits
-//   const vector<bitset<6>> split_segments {splitBitset<6>(expanded_input)};
-//   vector<bitset<4>> resulting_segments;
-//
-//   // Initialize empty container for output
-//   bitset<32> output;
-//
-//   // Use the S-boxes to find their 4-bit entry
-//   for (int i{0}; i < 8; ++i) {
-//     resulting_segments.emplace_back(sBox(split_segments[i], S_BOXES[i]));
-//   }
-//
-//   // Merge the split segments
-//
-//
-// }
+// TODO: Implement cipher abstract class (interface)
+// TODO: Add comment checker (checks that there are enough comments) in Github
+bitset<32> DataEncryptionStandard::DES::feistel_function(const bitset<48> input) {
+
+  // Expand input
+  const auto expanded_input {boxPermute<48>(kExpansionFunctionBox, input)};
+
+  // XOR expanded input with round key
+  // current_round is a class variable updated on every round of encryption and decryption
+  const auto xored_input {expanded_input ^ roundKeys[current_round]};
+
+  // Divide into 8 segments of 6-bits
+  const auto split_segments {splitBitset<6>(xored_input)};
+  auto resulting_segments {vector<bitset<4>>{}};
+
+  // Use the S-boxes to find their 4-bit entry
+  for (auto i{0}; i < resulting_segments.size(); ++i) {
+    resulting_segments.emplace_back(sBox(split_segments[i], kSBoxes[i]));
+  }
+
+  // Merge segments, permute with P-Box, and return
+  return boxPermute<32>(kPermutationBox, concatenateBitsets<32>(resulting_segments));
+}
