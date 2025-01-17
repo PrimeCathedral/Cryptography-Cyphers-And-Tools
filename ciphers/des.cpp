@@ -360,21 +360,21 @@ namespace DataEncryptionStandard {
   }
 }
 
-bitset<32> DataEncryptionStandard::DES::feistel_function(const bitset<32> input) {
+bitset<32> DataEncryptionStandard::DES::f_function(const bitset<32>& input, const int& current_round) const {
 
   // Expand input
   const auto expanded_input {boxPermute<48>(kExpansionFunctionBox, input)};
 
   // XOR expanded input with round key
   // current_round is a class variable updated on every round of encryption and decryption
-  const auto xored_input {expanded_input ^ roundKeys[current_round]};
+  const auto xored_input {expanded_input ^ this->roundKeys[current_round]};
 
   // Divide into 8 segments of 6-bits
   const auto split_segments {splitBitset<6>(xored_input)};
   auto resulting_segments {vector<bitset<4>>{}};
 
   // Use the S-boxes to find their 4-bit entry
-  for (auto i{0}; i < resulting_segments.size(); ++i) {
+  for (int i{0}; i < 8; ++i) {
     resulting_segments.emplace_back(sBox(split_segments[i], kSBoxes[i]));
   }
 
@@ -402,7 +402,7 @@ uint64_t DataEncryptionStandard::DES::encrypt(const uint64_t plaintext) {
     // R_i = L_(i-1) XOR FeistelFunction(R_(i-1), k_i)
   do {
     new_left = previous_right;
-    new_right = previous_left ^ feistel_function(previous_right);
+    new_right = previous_left ^ f_function(previous_right, this->current_round);
 
     previous_left = new_left;
     previous_right = new_right;
@@ -414,7 +414,7 @@ uint64_t DataEncryptionStandard::DES::encrypt(const uint64_t plaintext) {
   // Permute them with the final permutation box
   const auto cipher_text {boxPermute<64>(kFinalPermutationBox, post_round_text)};
 
-  // Return encrypted text
+  // Return encrypted text as 64-bit unsigned integer
   return cipher_text.to_ullong();
 }
 

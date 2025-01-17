@@ -45,7 +45,7 @@ private:
   // function
   // TODO: uint64_t permute(uint64_t input, const int* table, int size); //
   // General permutation
-  bitset<32> feistel_function(bitset<32> input);   // Substitution using S-boxes
+  bitset<32> f_function(const bitset<32>& input, const int& current_round) const;   // Substitution using S-boxes
 };
 
 // `extern` indicates that these variables are declared here but defined in the
