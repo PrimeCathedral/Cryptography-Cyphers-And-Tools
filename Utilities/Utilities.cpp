@@ -3,7 +3,7 @@
 //
 
 #include "Utilities.hpp"
-
+// TODO: Moe this to modules instead of namespaces
 using cpp_int = boost::multiprecision::cpp_int;
 
 /**
