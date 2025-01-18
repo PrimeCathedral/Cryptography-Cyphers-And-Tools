@@ -24,18 +24,20 @@ add_library(ModularArithmetic Utilities/ModularArithmetic.cpp Utilities/ModularA
 add_library(Utilities Utilities/Utilities.cpp Utilities/Utilities.hpp)
 add_library(Primes Utilities/Primes.cpp Utilities/Primes.hpp)
 add_library(IntegerFactorization Utilities/IntegerFactorization.cpp Utilities/IntegerFactorization.hpp)
-add_library(DataEncryptionStandard ciphers/des.hpp ciphers/des.cpp)
+add_library(DataEncryptionStandard ciphers/des.hpp ciphers/des.cpp Utilities/bytearray.h)
+add_library(ByteArray ./Utilities/bytearray.h ./Utilities/bytearray.cpp Utilities/bytearray.cpp)
 
 # Define a common list of libraries to link with (to avoid redundancy)
 set(COMMON_LIBS Boost::multiprecision Boost::integer)
 
 # Add executables
-add_executable(Crypto main.cpp ciphers/des.cpp ciphers/des.hpp)
+add_executable(Crypto main.cpp ciphers/des.cpp ciphers/des.hpp Utilities/bytearray.h)
 add_executable(ModularArithmeticTest tests/ModularArithmeticTest.cpp)
 add_executable(PrimesTest tests/PrimesTest.cpp)
 add_executable(UtilitiesTest tests/UtilitiesTest.cpp)
 add_executable(IntegerFactorizationTest tests/IntegerFactorizationTest.cpp)
-add_executable(DESTest tests/DESTest.cpp)
+add_executable(DESTest tests/DESTest.cpp Utilities/bytearray.h)
+add_executable(ByteArrayTest tests/ByteArrayTest.cpp)
 
 # Link common libraries
 target_link_libraries(Crypto Utilities ModularArithmetic Primes DataEncryptionStandard ${COMMON_LIBS})
@@ -43,13 +45,16 @@ target_link_libraries(Primes Utilities ModularArithmetic ${COMMON_LIBS})
 target_link_libraries(ModularArithmetic ${COMMON_LIBS})
 target_link_libraries(Utilities ${COMMON_LIBS})
 target_link_libraries(IntegerFactorization Utilities ${COMMON_LIBS})
+target_link_libraries(DataEncryptionStandard ByteArray ${COMMON_LIBS})
+target_link_libraries(ByteArray ${COMMON_LIBS})
 
 # Tests - link GTest and GMock to test executables
 target_link_libraries(ModularArithmeticTest ModularArithmetic GTest::gtest_main)
 target_link_libraries(UtilitiesTest Utilities ${COMMON_LIBS} GTest::gtest_main)
 target_link_libraries(PrimesTest Primes ModularArithmetic Utilities ${COMMON_LIBS} GTest::gtest_main)
 target_link_libraries(IntegerFactorizationTest IntegerFactorization Utilities ${COMMON_LIBS} GTest::gtest_main)
-target_link_libraries(DESTest DataEncryptionStandard GTest::gtest_main)
+target_link_libraries(DESTest DataEncryptionStandard GTest::gtest_main ByteArray)
+target_link_libraries(ByteArrayTest ByteArray GTest::gtest_main)
 
 # Compile definitions
 target_compile_definitions(PrimesTest PRIVATE $<$<CONFIG:Debug>:DEBUG_MACRO>)

@@ -41,3 +41,6 @@ jobs:
     - name: Run IntegerFactorizationTest
       run: ./build/IntegerFactorizationTest
 
+    - name: Run ByteArrayTest
+      run: ./build/ByteArrayTest
+

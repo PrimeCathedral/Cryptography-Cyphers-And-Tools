@@ -3,9 +3,12 @@
 //
 
 #include "des.hpp"
+#include "../Utilities/bytearray.h"
 
 using std::bitset;
 using std::vector;
+
+
 namespace DataEncryptionStandard {
 // Initial Permutation Box (IP)
 const vector<int> kInitialPermutationBox{
@@ -94,338 +97,319 @@ const vector<const vector<const vector<int>>> kSBoxes{
 const vector<int> kShiftSchedule{
     1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
 
-DES::DES(const uint64_t key) : key(key), current_round(0) {
-  this->generateRoundKeys();
-}
+// DES::DES(const uint64_t key) : key(key), current_round(0) {
+//   this->generateRoundKeys();
+// }
 
-template <size_t Output, size_t Input>
-bitset<Output> boxPermute(const vector<int> &Box,
-                          const bitset<Input> &original) {
-  bitset<Output> permuted_text;
+ByteArray applyPermutation(const vector<int> &Box, const ByteArray &original) {
 
-  // Ensure the size of the Box matches the Output size
-  if (Box.size() != Output) {
-    throw std::invalid_argument("Box size must match Output size.");
-  }
-
+  ByteArray permuted_text {std::vector<uint8_t>{8,0}};
   // Perform the permutation
-  for (size_t i{0}; i < Output; ++i) {
-    int bitFromOriginal =
-        (Input - 1) - (Box[i] - 1); // Convert 1-based index to 0-based
-    int newValue = original[bitFromOriginal];
-    int bitToChange =
-        (Output - 1) - i; // The bit we want to change is i from left to right,
-    // and bitset works right to left
-
-    // Validate the index
-    if (bitFromOriginal < 0 || bitFromOriginal >= Input) {
-      throw std::out_of_range("Invalid index in Box for the given Input size.");
-    }
-
-    // Set the corresponding bit in permuted_text
-    permuted_text.set(bitToChange, newValue);
+  for (size_t i{0}; i < Box.size(); ++i) {
+    permuted_text.setBit(i, original[Box[i] - 1]);
   }
   return permuted_text;
 }
+
 template <size_t Size>
 void changeBit(bitset<Size> &bitset, const int bit_to_change,
                const bool new_value) {
   bitset.set(Size - 1 - bit_to_change, new_value);
 }
 
-/**
- * Splits a bitset into smaller segments of a specified size.
- * The order of the segments in the output matches the bit order in the original
- * bitset.
- *
- * @tparam size_of_segment The size of each segment in the resulting vector.
- * @tparam size_of_original The size of the original bitset to be split.
- * @param original The original bitset to be split into smaller segments.
- * @return A vector of bitsets, each of size `size_of_segment`, representing the
- * segments of the original bitset.
- *
- * @throws std::invalid_argument If the size of the original bitset is not
- * evenly divisible by the segment size.
- * @throws std::invalid_argument If the size of the original bitset is the same
- * as the segment size.
- */
-template <size_t size_of_segment, size_t size_of_original>
-vector<bitset<size_of_segment>>
-splitBitset(const bitset<size_of_original> &original) {
-  // Validate input: ensure split size divides original size
-  if (size_of_original % size_of_segment != 0) {
-    throw std::invalid_argument(
-        "Original bitset size must be evenly divisible by SplitSize.");
-  }
-  if (size_of_original == size_of_segment) {
-    throw std::invalid_argument(
-        "Original size and segment size must not be the same");
-  }
-
-  // Precompute constants
-  constexpr int number_of_segments{size_of_original / size_of_segment};
-  constexpr unsigned long long mask{
-      bitset<size_of_segment>().flip().to_ullong()};
-
-  // Copy the original bitset to a modifiable value
-  unsigned long long copy{original.to_ullong()};
-
-  // Create a vector for segments
-  vector<bitset<size_of_segment>> segments;
-
-  // Extract segments using the mask
-  for (int i{0}; i < number_of_segments; ++i) {
-    segments.emplace_back(copy & mask);
-    copy >>= size_of_segment;
-  }
-  // Reverse the order of segments to match the correct bit order
-  reverse(segments.begin(), segments.end());
-  return segments;
-}
-
-/**
- * Rotates the bits of a bitset by a specified number of positions,
- * accommodating both positive (right rotation) and negative (left rotation)
- * shifts.
- *
- * The rotation wraps around the bitset, so bits shifted out on one side
- * reappear on the opposite side. Negative values for `bits_to_rotate` result in
- * a left rotation, while positive values result in a right rotation. The number
- * of rotations is normalized to avoid redundant full rotations.
- *
- * @tparam Size The size of the bitset to rotate.
- * @param original The bitset to be rotated. This bitset is modified in place.
- * @param bits_to_rotate The number of positions to rotate the bits. Positive
- * values rotate the bits to the right, while negative values rotate the bits to
- * the left.
- * @return A reference to the rotated bitset (`original`) for convenience.
- *
- * @note The rotation is performed in place, modifying the input bitset
- * directly. If `bits_to_rotate` is a multiple of `Size`, the bitset remains
- * unchanged.
- */
-template <size_t Size>
-bitset<Size> &rotateBits(bitset<Size> &original, const int bits_to_rotate) {
-
-  // We define this here to be able to use the % operator with ints and
-  // accurately calculate modulus. Otherwise -1 % 5 returns -1 or conversion
-  // error from downgrading size_t to int.
-  const int size{static_cast<int>(original.size())};
-
-  // To accommodate for negative shifts, find a number that is congruent with
-  // bits_to_rotate and less than Size
-  const int congruent_btr{((bits_to_rotate % size) + size) % size};
-
-  // If full rotation return original
-  if (congruent_btr == 0)
-    return original;
-
-  // Make copy of original
-  bitset<Size> copy(original);
-
-  // Shift copy-bits all the way to the left (11000)
-  copy <<= size - congruent_btr;
-
-  // Shift original bits to the right causing leftmost bits to be Zero (00111)
-  original >>= congruent_btr;
-
-  // XOR original and copy to merge them (11000 ^ 00111) = (11111)
-  original ^= copy;
-
-  return original;
-}
-/**
- * Concatenates two bitsets into a single bitset, where the first argument's
- * bits appear first in the resulting bitset, followed by the second argument's
- * bits.
- *
- * The order of the arguments is significant: the bits of the first bitset
- * (`B1`) will occupy the higher-order bits of the concatenated result, while
- * the bits of the second bitset (`B2`) will occupy the lower-order bits.
- *
- * @tparam S1 The size of the first bitset (B1).
- * @tparam S2 The size of the second bitset (B2).
- * @param B1 The first bitset, whose bits will appear first in the concatenated
- * result.
- * @param B2 The second bitset, whose bits will appear second in the
- * concatenated result.
- * @return A new bitset of size S1 + S2, containing the concatenation of `B1`
- * and `B2`.
- */
-template <size_t S1, size_t S2>
-bitset<S1 + S2> concatenateBitsets(const bitset<S1> &B1, const bitset<S2> &B2) {
-  bitset<S1 + S2> result;
-
-  // Copy bits from B2 (LSB-first) into the lower part of result
-  for (size_t i = 0; i < S2; ++i) {
-    result[i] = B2[i];
-  }
-
-  // Copy bits from B1 (LSB-first) into the upper part of result
-  for (size_t i = 0; i < S1; ++i) {
-    result[S2 + i] = B1[i];
-  }
-
-  return result;
-}
-
-void DES::setKey(const uint64_t key) {
-
-  // Save new key
-  this->key = bitset<64>(key);
-
-  // Generate new round keys based on new_key
-  this->generateRoundKeys();
-}
-
-void DES::generateRoundKeys() {
-
-    // Make sure vector is clear
-    roundKeys.clear();
-
-  // Permute with PC1 and remove parity bits from key
-  const bitset<56> pc1_key{boxPermute<56, 64>(kPermutedChoiceOneBox, this->key)};
-
-  // Split key into 28-bit halves L0 and R0
-  vector<bitset<28>> keys{splitBitset<28>(pc1_key)};
-
-  int round{0};
-
-  while (round < 16) {
-    // In some specific rounds
-    if (round == 0 || round == 1 || round == 8 || round == 15) {
-      // Rotate the halves one bit to the left
-      rotateBits(keys[0], -1);
-      rotateBits(keys[1], -1);
-    } else { // In all other rounds rotate the halves two bits to the left
-      rotateBits(keys[0], -2);
-      rotateBits(keys[1], -2);
-    }
-
-    // Join the two halves
-    const bitset<56> concatenated_key{concatenateBitsets(keys[0], keys[1])};
-
-    // Permute them
-    const bitset<48> permuted_key{boxPermute<48, 56>(kPermutedChoiceTwoBox, concatenated_key)};
-
-    // Save them as a round key
-    roundKeys.emplace_back(permuted_key);
-
-    // Move to next round
-    round++;
-  }
-}
-
-bitset<4> sBox (const bitset<6>& input, const vector<const vector<int>>& SBox) {
-  bitset<2> row;
-  bitset<4> column;
-
-  row[0] = input[0];
-  row[1] = input[5];
-
-  column[0] = input[1];
-  column[1] = input[2];
-  column[2] = input[3];
-  column[3] = input[4];
-
-  // TODO: simplify this. This is ugly AF
-  return {static_cast<unsigned long long>(SBox[row.to_ulong()][column.to_ulong()])};
-}
-
-
-  template <size_t OutputSize, size_t InputSize>
-  std::bitset<OutputSize> concatenateBitsets(const std::vector<std::bitset<InputSize>> &bitsets) {
-    // Ensure the total size of the concatenated bitset matches OutputSize
-    if (bitsets.size() * InputSize != OutputSize) {
-      throw std::invalid_argument("Concatenation size must match the total size of the input bitsets.");
-    }
-
-    // Initialize the output bitset
-    std::bitset<OutputSize> result;
-
-    // Iterate through the input bitsets
-    for (size_t i {0}; i < bitsets.size(); ++i) {
-      // Shift the current bitset to its position in the result
-      size_t shiftAmount {(bitsets.size() - i - 1) * InputSize};
-      result |= (std::bitset<OutputSize>(bitsets[i].to_ullong()) << shiftAmount);
-    }
-
-    return result;
-  }
-
-bitset<32> DES::f_function(const bitset<32>& input, const int& current_round) const {
-
-  // Expand input
-  const auto expanded_input {boxPermute<48>(kExpansionFunctionBox, input)};
-
-  // XOR expanded input with round key
-  // current_round is a class variable updated on every round of encryption and decryption
-  const auto xored_input {expanded_input ^ this->roundKeys[current_round]};
-
-  // Divide into 8 segments of 6-bits
-  const auto split_segments {splitBitset<6>(xored_input)};
-  auto resulting_segments {vector<bitset<4>>{}};
-
-  // Use the S-boxes to find their 4-bit entry
-  for (int i{0}; i < 8; ++i) {
-    resulting_segments.emplace_back(sBox(split_segments[i], kSBoxes[i]));
-  }
-
-  // Merge segments, permute with P-Box, and return
-  return boxPermute<32>(kPermutationBox, concatenateBitsets<32>(resulting_segments));
-}
-
-uint64_t DES::encrypt(const uint64_t plaintext) {
-
-  // Make sure current round is Zero
-  this->current_round = 0;
-
-  // Initial permutation TODO: Refactor box permute
-  const auto initial_permutation {boxPermute<64,64>(kInitialPermutationBox, bitset<64>{plaintext})};
-
-  // Split into left and right
-  // TODO: refactor splitBitset
-  const auto split_permutation {splitBitset<32>(initial_permutation)};
-  auto previous_left {split_permutation[0]};
-  auto previous_right {split_permutation[1]};
-  auto new_left {bitset<32>{}};
-  auto new_right {bitset<32>{}};
-
-  // For each round i:
-    // L_i = R_(i-1)
-    // R_i = L_(i-1) XOR FeistelFunction(R_(i-1), k_i)
-  do {
-    new_left = previous_right;
-    // TODO: Refactor f_function
-    new_right = previous_left ^ f_function(previous_right, this->current_round);
-
-    previous_left = new_left;
-    previous_right = new_right;
-  } while (current_round++ < 15);
-
-  // Concatenate the two halves
-  // TODO: Refactor concatenateBitsets
-  const auto post_round_text {concatenateBitsets(new_left, new_right)};
-
-  // Permute them with the final permutation box
-  const auto cipher_text {boxPermute<64>(kFinalPermutationBox, post_round_text)};
-
-  // Return encrypted text as 64-bit unsigned integer
-  return cipher_text.to_ullong();
-}
-
-uint64_t DES::decrypt(const uint64_t ciphertext) {
-  // Given how DES works, decryption is the same process as encryption but with the round keys reversed
-
-  // Reverse the round keys for decryption
-  std::reverse(this->roundKeys.begin(), this->roundKeys.end());
-
-  // Decrypt the ciphertext (same process as decryption)
-  auto plaintext {encrypt(ciphertext)};
-
-  // Return round keys to original state]
-  std::reverse(this->roundKeys.begin(), this->roundKeys.end());
-
-  return plaintext;
-}
+// /**
+//  * Splits a bitset into smaller segments of a specified size.
+//  * The order of the segments in the output matches the bit order in the original
+//  * bitset.
+//  *
+//  * @tparam size_of_segment The size of each segment in the resulting vector.
+//  * @tparam size_of_original The size of the original bitset to be split.
+//  * @param original The original bitset to be split into smaller segments.
+//  * @return A vector of bitsets, each of size `size_of_segment`, representing the
+//  * segments of the original bitset.
+//  *
+//  * @throws std::invalid_argument If the size of the original bitset is not
+//  * evenly divisible by the segment size.
+//  * @throws std::invalid_argument If the size of the original bitset is the same
+//  * as the segment size.
+//  */
+// template <size_t size_of_segment, size_t size_of_original>
+// vector<bitset<size_of_segment>>
+// splitBitset(const bitset<size_of_original> &original) {
+//   // Validate input: ensure split size divides original size
+//   if (size_of_original % size_of_segment != 0) {
+//     throw std::invalid_argument(
+//         "Original bitset size must be evenly divisible by SplitSize.");
+//   }
+//   if (size_of_original == size_of_segment) {
+//     throw std::invalid_argument(
+//         "Original size and segment size must not be the same");
+//   }
+//
+//   // Precompute constants
+//   constexpr int number_of_segments{size_of_original / size_of_segment};
+//   constexpr unsigned long long mask{
+//       bitset<size_of_segment>().flip().to_ullong()};
+//
+//   // Copy the original bitset to a modifiable value
+//   unsigned long long copy{original.to_ullong()};
+//
+//   // Create a vector for segments
+//   vector<bitset<size_of_segment>> segments;
+//
+//   // Extract segments using the mask
+//   for (int i{0}; i < number_of_segments; ++i) {
+//     segments.emplace_back(copy & mask);
+//     copy >>= size_of_segment;
+//   }
+//   // Reverse the order of segments to match the correct bit order
+//   reverse(segments.begin(), segments.end());
+//   return segments;
+// }
+//
+// /**
+//  * Rotates the bits of a bitset by a specified number of positions,
+//  * accommodating both positive (right rotation) and negative (left rotation)
+//  * shifts.
+//  *
+//  * The rotation wraps around the bitset, so bits shifted out on one side
+//  * reappear on the opposite side. Negative values for `bits_to_rotate` result in
+//  * a left rotation, while positive values result in a right rotation. The number
+//  * of rotations is normalized to avoid redundant full rotations.
+//  *
+//  * @tparam Size The size of the bitset to rotate.
+//  * @param original The bitset to be rotated. This bitset is modified in place.
+//  * @param bits_to_rotate The number of positions to rotate the bits. Positive
+//  * values rotate the bits to the right, while negative values rotate the bits to
+//  * the left.
+//  * @return A reference to the rotated bitset (`original`) for convenience.
+//  *
+//  * @note The rotation is performed in place, modifying the input bitset
+//  * directly. If `bits_to_rotate` is a multiple of `Size`, the bitset remains
+//  * unchanged.
+//  */
+// template <size_t Size>
+// bitset<Size> &rotateBits(bitset<Size> &original, const int bits_to_rotate) {
+//
+//   // We define this here to be able to use the % operator with ints and
+//   // accurately calculate modulus. Otherwise -1 % 5 returns -1 or conversion
+//   // error from downgrading size_t to int.
+//   const int size{static_cast<int>(original.size())};
+//
+//   // To accommodate for negative shifts, find a number that is congruent with
+//   // bits_to_rotate and less than Size
+//   const int congruent_btr{((bits_to_rotate % size) + size) % size};
+//
+//   // If full rotation return original
+//   if (congruent_btr == 0)
+//     return original;
+//
+//   // Make copy of original
+//   bitset<Size> copy(original);
+//
+//   // Shift copy-bits all the way to the left (11000)
+//   copy <<= size - congruent_btr;
+//
+//   // Shift original bits to the right causing leftmost bits to be Zero (00111)
+//   original >>= congruent_btr;
+//
+//   // XOR original and copy to merge them (11000 ^ 00111) = (11111)
+//   original ^= copy;
+//
+//   return original;
+// }
+// /**
+//  * Concatenates two bitsets into a single bitset, where the first argument's
+//  * bits appear first in the resulting bitset, followed by the second argument's
+//  * bits.
+//  *
+//  * The order of the arguments is significant: the bits of the first bitset
+//  * (`B1`) will occupy the higher-order bits of the concatenated result, while
+//  * the bits of the second bitset (`B2`) will occupy the lower-order bits.
+//  *
+//  * @tparam S1 The size of the first bitset (B1).
+//  * @tparam S2 The size of the second bitset (B2).
+//  * @param B1 The first bitset, whose bits will appear first in the concatenated
+//  * result.
+//  * @param B2 The second bitset, whose bits will appear second in the
+//  * concatenated result.
+//  * @return A new bitset of size S1 + S2, containing the concatenation of `B1`
+//  * and `B2`.
+//  */
+// template <size_t S1, size_t S2>
+// bitset<S1 + S2> concatenateBitsets(const bitset<S1> &B1, const bitset<S2> &B2) {
+//   bitset<S1 + S2> result;
+//
+//   // Copy bits from B2 (LSB-first) into the lower part of result
+//   for (size_t i = 0; i < S2; ++i) {
+//     result[i] = B2[i];
+//   }
+//
+//   // Copy bits from B1 (LSB-first) into the upper part of result
+//   for (size_t i = 0; i < S1; ++i) {
+//     result[S2 + i] = B1[i];
+//   }
+//
+//   return result;
+// }
+//
+// void DES::setKey(const uint64_t key) {
+//
+//   // Save new key
+//   this->key = bitset<64>(key);
+//
+//   // Generate new round keys based on new_key
+//   this->generateRoundKeys();
+// }
+//
+// void DES::generateRoundKeys() {
+//
+//     // Make sure vector is clear
+//     roundKeys.clear();
+//
+//   // Permute with PC1 and remove parity bits from key
+//   const bitset<56> pc1_key{boxPermute<56, 64>(kPermutedChoiceOneBox, this->key)};
+//
+//   // Split key into 28-bit halves L0 and R0
+//   vector<bitset<28>> keys{splitBitset<28>(pc1_key)};
+//
+//   int round{0};
+//
+//   while (round < 16) {
+//     // In some specific rounds
+//     if (round == 0 || round == 1 || round == 8 || round == 15) {
+//       // Rotate the halves one bit to the left
+//       rotateBits(keys[0], -1);
+//       rotateBits(keys[1], -1);
+//     } else { // In all other rounds rotate the halves two bits to the left
+//       rotateBits(keys[0], -2);
+//       rotateBits(keys[1], -2);
+//     }
+//
+//     // Join the two halves
+//     const bitset<56> concatenated_key{concatenateBitsets(keys[0], keys[1])};
+//
+//     // Permute them
+//     const bitset<48> permuted_key{boxPermute<48, 56>(kPermutedChoiceTwoBox, concatenated_key)};
+//
+//     // Save them as a round key
+//     roundKeys.emplace_back(permuted_key);
+//
+//     // Move to next round
+//     round++;
+//   }
+// }
+//
+// bitset<4> sBox (const bitset<6>& input, const vector<const vector<int>>& SBox) {
+//   bitset<2> row;
+//   bitset<4> column;
+//
+//   row[0] = input[0];
+//   row[1] = input[5];
+//
+//   column[0] = input[1];
+//   column[1] = input[2];
+//   column[2] = input[3];
+//   column[3] = input[4];
+//
+//   // TODO: simplify this. This is ugly AF
+//   return {static_cast<unsigned long long>(SBox[row.to_ulong()][column.to_ulong()])};
+// }
+//
+//
+//   template <size_t OutputSize, size_t InputSize>
+//   std::bitset<OutputSize> concatenateBitsets(const std::vector<std::bitset<InputSize>> &bitsets) {
+//     // Ensure the total size of the concatenated bitset matches OutputSize
+//     if (bitsets.size() * InputSize != OutputSize) {
+//       throw std::invalid_argument("Concatenation size must match the total size of the input bitsets.");
+//     }
+//
+//     // Initialize the output bitset
+//     std::bitset<OutputSize> result;
+//
+//     // Iterate through the input bitsets
+//     for (size_t i {0}; i < bitsets.size(); ++i) {
+//       // Shift the current bitset to its position in the result
+//       size_t shiftAmount {(bitsets.size() - i - 1) * InputSize};
+//       result |= (std::bitset<OutputSize>(bitsets[i].to_ullong()) << shiftAmount);
+//     }
+//
+//     return result;
+//   }
+//
+// bitset<32> DES::f_function(const bitset<32>& input, const int& current_round) const {
+//
+//   // Expand input
+//   const auto expanded_input {boxPermute<48>(kExpansionFunctionBox, input)};
+//
+//   // XOR expanded input with round key
+//   // current_round is a class variable updated on every round of encryption and decryption
+//   const auto xored_input {expanded_input ^ this->roundKeys[current_round]};
+//
+//   // Divide into 8 segments of 6-bits
+//   const auto split_segments {splitBitset<6>(xored_input)};
+//   auto resulting_segments {vector<bitset<4>>{}};
+//
+//   // Use the S-boxes to find their 4-bit entry
+//   for (int i{0}; i < 8; ++i) {
+//     resulting_segments.emplace_back(sBox(split_segments[i], kSBoxes[i]));
+//   }
+//
+//   // Merge segments, permute with P-Box, and return
+//   return boxPermute<32>(kPermutationBox, concatenateBitsets<32>(resulting_segments));
+// }
+//
+// uint64_t DES::encrypt(const uint64_t plaintext) {
+//
+//   // Make sure current round is Zero
+//   this->current_round = 0;
+//
+//   // Initial permutation TODO: Refactor box permute
+//   const auto initial_permutation {boxPermute<64,64>(kInitialPermutationBox, bitset<64>{plaintext})};
+//
+//   // Split into left and right
+//   // TODO: refactor splitBitset
+//   const auto split_permutation {splitBitset<32>(initial_permutation)};
+//   auto previous_left {split_permutation[0]};
+//   auto previous_right {split_permutation[1]};
+//   auto new_left {bitset<32>{}};
+//   auto new_right {bitset<32>{}};
+//
+//   // For each round i:
+//     // L_i = R_(i-1)
+//     // R_i = L_(i-1) XOR FeistelFunction(R_(i-1), k_i)
+//   do {
+//     new_left = previous_right;
+//     // TODO: Refactor f_function
+//     new_right = previous_left ^ f_function(previous_right, this->current_round);
+//
+//     previous_left = new_left;
+//     previous_right = new_right;
+//   } while (current_round++ < 15);
+//
+//   // Concatenate the two halves
+//   // TODO: Refactor concatenateBitsets
+//   const auto post_round_text {concatenateBitsets(new_left, new_right)};
+//
+//   // Permute them with the final permutation box
+//   const auto cipher_text {boxPermute<64>(kFinalPermutationBox, post_round_text)};
+//
+//   // Return encrypted text as 64-bit unsigned integer
+//   return cipher_text.to_ullong();
+// }
+//
+// uint64_t DES::decrypt(const uint64_t ciphertext) {
+//   // Given how DES works, decryption is the same process as encryption but with the round keys reversed
+//
+//   // Reverse the round keys for decryption
+//   std::reverse(this->roundKeys.begin(), this->roundKeys.end());
+//
+//   // Decrypt the ciphertext (same process as decryption)
+//   auto plaintext {encrypt(ciphertext)};
+//
+//   // Return round keys to original state]
+//   std::reverse(this->roundKeys.begin(), this->roundKeys.end());
+//
+//   return plaintext;
+// }
 }

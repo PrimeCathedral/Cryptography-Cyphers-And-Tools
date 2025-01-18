@@ -39,13 +39,8 @@ private:
     int current_round;
 
   // Private functions
-  void generateRoundKeys(); // Key scheduling
-
-  // TODO: uint64_t feistelFunction(uint32_t R, uint64_t roundKey); // Feistel
-  // function
-  // TODO: uint64_t permute(uint64_t input, const int* table, int size); //
-  // General permutation
-  bitset<32> f_function(const bitset<32>& input, const int& current_round) const;   // Substitution using S-boxes
+  // void generateRoundKeys(); // Key scheduling
+  // bitset<32> f_function(const bitset<32>& input, const int& current_round) const;   // Substitution using S-boxes
 };
 
 // `extern` indicates that these variables are declared here but defined in the
