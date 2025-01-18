@@ -3,8 +3,7 @@
 //
 
 #include "des.hpp"
-#include <bitset>
-#include <ostream>
+#import <bitset>;
 
 using std::bitset;
 using std::vector;

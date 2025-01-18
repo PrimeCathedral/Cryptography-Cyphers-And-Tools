@@ -7,10 +7,9 @@
 
 #include <boost/multiprecision/cpp_int.hpp>
 
-class Utilities {
-private:
-  using cpp_int = boost::multiprecision::cpp_int;
+using boost::multiprecision::cpp_int;
 
+class Utilities {
 public:
   static bool isOdd(const cpp_int &number);
   static bool isEven(const cpp_int &number);

@@ -4,7 +4,7 @@
 
 #include "Utilities.hpp"
 
-using cpp_int = boost::multiprecision::cpp_int;
+using boost::multiprecision::cpp_int;
 
 /**
  * Checks if a given number is odd.

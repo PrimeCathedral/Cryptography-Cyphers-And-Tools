@@ -7,7 +7,7 @@
 // TODO: Find a better way to manage this macro
 #define MA Crypto::ModularArithmetic
 
-using cpp_int = boost::multiprecision::cpp_int;
+using boost::multiprecision::cpp_int;
 
 // Random number generator setup
 std::random_device rd;  // Seed source for the random number engine
@@ -36,12 +36,12 @@ int defineIterations(const cpp_int &num) {
  * @return The odd component after factoring out powers of 2.
  */
 cpp_int FactorPowersOfTwo(const cpp_int &n) {
-  auto s = 0;
-  auto d = n;
+  auto s {cpp_int{}};
+  auto d {n};
 
   while (Utilities::isEven(d)) {
     d >>= 1;
-    s++;
+    ++s;
   }
   return s;
 }
@@ -64,7 +64,7 @@ bool Primes::FermatPrimalityTest(const cpp_int &candidate) {
 
   // Setup for random number generator (RNG)
   cpp_int rand{};
-  const cpp_int limit = candidate - 2;
+  const cpp_int limit {candidate - 2};
   const boost::random::uniform_int_distribution<cpp_int> dist(2, limit);
 
   while (iterations--) {

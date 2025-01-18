@@ -13,9 +13,9 @@
 
 #define ITERATIONS 40
 
-class Primes {
-  using cpp_int = boost::multiprecision::cpp_int;
+using boost::multiprecision::cpp_int;
 
+class Primes {
 public:
   static cpp_int generatePrime(const int &numBits);
   static bool FermatPrimalityTest(const cpp_int &candidate);
