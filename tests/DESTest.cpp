@@ -20,95 +20,71 @@ using namespace DataEncryptionStandard;
 //   void TearDown() override { delete desEncryptor; }
 // };
 
-TEST(applyPermutation, IdentityPermutation) {
+TEST(ApplyPermutationTest, IdentityPermutation) {
   const ByteArray input{{0b00000001}};
   const std::vector<int> identityBox = {1, 2, 3, 4, 5, 6, 7, 8}; // Identity permutation
   constexpr auto expected {0b00000001};
 
   const auto actual {applyPermutation(identityBox, input).to_cpp_int()};
 
-  EXPECT_EQ(expected, actual); // Output should match the input
+  EXPECT_EQ(expected, actual);
 }
 
+TEST(ApplyPermutationTest, ReversePermutation) {
+    const ByteArray input{{0b11110000}};
+    const std::vector<int> reverseBox = {8, 7, 6, 5, 4, 3, 2, 1}; // Reverse the bit order
 
-// TEST(BoxPermute, IdentityPermutation) {
-//   constexpr std::bitset<8> input{0b10000000};
-//   const std::vector<int> identityBox = {1, 2, 3, 4,
-//                                         5, 6, 7, 8}; // Identity permutation
-//
-//   const auto output = boxPermute<8, 8>(identityBox, input);
-//
-//   EXPECT_EQ(input, output); // Output should match the input
-// }
-//
-// TEST(BoxPermute, ReversePermutation) {
-//   constexpr std::bitset<8> input{0b00000001};
-//   const std::vector<int> reverseBox = {8, 7, 6, 5,
-//                                        4, 3, 2, 1}; // Reverses the bit order
-//
-//   constexpr std::bitset<8> expected{0b10000000}; // Reversed input
-//
-//   const auto output = boxPermute<8, 8>(reverseBox, input);
-//
-//   EXPECT_EQ(expected, output); // Output should be reversed
-// }
-//
-// TEST(BoxPermute, PartialPermutation) {
-//   constexpr std::bitset<8> input{0b01010101};
-//   const std::vector<int> partialBox = {2, 4, 6,
-//                                        8}; // Maps bits 1, 4, 6, 8 to the output
-//
-//   constexpr std::bitset<4> expected{
-//       0b1111}; // Bits from 1, 4, 6, 8 (from right to left)
-//
-//   const auto output = boxPermute<4, 8>(partialBox, input);
-//
-//   EXPECT_EQ(expected, output); // Output should match the selected bits
-// }
-//
-// TEST(BoxPermute, LargerOutput) {
-//   constexpr std::bitset<2> input{0b10};
-//   const std::vector<int> largerBox = {1, 2, 1,
-//                                       2, 1, 2}; // Repeats some input bits
-//
-//   constexpr std::bitset<6> expected{
-//       0b101010}; // From repeated and reordered bits
-//
-//   const auto output = boxPermute<6, 2>(largerBox, input);
-//
-//   EXPECT_EQ(expected, output); // Output should match the specified mapping
-// }
-//
-// TEST(BoxPermute, IPAndFPBoxTest) {
-//
-//   // First half of the box
-//   constexpr bitset<64> p1{
-//       0b1111111111111111111111111111111100000000000000000000000000000000};
-//   constexpr bitset<64> e1{
-//       0b0000111100001111000011110000111100001111000011110000111100001111};
-//   const auto a1{boxPermute<64, 64>(kInitialPermutationBox, p1)};
-//
-//   EXPECT_EQ(e1, a1);
-//
-//   // Second half of the box
-//   constexpr bitset<64> p2{
-//       0b0000000000000000000000000000000011111111111111111111111111111111};
-//   constexpr bitset<64> e2{
-//       0b1111000011110000111100001111000011110000111100001111000011110000};
-//   const auto a2{boxPermute<64, 64>(kInitialPermutationBox, p2)};
-//
-//   EXPECT_EQ(e2, a2);
-//
-//   // Reverse first half
-//   // TODO: remove auto
-//   const auto r1{boxPermute<64, 64>(kFinalPermutationBox, a1)};
-//   EXPECT_EQ(p1, r1);
-//
-//   // Reverse second half
-//   const auto r2{boxPermute<64, 64>(kFinalPermutationBox, a2)};
-//   EXPECT_EQ(p2, r2);
-// }
-//
+    constexpr auto expected{0b00001111}; // Reversed input
+    const auto actual {applyPermutation(reverseBox, input).to_cpp_int()};
+
+  EXPECT_EQ(expected, actual);
+}
+
+TEST(ApplyPermutationTest, PartialPermutation) {
+  const ByteArray input{{0b01010101}};
+  const std::vector<int> partialBox = {2, 4, 6, 8};
+
+  constexpr auto expected{0b11110000};
+  const auto output {applyPermutation(partialBox, input).to_cpp_int()};
+
+  EXPECT_EQ(expected, output);
+}
+
+TEST(ApplyPermutationTest, LargerOutput) {
+  const ByteArray input{{0b10000000}};
+  const std::vector<int> largerBox = {1, 2, 3, 4, 5, 6, 7, 8, 1, 1, 1, 1, 1, 1, 1, 1}; // Repeats some input bits
+
+  constexpr auto expected {0b1000000011111111};
+  const auto output {applyPermutation(largerBox, input).to_cpp_int()};
+
+  EXPECT_EQ(expected, output);
+}
+
+TEST(ApplyPermutationTest, IPAndFPBoxTest) {
+  // TODO: make an constructor for ByteArray that takes any data type and converts it into a ByteArray
+  // First half of the box
+  const ByteArray p1({{0xFF}, {0xFF}, {0xFF}, {0xFF}, {0x00}, {0x00}, {0x00}, {0x00}});
+  constexpr auto e1{0xF0F0F0F0F0F0F0F};
+  const auto a1{applyPermutation(kInitialPermutationBox, p1)};
+
+  EXPECT_EQ(e1, a1.to_cpp_int());
+
+  // Second half of the box
+  const ByteArray p2({{0x00}, {0x00}, {0x00}, {0x00}, {0xFF}, {0xFF}, {0xFF}, {0xFF}});
+  constexpr auto e2{0xF0F0F0F0F0F0F0F0}; // NOT THE SAME AS e1!!!
+  const auto a2{applyPermutation(kInitialPermutationBox, p2)};
+
+  EXPECT_EQ(e2, a2.to_cpp_int());
+
+  // Reverse first half
+  const auto r1{applyPermutation(kFinalPermutationBox, a1)};
+  EXPECT_EQ(p1, r1);
+
+  // Reverse second half
+  const auto r2{applyPermutation(kFinalPermutationBox, a2)};
+  EXPECT_EQ(p2, r2);
+}
+
 // // Test: Splitting a 16-bit bitset into 4-bit segments
 // TEST(SplitBitset, SplitIntoEqualSegments) {
 //   constexpr bitset<16> original{0b1111000011110000};

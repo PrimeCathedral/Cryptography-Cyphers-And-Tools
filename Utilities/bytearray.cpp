@@ -30,19 +30,30 @@ bool ByteArray::getBit(const size_t pos) const {
     return (data[byte_index] >> (7 - bit_index) & 1);
 }
 
-ByteArray* ByteArray::setBit(const size_t pos, const bool value) {
-    if (pos > data.size() * 8 - 1) throw std::out_of_range("ByteArray::setBit");
+ByteArray& ByteArray::setBit(const size_t pos, const bool value, const bool can_grow) {
+    if (!can_grow && pos > data.size() * 8 - 1) throw std::out_of_range("ByteArray::setBit");
 
     const size_t byte_index {pos / 8}; // Which byte
     const size_t bit_index {pos % 8}; // Which bit in that byte
 
-    if (value) { // Set bit to 1
-        data[byte_index] |= (1 << (7 - bit_index));
-    } else { // Set bit to 0
-        data[byte_index] &= ~(1 << (7 - bit_index));
+    if (byte_index >= data.size()) {
+        // This case is when we want to modify bits beyond
+        // the current range. It should allow for the array
+        // to grow as needed. This functionality can be turned
+        // off by setting can_grow = false in the function call.
+        data.emplace_back(128 >> bit_index);
+    } else {
+        if (value) {
+            // Create a 0b1, shift it to the bit we want to modify,
+            // do an OR/AND comparison with the byte depending on
+            // if the new value is 0 or 1.
+            data[byte_index] |= (1 << (7 - bit_index));
+        } else { // Set bit to 0
+            data[byte_index] &= ~(1 << (7 - bit_index));
+        }
     }
 
-    return this;
+    return *this;
 }
 
 cpp_int ByteArray::to_cpp_int() const {

@@ -26,7 +26,7 @@ struct ByteArray {
 
     // Methods
     [[nodiscard]] bool getBit(size_t pos) const;
-    ByteArray* setBit(size_t pos, bool value);
+    ByteArray& setBit(size_t pos, bool value, bool can_grow = true);
     [[nodiscard]] cpp_int to_cpp_int() const;
 
     // Operator overloads
