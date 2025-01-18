@@ -21,13 +21,13 @@ using namespace DataEncryptionStandard;
 // };
 
 TEST(applyPermutation, IdentityPermutation) {
-  const ByteArray input{{0b10000000}};
-  const std::vector<int> identityBox = {1, 2, 3, 4,
-                                        5, 6, 7, 8}; // Identity permutation
+  const ByteArray input{{0b00000001}};
+  const std::vector<int> identityBox = {1, 2, 3, 4, 5, 6, 7, 8}; // Identity permutation
+  constexpr auto expected {0b00000001};
 
-  const auto output {applyPermutation(identityBox, input).to_cpp_int()};
+  const auto actual {applyPermutation(identityBox, input).to_cpp_int()};
 
-  EXPECT_EQ(input.to_cpp_int(), output); // Output should match the input
+  EXPECT_EQ(expected, actual); // Output should match the input
 }
 
 

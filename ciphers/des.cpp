@@ -103,11 +103,13 @@ const vector<int> kShiftSchedule{
 
 ByteArray applyPermutation(const vector<int> &Box, const ByteArray &original) {
 
-  ByteArray permuted_text {std::vector<uint8_t>{8,0}};
+  ByteArray permuted_text {std::vector<uint8_t>(original.data.size(),0)};
+
   // Perform the permutation
   for (size_t i{0}; i < Box.size(); ++i) {
     permuted_text.setBit(i, original[Box[i] - 1]);
   }
+
   return permuted_text;
 }
 
