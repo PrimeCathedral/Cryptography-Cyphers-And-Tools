@@ -3,44 +3,43 @@
 //
 
 #include "des.hpp"
-#import <bitset>;
 
 using std::bitset;
 using std::vector;
-
+namespace DataEncryptionStandard {
 // Initial Permutation Box (IP)
-const vector<int> DataEncryptionStandard::kInitialPermutationBox{
+const vector<int> kInitialPermutationBox{
     58, 50, 42, 34, 26, 18, 10, 2, 60, 52, 44, 36, 28, 20, 12, 4,
     62, 54, 46, 38, 30, 22, 14, 6, 64, 56, 48, 40, 32, 24, 16, 8,
     57, 49, 41, 33, 25, 17, 9,  1, 59, 51, 43, 35, 27, 19, 11, 3,
     61, 53, 45, 37, 29, 21, 13, 5, 63, 55, 47, 39, 31, 23, 15, 7};
 
 // Final Permutation (IP ^-1)
-const vector<int> DataEncryptionStandard::kFinalPermutationBox{
+const vector<int> kFinalPermutationBox{
     40, 8, 48, 16, 56, 24, 64, 32, 39, 7, 47, 15, 55, 23, 63, 31,
     38, 6, 46, 14, 54, 22, 62, 30, 37, 5, 45, 13, 53, 21, 61, 29,
     36, 4, 44, 12, 52, 20, 60, 28, 35, 3, 43, 11, 51, 19, 59, 27,
     34, 2, 42, 10, 50, 18, 58, 26, 33, 1, 41, 9,  49, 17, 57, 25};
 
 // Expansion Function Box (E). Expands from 32 bits to 48 bits
-const vector<int> DataEncryptionStandard::kExpansionFunctionBox{
+const vector<int> kExpansionFunctionBox{
     32, 1,  2,  3,  4,  5,  4,  5,  6,  7,  8,  9,  8,  9,  10, 11,
     12, 13, 12, 13, 14, 15, 16, 17, 16, 17, 18, 19, 20, 21, 20, 21,
     22, 23, 24, 25, 24, 25, 26, 27, 28, 29, 28, 29, 30, 31, 32, 1};
 
 // Permutation Box (P)
-const vector<int> DataEncryptionStandard::kPermutationBox{
+const vector<int> kPermutationBox{
     16, 07, 20, 21, 29, 12, 28, 17, 01, 15, 23, 26, 05, 18, 31, 10,
     02, 8,  24, 14, 32, 27, 03, 9,  19, 13, 30, 06, 22, 11, 04, 25};
 
 // Permuted choice 1 box (PC-1)
-const vector<int> DataEncryptionStandard::kPermutedChoiceOneBox{
+const vector<int> kPermutedChoiceOneBox{
     57, 49, 41, 33, 25, 17, 9,  01, 58, 50, 42, 34, 26, 18, 10, 02, 59, 51, 43,
     35, 27, 19, 11, 03, 60, 52, 44, 36, 63, 55, 47, 39, 31, 23, 15, 07, 62, 54,
     46, 38, 30, 22, 14, 6,  61, 53, 45, 37, 29, 21, 13, 05, 28, 20, 12, 04};
 
 // Permuted choice 2 box (PC-2)
-const vector<int> DataEncryptionStandard::kPermutedChoiceTwoBox{
+const vector<int> kPermutedChoiceTwoBox{
     14, 17, 11, 24, 1,  5,  3,  28, 15, 6,  21, 10, 23, 19, 12, 4,
     26, 8,  16, 7,  27, 20, 13, 2,  41, 52, 31, 37, 47, 55, 30, 40,
     51, 45, 33, 48, 44, 49, 39, 56, 34, 53, 46, 42, 50, 36, 29, 32};
@@ -49,7 +48,7 @@ const vector<int> DataEncryptionStandard::kPermutedChoiceTwoBox{
 // Each S-Box is a 4x16 table of values, defining how a 6-bit input is
 // transformed into a 4-bit output. There are 8 S-Boxes in total, each
 // responsible for a specific transformation during the Feistel function.
-const vector<const vector<const vector<int>>> DataEncryptionStandard::kSBoxes{
+const vector<const vector<const vector<int>>> kSBoxes{
     // S-Box 1
     {{14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7},
      {0, 15, 7, 4, 14, 2, 13, 1, 10, 6, 12, 11, 9, 5, 3, 8},
@@ -92,14 +91,13 @@ const vector<const vector<const vector<int>>> DataEncryptionStandard::kSBoxes{
      {2, 1, 14, 7, 4, 10, 8, 13, 15, 12, 9, 0, 3, 5, 6, 11}}};
 
 // SHIFT_SCHEDULE[i] returns the number of bits to shift in round i
-const vector<int> DataEncryptionStandard::kShiftSchedule{
+const vector<int> kShiftSchedule{
     1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
 
-DataEncryptionStandard::DES::DES(const uint64_t key) : key(key), current_round(0) {
+DES::DES(const uint64_t key) : key(key), current_round(0) {
   this->generateRoundKeys();
 }
 
-namespace DataEncryptionStandard {
 template <size_t Output, size_t Input>
 bitset<Output> boxPermute(const vector<int> &Box,
                           const bitset<Input> &original) {
@@ -271,9 +269,7 @@ bitset<S1 + S2> concatenateBitsets(const bitset<S1> &B1, const bitset<S2> &B2) {
   return result;
 }
 
-} // namespace DataEncryptionStandard
-
-void DataEncryptionStandard::DES::setKey(const uint64_t key) {
+void DES::setKey(const uint64_t key) {
 
   // Save new key
   this->key = bitset<64>(key);
@@ -282,7 +278,7 @@ void DataEncryptionStandard::DES::setKey(const uint64_t key) {
   this->generateRoundKeys();
 }
 
-void DataEncryptionStandard::DES::generateRoundKeys() {
+void DES::generateRoundKeys() {
 
     // Make sure vector is clear
     roundKeys.clear();
@@ -337,7 +333,6 @@ bitset<4> sBox (const bitset<6>& input, const vector<const vector<int>>& SBox) {
 }
 
 
-namespace DataEncryptionStandard {
   template <size_t OutputSize, size_t InputSize>
   std::bitset<OutputSize> concatenateBitsets(const std::vector<std::bitset<InputSize>> &bitsets) {
     // Ensure the total size of the concatenated bitset matches OutputSize
@@ -357,9 +352,8 @@ namespace DataEncryptionStandard {
 
     return result;
   }
-}
 
-bitset<32> DataEncryptionStandard::DES::f_function(const bitset<32>& input, const int& current_round) const {
+bitset<32> DES::f_function(const bitset<32>& input, const int& current_round) const {
 
   // Expand input
   const auto expanded_input {boxPermute<48>(kExpansionFunctionBox, input)};
@@ -381,7 +375,7 @@ bitset<32> DataEncryptionStandard::DES::f_function(const bitset<32>& input, cons
   return boxPermute<32>(kPermutationBox, concatenateBitsets<32>(resulting_segments));
 }
 
-uint64_t DataEncryptionStandard::DES::encrypt(const uint64_t plaintext) {
+uint64_t DES::encrypt(const uint64_t plaintext) {
 
   // Make sure current round is Zero
   current_round = 0;
@@ -416,4 +410,4 @@ uint64_t DataEncryptionStandard::DES::encrypt(const uint64_t plaintext) {
   // Return encrypted text as 64-bit unsigned integer
   return cipher_text.to_ullong();
 }
-
+}
