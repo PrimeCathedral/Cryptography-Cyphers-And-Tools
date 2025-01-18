@@ -387,6 +387,14 @@ TEST(ConcatenateBitsets, EdgeCase_InvalidInput) {
   EXPECT_THROW(concatenateBitsets<10>(z), std::invalid_argument);
 }
 
+
+TEST_F(DESFixture, EncryptAndDecrypt) {
+  desEncryptor->setKey(0x133457799BBCDFF1);
+  constexpr auto plaintext {0b1100};
+  const auto ciphertext {desEncryptor->encrypt(plaintext)};
+  const auto decryption {desEncryptor->decrypt(ciphertext)};
+  EXPECT_EQ(decryption, plaintext);
+}
 // Main entry point for the test runner
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

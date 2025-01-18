@@ -378,12 +378,13 @@ bitset<32> DES::f_function(const bitset<32>& input, const int& current_round) co
 uint64_t DES::encrypt(const uint64_t plaintext) {
 
   // Make sure current round is Zero
-  current_round = 0;
+  this->current_round = 0;
 
-  // Initial permutation
+  // Initial permutation TODO: Refactor box permute
   const auto initial_permutation {boxPermute<64,64>(kInitialPermutationBox, bitset<64>{plaintext})};
 
   // Split into left and right
+  // TODO: refactor splitBitset
   const auto split_permutation {splitBitset<32>(initial_permutation)};
   auto previous_left {split_permutation[0]};
   auto previous_right {split_permutation[1]};
@@ -395,6 +396,7 @@ uint64_t DES::encrypt(const uint64_t plaintext) {
     // R_i = L_(i-1) XOR FeistelFunction(R_(i-1), k_i)
   do {
     new_left = previous_right;
+    // TODO: Refactor f_function
     new_right = previous_left ^ f_function(previous_right, this->current_round);
 
     previous_left = new_left;
@@ -402,6 +404,7 @@ uint64_t DES::encrypt(const uint64_t plaintext) {
   } while (current_round++ < 15);
 
   // Concatenate the two halves
+  // TODO: Refactor concatenateBitsets
   const auto post_round_text {concatenateBitsets(new_left, new_right)};
 
   // Permute them with the final permutation box
@@ -409,5 +412,20 @@ uint64_t DES::encrypt(const uint64_t plaintext) {
 
   // Return encrypted text as 64-bit unsigned integer
   return cipher_text.to_ullong();
+}
+
+uint64_t DES::decrypt(const uint64_t ciphertext) {
+  // Given how DES works, decryption is the same process as encryption but with the round keys reversed
+
+  // Reverse the round keys for decryption
+  std::reverse(this->roundKeys.begin(), this->roundKeys.end());
+
+  // Decrypt the ciphertext (same process as decryption)
+  auto plaintext {encrypt(ciphertext)};
+
+  // Return round keys to original state]
+  std::reverse(this->roundKeys.begin(), this->roundKeys.end());
+
+  return plaintext;
 }
 }
