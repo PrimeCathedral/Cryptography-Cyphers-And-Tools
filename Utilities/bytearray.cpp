@@ -69,9 +69,12 @@ cpp_int ByteArray::to_cpp_int() const {
     return result;
 }
 
+bool ByteArray::is_divisible_by(const int divisor) const {
+    return this->data.size() % divisor == 0;
+}
+
 std::vector<ByteArray> ByteArray::splitInto(const int desired_segments) const {
-    // Check if divisible
-    if (this->data.size() % desired_segments != 0) throw std::invalid_argument("ByteArray::splitInto. Size of ByteArray must be divisible by the number of segments.");
+    if (this->is_divisible_by(desired_segments)) throw std::invalid_argument("ByteArray::splitInto. Size of ByteArray must be divisible by the number of segments.");
 
     const auto bytes_per_segment {this->data.size() / desired_segments};
 
