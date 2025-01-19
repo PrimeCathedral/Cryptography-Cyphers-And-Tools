@@ -69,6 +69,26 @@ cpp_int ByteArray::to_cpp_int() const {
     return result;
 }
 
+std::vector<ByteArray> ByteArray::splitInto(const int desired_segments) const {
+    // Check if divisible
+    if (this->data.size() % desired_segments != 0) throw std::invalid_argument("ByteArray::splitInto. Size of ByteArray must be divisible by the number of segments.");
+
+    const auto bytes_per_segment {this->data.size() / desired_segments};
+
+    // Create container
+    std::vector<ByteArray> result;
+
+    for (size_t current_segment {0}; current_segment < desired_segments; ++current_segment) {
+        result.emplace_back(/* Empty but adds a new ByteArray*/);
+        for (size_t current_byte {0}; current_byte < bytes_per_segment; ++current_byte) {
+            const auto byte_from_original {current_segment * bytes_per_segment + current_byte};
+            result[current_byte].data.emplace_back(this->data[byte_from_original]);
+        }
+    }
+
+    return result;
+}
+
 bool ByteArray::operator[](const size_t pos) const {
     return getBit(pos);
 }

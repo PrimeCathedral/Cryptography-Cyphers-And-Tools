@@ -119,55 +119,56 @@ void changeBit(bitset<Size> &bitset, const int bit_to_change,
   bitset.set(Size - 1 - bit_to_change, new_value);
 }
 
-// /**
-//  * Splits a bitset into smaller segments of a specified size.
-//  * The order of the segments in the output matches the bit order in the original
-//  * bitset.
-//  *
-//  * @tparam size_of_segment The size of each segment in the resulting vector.
-//  * @tparam size_of_original The size of the original bitset to be split.
-//  * @param original The original bitset to be split into smaller segments.
-//  * @return A vector of bitsets, each of size `size_of_segment`, representing the
-//  * segments of the original bitset.
-//  *
-//  * @throws std::invalid_argument If the size of the original bitset is not
-//  * evenly divisible by the segment size.
-//  * @throws std::invalid_argument If the size of the original bitset is the same
-//  * as the segment size.
-//  */
-// template <size_t size_of_segment, size_t size_of_original>
-// vector<bitset<size_of_segment>>
-// splitBitset(const bitset<size_of_original> &original) {
-//   // Validate input: ensure split size divides original size
-//   if (size_of_original % size_of_segment != 0) {
-//     throw std::invalid_argument(
-//         "Original bitset size must be evenly divisible by SplitSize.");
-//   }
-//   if (size_of_original == size_of_segment) {
-//     throw std::invalid_argument(
-//         "Original size and segment size must not be the same");
-//   }
-//
-//   // Precompute constants
-//   constexpr int number_of_segments{size_of_original / size_of_segment};
-//   constexpr unsigned long long mask{
-//       bitset<size_of_segment>().flip().to_ullong()};
-//
-//   // Copy the original bitset to a modifiable value
-//   unsigned long long copy{original.to_ullong()};
-//
-//   // Create a vector for segments
-//   vector<bitset<size_of_segment>> segments;
-//
-//   // Extract segments using the mask
-//   for (int i{0}; i < number_of_segments; ++i) {
-//     segments.emplace_back(copy & mask);
-//     copy >>= size_of_segment;
-//   }
-//   // Reverse the order of segments to match the correct bit order
-//   reverse(segments.begin(), segments.end());
-//   return segments;
-// }
+/**
+ * Splits a bitset into smaller segments of a specified size.
+ * The order of the segments in the output matches the bit order in the original
+ * bitset.
+ *
+ * @tparam size_of_segment The size of each segment in the resulting vector.
+ * @tparam size_of_original The size of the original bitset to be split.
+ * @param original The original bitset to be split into smaller segments.
+ * @return A vector of bitsets, each of size `size_of_segment`, representing the
+ * segments of the original bitset.
+ *
+ * @throws std::invalid_argument If the size of the original bitset is not
+ * evenly divisible by the segment size.
+ * @throws std::invalid_argument If the size of the original bitset is the same
+ * as the segment size.
+ */
+
+template <size_t size_of_segment, size_t size_of_original>
+vector<bitset<size_of_segment>>
+splitBitset(const bitset<size_of_original> &original) {
+  // Validate input: ensure split size divides original size
+  if (size_of_original % size_of_segment != 0) {
+    throw std::invalid_argument(
+        "Original bitset size must be evenly divisible by SplitSize.");
+  }
+  if (size_of_original == size_of_segment) {
+    throw std::invalid_argument(
+        "Original size and segment size must not be the same");
+  }
+
+  // Precompute constants
+  constexpr int number_of_segments{size_of_original / size_of_segment};
+  constexpr unsigned long long mask{
+      bitset<size_of_segment>().flip().to_ullong()};
+
+  // Copy the original bitset to a modifiable value
+  unsigned long long copy{original.to_ullong()};
+
+  // Create a vector for segments
+  vector<bitset<size_of_segment>> segments;
+
+  // Extract segments using the mask
+  for (int i{0}; i < number_of_segments; ++i) {
+    segments.emplace_back(copy & mask);
+    copy >>= size_of_segment;
+  }
+  // Reverse the order of segments to match the correct bit order
+  reverse(segments.begin(), segments.end());
+  return segments;
+}
 //
 // /**
 //  * Rotates the bits of a bitset by a specified number of positions,
@@ -366,7 +367,7 @@ void changeBit(bitset<Size> &bitset, const int bit_to_change,
 //   // Make sure current round is Zero
 //   this->current_round = 0;
 //
-//   // Initial permutation TODO: Refactor box permute
+//   // Initial permutation
 //   const auto initial_permutation {boxPermute<64,64>(kInitialPermutationBox, bitset<64>{plaintext})};
 //
 //   // Split into left and right
